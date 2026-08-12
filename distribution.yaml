@@ -1,0 +1,11 @@
+name: content-agent
+version: 0.1.0
+description: "A private editorial partner for founders publishing useful newsletters on beehiiv."
+hermes_requires: ">=0.20.0"
+author: "Darwin"
+license: "All rights reserved"
+distribution_owned:
+  - distribution.yaml
+  - SOUL.md
+  - config.yaml
+  - skills/content-agent/

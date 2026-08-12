@@ -1,0 +1,52 @@
+# Credentials and authentication — never commit
+auth.json
+.env
+.env.*
+!.env.EXAMPLE
+
+# Hermes runtime state — user-owned, never distributed
+memories/
+sessions/
+workspace/
+local/
+logs/
+plans/
+home/
+cron/
+state.db*
+hermes_state.db*
+response_store.db*
+gateway.pid
+gateway_state.json
+processes.json
+auth.lock
+active_profile
+.update_check
+errors.log
+.hermes_history
+
+# Hermes caches and generated artifacts
+cache/
+*_cache/
+browser_screenshots/
+checkpoints/
+sandboxes/
+backups/
+profiles/
+.worktrees/
+
+# Python
+__pycache__/
+*.py[cod]
+.coverage
+.pytest_cache/
+
+# Editors and operating systems
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Local test artifacts
+.tmp/
+artifacts/

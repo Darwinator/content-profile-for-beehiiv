@@ -1,0 +1,19 @@
+model:
+  default: gpt-5.6-sol
+  provider: openai-codex
+memory:
+  write_approval: true
+mcp_servers:
+  beehiiv:
+    url: https://mcp.beehiiv.com/mcp
+    auth: oauth
+    enabled: false
+    sampling:
+      enabled: false
+    elicitation:
+      enabled: false
+    tools:
+      include:
+        - __enable_only_after_reviewing_read_only_tool_names__
+      prompts: false
+      resources: false
