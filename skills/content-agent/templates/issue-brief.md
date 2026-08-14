@@ -22,6 +22,14 @@
 
 -
 
+## Founder and Business Relevance
+
+- Current or intended business:
+- Newsletter objective:
+- Business and industry interests:
+- Why this belongs in this newsletter, from this founder, for this reader and promise:
+- Private personalization context used and publication permission:
+
 ## Claim and Source Map
 
 | Claim | Source ID | Strength/qualification | Missing evidence or permission |

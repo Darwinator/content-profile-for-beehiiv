@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 FILE_NAMES = (
+    "launch-checklist.md",
     "publication-brief.md",
     "voice-and-boundaries.md",
     "source-ledger.md",

@@ -1,12 +1,12 @@
 # Beehiiv Handoff — Working Title
 
-> Editable local handoff. This artifact does not authorize sending, scheduling, or publishing.
+> Editable private handoff paired with an inline draft. This artifact does not authorize sending, scheduling, or publishing.
 
 - Issue record:
 - Issue Brief:
 - Handoff created:
 - Send Check verdict: ready for founder review | needs revision | blocked
-- Founder approval: pending | approved for manual beehiiv import | revision requested
+- Founder approval: pending | approved for use inside beehiiv | revision requested
 
 ## Title Options
 
@@ -51,4 +51,12 @@
 
 ## Human Next Step
 
-Review and edit this artifact, then manually create or update the draft in beehiiv. The Content Agent must not send, schedule, or publish.
+Review and edit the inline draft or this artifact, then create or update the issue in beehiiv. Complete preview/testing and schedule or send inside beehiiv. The Content Agent must not send, schedule, publish, or describe approval as “approve and send.”
+
+## Workflow Continuation
+
+- Updated launch-checklist state:
+- Current review gate:
+- Recommended next action:
+- What the Content Agent will do after the answer:
+- Remaining launch work:

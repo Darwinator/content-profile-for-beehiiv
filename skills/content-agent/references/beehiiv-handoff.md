@@ -1,6 +1,6 @@
 # Beehiiv Handoff
 
-The v0 integration boundary is an editable local artifact for human review and import into beehiiv.
+The current integration boundary is inline delivery plus an editable local artifact for human review and use inside beehiiv.
 
 ## Current capability boundary
 
@@ -18,11 +18,13 @@ Until write access is both documented and live-verified:
 - never send, schedule, or publish;
 - do not block the editorial loop on connector access.
 
+There is no “approve and send” flow. Approval is the founder's content decision; the founder completes the final send inside beehiiv. The beehiiv MCP rule remains no send, schedule, or publish. A future Send API or another write-capable connector may eventually support bounded direct actions, but that is not a current capability and must not be promised.
+
 The connector is fail-closed: it is shipped disabled with a deliberately nonmatching tool allowlist, and prompts, resources, sampling, and elicitation are disabled. OAuth authentication and enabling are explicit local user actions. Before enabling it, inspect the live tool surface and replace the placeholder only with reviewed read-only tool names. OAuth tokens remain user-owned runtime data.
 
 ## Handoff artifact
 
-Use `templates/beehiiv-handoff.md`. Save the private copy under:
+Show the completed draft inline first, then use `templates/beehiiv-handoff.md` to save the private editable copy under:
 
 ```text
 $HERMES_HOME/workspace/editorial-memory/drafts/YYYY-MM-DD-working-slug.md

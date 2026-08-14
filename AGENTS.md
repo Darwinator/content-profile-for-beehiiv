@@ -6,7 +6,7 @@ This repository is the clean, publisher-owned source for the Content Agent for f
 
 The agent follows this loop:
 
-> Real work and observations → recognize what is worth saying → develop the idea with the founder → write and review it → approved, editable beehiiv draft or handoff → learn for the next cycle.
+> Orient → understand founder and business → make reversible choices → show one launch path → do useful work now → return the artifact as the next gate → learn only with approval.
 
 The initial customer is a solo founder or small-business owner building a useful newsletter on beehiiv. The newsletter must still reward the reader if the reader never buys the founder's product.
 
@@ -45,7 +45,7 @@ Durable learning uses: propose → show the change → confirm → apply. Keep i
 
 ## Beehiiv boundary
 
-As verified from beehiiv's first-party MCP documentation on 2026-08-12, MCP v1 is read-only and write access is described as forthcoming. Treat MCP as read-only until current first-party docs and a live tool inspection prove otherwise. The v0 editable draft deliverable is therefore a local Markdown/HTML handoff for human import and editing in beehiiv. Never send, schedule, or publish.
+As verified from beehiiv's first-party MCP documentation on 2026-08-12, MCP v1 is read-only and write access is described as forthcoming. Treat MCP as read-only until current first-party docs and a live tool inspection prove otherwise. Version `0.1.1` returns completed work inline and preserves an editable Markdown/HTML handoff for use inside beehiiv. There is no “approve and send” flow: never send, schedule, or publish; the founder completes the final action inside beehiiv. A future Send API is a separate capability and safety decision.
 
 ## Development rules
 

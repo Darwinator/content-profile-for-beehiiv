@@ -10,15 +10,16 @@ This is an independent product. It is not an official beehiiv product and does n
 
 ## Current product slice
 
-The first vertical slice supports:
+Version `0.1.1` supports:
 
-1. publication onboarding and confirmation;
+1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;
 3. no more than three worthwhile editorial opportunities;
 4. collaborative Issue Brief development;
 5. drafting and Send Check review;
-6. an editable Markdown handoff for manual work in beehiiv;
-7. inspectable learning proposals that require human approval.
+6. inline draft delivery plus an editable Markdown handoff for work inside beehiiv;
+7. a persistent lean-launch checklist covering beehiiv readiness, capture, welcome, promotion, preview/test, approval, and founder-completed sending;
+8. inspectable learning proposals that require human approval.
 
 It may say that something is not worth publishing yet. It never sends, schedules, or publishes.
 
@@ -122,13 +123,13 @@ The first prompt should be a normal conversation, for example:
 
 > Help me set up the publication you will work on with me.
 
-The agent should initialize Editorial Memory, ask one focused question at a time, distinguish confirmed facts from inferences, and seek confirmation before saving durable publication strategy.
+The agent should initialize Editorial Memory, orient the founder, ask exactly five typed questions one at a time, show setup progress and the launch path, turn uncertainty into reversible choices, and seek confirmation before saving durable publication strategy.
 
 ## Beehiiv connector boundary
 
 The distribution includes an optional disabled Beehiiv MCP configuration. Beehiiv's first-party documentation described MCP v1 as read-only when verified on 2026-08-12. The connector is fail-closed: it ships disabled with a deliberately nonmatching tool allowlist, and prompts, resources, sampling, and elicitation are disabled. A human must authenticate, inspect the live tool names, replace the placeholder with reviewed read-only tools, and only then enable it. It does not provide draft creation, scheduling, or publishing in this release.
 
-The v0 deliverable is an editable local Markdown handoff for human review and manual import into beehiiv. A future write-capable integration must pass the upgrade gate in `skills/content-agent/references/beehiiv-handoff.md`.
+The `0.1.1` deliverable is an inline draft plus an editable local Markdown handoff for human review and use inside beehiiv. There is no “approve and send” flow: the founder schedules or sends inside beehiiv. A future Send API or write-capable connector must pass the upgrade gate in `skills/content-agent/references/beehiiv-handoff.md`.
 
 ## Collaboration workflow
 
