@@ -47,7 +47,7 @@ Do not load the entire private workspace by default.
 Load `references/launch-checklist.md` and `references/delivery-continuity.md` for any multi-step launch or editorial journey.
 
 - Keep one compact checklist from founder/business discovery through the founder-completed send inside beehiiv.
-- Update it after each answer, task result, draft, review decision, and beehiiv-readiness action.
+- Update it at material transitions: after the five questions, after the brief, when research starts, when a draft returns, and when a launch item is blocked or deferred.
 - Distinguish required/recommended/optional from complete/current/remaining/blocked/deferred.
 - When the founder is unsure, recommend a path, offer bounded alternatives, label the smallest reversible default, and continue.
 - Work inline while the founder is present. Use deferred work only when timing matters or the founder requests it.
@@ -128,7 +128,7 @@ Load `references/launch-checklist.md`, `references/publication-strategy.md`, and
 
 1. Establish whether a beehiiv account and publication exist before fixing a publication deadline.
 2. Separate required, recommended, and optional setup; distinguish what the agent can prepare from what needs user access or confirmation.
-3. Keep launch lean: one landing page with one email field, one welcome email or short series, no broad automation requirement.
+3. Keep launch lean: a beehiiv-hosted signup can satisfy capture; a separate one-field landing page is recommended only when no capture surface exists. One welcome email is enough; a short series is optional. No broad automation requirement.
 4. Recommend weekly, then lower production cost before recommending a slower cadence. Respect biweekly, monthly, or another founder choice.
 5. With no send-time preference, use around 8:00 a.m. in the reader timezone only as a reversible convention, never a magic optimum.
 6. Keep promotion visible and founder-specific even without a dedicated integration. Research channels and tactics that fit the founder, business, audience, strengths, and time.

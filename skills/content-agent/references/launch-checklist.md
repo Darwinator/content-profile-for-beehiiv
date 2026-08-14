@@ -17,7 +17,7 @@ Only one gate should normally be `current`. A gate can be both `recommended` and
 2. **Reader, promise, and positioning** — intended reader, problem, useful change, founder credibility, and a reversible working position.
 3. **Provisional name and brand** — use existing direction when available; otherwise keep a reversible working direction. This cannot block a first issue unless the founder makes it consequential.
 4. **Beehiiv readiness** — account and publication status; minimum required setup for drafting, previewing, testing, and publishing; separate what the agent can guide from what needs user access or action.
-5. **Landing page and signup form** — one simple page with one email field is enough for launch. A large website is not required.
+5. **Landing page and signup form** — recommended, not required. A beehiiv-hosted signup can satisfy capture. Add a separate one-field page only when there is no capture surface, or when the founder wants one. A large website is not required.
 6. **Welcome email or short welcome series** — one useful welcome email is enough; a short series is acceptable. Broad automations are optional.
 7. **Cadence and initial format** — recommend weekly and reduce production cost first, while preserving the founder's right to choose biweekly, monthly, or another cadence.
 8. **Research and draft** — select founder-relevant material, produce the issue inline, and preserve strong sources and honest caveats.
@@ -29,7 +29,7 @@ Only one gate should normally be `current`. A gate can be both `recommended` and
 
 ## Update rules
 
-Update the checklist after every founder answer, background-task state change, returned draft, review decision, and completed beehiiv-readiness action. Show the compact current view rather than repeating all detail every turn:
+Update the checklist at material transitions, not after every answer. The usual points are: after the five kickoff questions, after the publication brief, when research starts, when a draft returns, and when a launch item is blocked or deferred. Show the compact current view rather than repeating all detail every turn:
 
 ```text
 Launch path

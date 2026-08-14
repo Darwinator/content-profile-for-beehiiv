@@ -25,7 +25,7 @@ Ask exactly five opening questions, one at a time, through a typed-answer popup.
 2. **Credible perspective:** What work, expertise, professional context, business or industry interests, or lived experience can you credibly speak from?
 3. **Reader and change:** Who would you most like to help, and what should reading the newsletter help them understand, decide, do, or feel?
 4. **Newsletter objective:** What should the newsletter support for you or the business—attention, trust, demand, community, thinking in public, or something else?
-5. **Existing direction:** What already exists—publication, beehiiv account, name, positioning, brand assets, examples you admire, anti-preferences, or boundaries—and where are you still unsure?
+5. **Existing direction:** What already exists for this newsletter, and what's still blank? A publication, account, name, or nothing yet is all fine.
 
 If Desktop cannot render a typed-answer popup, ask the same question as a normal typed reply rather than inventing UI. Popup chrome, Back, and Skip are Desktop capabilities; the product contract is the five questions, one at a time, with visible progress and free text.
 

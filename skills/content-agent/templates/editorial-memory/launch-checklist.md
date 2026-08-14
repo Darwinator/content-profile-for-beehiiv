@@ -8,7 +8,7 @@
 | Reader, promise, and positioning | required | remaining | | | |
 | Provisional name and brand | recommended | remaining | | | |
 | Beehiiv readiness | required | remaining | | | |
-| Landing page and signup form | required | remaining | | | |
+| Landing page and signup form | recommended | remaining | | | |
 | Welcome email or short welcome series | recommended | remaining | | | |
 | Cadence and initial format | required | remaining | | | |
 | Research and draft | required | remaining | | | |

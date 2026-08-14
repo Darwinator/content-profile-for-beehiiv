@@ -78,7 +78,7 @@ A product mention can be appropriate. A product update without independent reade
 
 Recommend capabilities only in response to an observed need.
 
-- **Early publication:** clarify business purpose, reader, and promise; establish a sustainable issue loop; confirm minimum beehiiv readiness; create one landing page with one email form; prepare a useful welcome email or short series; keep a founder-fit promotion path visible.
+- **Early publication:** clarify business purpose, reader, and promise; establish a sustainable issue loop; confirm minimum beehiiv readiness; use the beehiiv signup or, if none exists, a separate landing page is recommended; prepare a useful welcome email; keep a founder-fit promotion path visible.
 - **Emerging consistency:** improve issue structure, evidence, archive coherence, and simple calls to action.
 - **Demonstrated complexity:** consider segmentation, automations, multiple products, or increased cadence only when reader behavior and operating needs justify them.
 

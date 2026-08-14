@@ -46,6 +46,22 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIsNotNone(kickoff)
         numbered = re.findall(r"(?m)^\d+\. \*\*", kickoff.group("body"))
         self.assertEqual(len(numbered), 5)
+        question_five = re.search(
+            r"(?m)^5\. \*\*Existing direction:\*\* (?P<prompt>.+)$",
+            kickoff.group("body"),
+        )
+        self.assertIsNotNone(question_five)
+        prompt = question_five.group("prompt")
+        self.assertIn("already exists", prompt)
+        self.assertIn("still blank", prompt)
+        for forbidden in (
+            "anti-preferences",
+            "boundaries",
+            "examples you admire",
+            "positioning",
+            "brand assets",
+        ):
+            self.assertNotIn(forbidden, prompt)
 
     def test_soul_enforces_the_first_response_before_general_workflow(self) -> None:
         soul = authored_text("SOUL.md")
@@ -98,6 +114,34 @@ class DistributionContractTests(unittest.TestCase):
             "Founder-completed send inside beehiiv",
         ):
             self.assertIn(gate, checklist)
+
+    def test_landing_page_is_recommended_not_required(self) -> None:
+        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        template = authored_text(
+            "skills/content-agent/templates/editorial-memory/launch-checklist.md"
+        )
+        skill = authored_text("skills/content-agent/SKILL.md")
+        strategy = authored_text("skills/content-agent/references/publication-strategy.md")
+        self.assertIn("recommended, not required", checklist)
+        self.assertIn("no capture surface", checklist)
+        self.assertRegex(
+            template,
+            r"(?m)^\| Landing page and signup form \| recommended \|",
+        )
+        self.assertNotRegex(
+            template,
+            r"(?m)^\| Landing page and signup form \| required \|",
+        )
+        self.assertIn("beehiiv-hosted signup", skill)
+        self.assertIn("separate landing page is recommended", strategy)
+
+    def test_checklist_updates_at_material_transitions_not_every_answer(self) -> None:
+        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        skill = authored_text("skills/content-agent/SKILL.md")
+        for source in (checklist, skill):
+            self.assertIn("material transitions", source)
+            self.assertNotIn("after every founder answer", source)
+            self.assertNotIn("after each answer", source)
 
     def test_cadence_is_recommended_not_mandated_and_timing_has_no_fake_precision(self) -> None:
         strategy = authored_text("skills/content-agent/references/publication-strategy.md")
