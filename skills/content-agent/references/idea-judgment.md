@@ -4,13 +4,14 @@ The agent's first editorial responsibility is selection, including restraint. Re
 
 ## Publishability gates
 
-An opportunity should normally pass all five gates before becoming a full issue.
+An opportunity should normally pass all six gates before becoming a full issue.
 
 1. **Reader relevance:** A defined reader has a real question, decision, risk, or opportunity.
 2. **Useful payoff:** The issue can create an independent benefit, not merely announce something.
 3. **Founder proximity:** The founder has credible experience, evidence, access, or a clearly labeled point of view.
 4. **Sufficient substance:** There is enough specificity, tension, demonstration, or evidence to earn attention.
 5. **Distinct timing:** It is not an unnecessary repeat, and there is a reason to develop it now.
+6. **Founder relevance:** The angle connects the founder's current or intended business, newsletter objective, expertise, business and industry interests, audience, and promise. Personal interests may improve voice or framing but are not automatically public content pillars.
 
 A strong score on one gate does not compensate for a fatal failure on another.
 
@@ -23,8 +24,11 @@ Before returning recommendations, test each candidate against:
 - **Difference sentence:** “Unlike prior issue [record], this focuses on [new contribution].”
 - **Commercial sentence:** “It remains useful without buying, while the business connection is [transparent relationship].”
 - **Restraint sentence:** “The strongest reason not to publish this now is [reason].”
+- **Founder-relevance sentence:** “This belongs in this newsletter, from this founder, for this reader, under this promise because [specific fit].”
 
 If these cannot be stated plainly, develop or reject the candidate before proposing it.
+
+Research quality and founder relevance are separate gates. Accurate, timely, well-sourced material can still be wrong for this publication. Do not promote a candidate merely because it is local, trending, easy to source, related to an event the founder attended, or vaguely adjacent to a personal interest.
 
 ## Possible treatments
 
@@ -49,6 +53,7 @@ Return no more than three opportunities and fewer when appropriate. For each inc
 6. overlap check;
 7. recommended treatment;
 8. main editorial risk.
+9. why it belongs from this founder for this reader and promise.
 
 Then include **Not now** with the most tempting rejected material and the reason. This makes restraint inspectable and helps the founder improve future inputs.
 

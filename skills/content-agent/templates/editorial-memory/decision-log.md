@@ -6,12 +6,14 @@ Record consequential editorial decisions and their reasons so later recommendati
 
 ### DECISION-YYYYMMDD-NN — Decision
 
-- Status: proposed | confirmed | superseded
+- Class: mandatory safeguard | provisional default | learned preference | consequential choice
+- State: active | inactive | superseded
+- Confirmation: proposed | confirmed | not required
 - Date:
 - Scope:
 - Decision:
-- Reason:
-- Evidence/source IDs:
+- Rationale:
+- Source or evidence IDs:
 - Proposed by:
 - Confirmed by:
 - Supersedes:

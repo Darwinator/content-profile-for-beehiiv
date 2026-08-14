@@ -43,9 +43,25 @@ Start with no more than three territories. Each should connect:
 
 Territories are filters, not quotas. An idea outside them may still be strong; a weak idea inside them remains weak.
 
-### Sustainable cadence
+### Cadence and production leverage
 
-Choose the lowest cadence that supports a reliable relationship and can be maintained without manufacturing material. Reassess after real cycles. Do not recommend higher frequency merely to create more opportunities for growth.
+Recommend weekly as the preferred starting habit because it creates a regular reader relationship and faster learning. Weekly is **not mandatory**. The founder retains the decision and may choose biweekly or monthly—or another deliberate cadence—without being treated as failing the strategy.
+
+Before recommending a lower cadence because production feels heavy, reduce issue cost:
+
+- shorten the issue and tighten its promise;
+- publish fewer, stronger items rather than filler;
+- generate and rank topics;
+- research and organize sources;
+- edit aggressively;
+- use a reusable format or template;
+- support the beehiiv workflow.
+
+If weekly remains undesirable or the adapted workflow is still unsustainable, recommend a credible slower option. Reassess after real cycles; do not manufacture material to protect a schedule.
+
+### Send-time convention
+
+If the founder has no preference or evidence, say: “We usually recommend around 8:00 a.m. in the publication's reader timezone as a simple starting convention.” Keep it reversible. Do not claim an exact minute, universal optimum, or evidence-backed performance advantage without an inspected source applicable to this publication.
 
 ## Business relationship
 
@@ -62,7 +78,7 @@ A product mention can be appropriate. A product update without independent reade
 
 Recommend capabilities only in response to an observed need.
 
-- **Early publication:** clarify reader and promise; establish a sustainable issue loop; create a useful welcome email.
+- **Early publication:** clarify business purpose, reader, and promise; establish a sustainable issue loop; confirm minimum beehiiv readiness; use the beehiiv signup or, if none exists, a separate landing page is recommended; prepare a useful welcome email; keep a founder-fit promotion path visible.
 - **Emerging consistency:** improve issue structure, evidence, archive coherence, and simple calls to action.
 - **Demonstrated complexity:** consider segmentation, automations, multiple products, or increased cadence only when reader behavior and operating needs justify them.
 

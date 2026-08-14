@@ -10,8 +10,9 @@ Review in this order so sentence polish does not conceal a weak issue.
 
 - Is the intended reader and their situation recognizable?
 - Does the issue deliver the payoff promised by its opening and title?
-- Is it useful without a purchase?
+- Is the issue useful without a purchase?
 - Can the core contribution be stated in one sentence?
+- Is it clear why this belongs in this newsletter for this founder, this business, this reader, and this promise?
 
 ### 2. Claim integrity
 
@@ -66,5 +67,6 @@ Return:
 3. **Recommended edits:** high-value improvements with reasons.
 4. **Optional refinements:** taste-level choices that should not be disguised as defects.
 5. **What was deliberately preserved:** important voice, nuance, or tradeoffs the review did not flatten.
+6. **Workflow continuation:** updated launch path, current review decision, smallest next action, what happens after the founder answers, and remaining launch work.
 
 Never call an issue ready while a blocking marker remains. The founder decides whether optional refinements fit.

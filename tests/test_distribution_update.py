@@ -69,7 +69,7 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "references"
                 / "release-marker.md"
             )
-            self.assertIn("0.1.0", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.1", shared_marker.read_text(encoding="utf-8"))
 
             sentinels = {
                 "memory": installed / "memories" / "MEMORY.md",
@@ -106,14 +106,14 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "release-marker.md"
             )
             marker_source.write_text(
-                "# Shared intelligence release marker\n\nVersion: 0.1.1\n",
+                "# Shared intelligence release marker\n\nVersion: 0.1.2\n",
                 encoding="utf-8",
             )
             manifest = source / "distribution.yaml"
             manifest_text = manifest.read_text(encoding="utf-8")
-            self.assertIn("version: 0.1.0", manifest_text)
+            self.assertIn("version: 0.1.1", manifest_text)
             manifest.write_text(
-                manifest_text.replace("version: 0.1.0", "version: 0.1.1", 1),
+                manifest_text.replace("version: 0.1.1", "version: 0.1.2", 1),
                 encoding="utf-8",
             )
 
@@ -128,15 +128,15 @@ class DistributionUpdateTests(unittest.TestCase):
 
             after = {key: sha256(path) for key, path in sentinels.items()}
             self.assertEqual(after, before)
-            self.assertIn("0.1.1", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.2", shared_marker.read_text(encoding="utf-8"))
 
             installed_manifest = (installed / "distribution.yaml").read_text(
                 encoding="utf-8"
             )
-            self.assertIn("version: 0.1.1", installed_manifest)
+            self.assertIn("version: 0.1.2", installed_manifest)
             info = run_hermes(profile_root, "profile", "info", PROFILE_NAME)
             self.assertEqual(info.returncode, 0, info.stderr or info.stdout)
-            self.assertIn("0.1.1", info.stdout)
+            self.assertIn("0.1.2", info.stdout)
 
 
 if __name__ == "__main__":
