@@ -55,15 +55,17 @@ Load `references/launch-checklist.md` and `references/delivery-continuity.md` fo
 
 ## Job 1 — Orient and onboard
 
-Load `references/onboarding.md` and `references/publication-strategy.md`.
+Load `references/onboarding.md` and `references/publication-strategy.md`. After the kickoff, once current work and the reader are known, also load `references/publication-kind.md` and `references/publication-landscape.md`. Classify publication kind and do a short landscape scan **before** showing the publication brief.
 
 1. Give the opening contract before asking anything: beehiiv-tuned, beginner-friendly, provisional, finite, and accepting of “I don't know yet.”
 2. Ask exactly five typed-answer popup questions, one at a time, showing `1 of 5` through `5 of 5`. If popup UI is unavailable, preserve the same typed one-at-a-time conversation.
 3. Establish founder/business, credible perspective, reader/change, newsletter objective, and existing direction before prescribing cadence, format, territories, or research.
 4. After question five, summarize what is known, update the checklist, and continue in paragraph-style conversation rather than another questionnaire.
 5. Learn operating leverage, boundaries, beehiiv state, business/industry interests, selective personal context, and references only as needed.
-6. Separate confirmed facts, provenance, inferences, recommendations, safeguards, provisional defaults, and open questions.
-7. Show the publication brief and boundary record for correction. Save durable Editorial Memory only after explicit approval.
+6. Classify publication kind. If they are not building a company, do not run the founder operating-week script.
+7. Run a short landscape scan of what already exists for this reader and beat. Put the baseline in the brief. Silently drop directions that cannot produce useful issues for about six months. Do not use the scan to discourage the founder or to delay the first issue.
+8. Separate confirmed facts, provenance, inferences, recommendations, safeguards, provisional defaults, and open questions.
+9. Show the publication brief and boundary record for correction. Save durable Editorial Memory only after explicit approval.
 
 **Complete enough when:** the agent can make founder-relevant editorial choices, the checklist exposes launch readiness, and uncertainty has a reversible next step.
 
@@ -95,7 +97,7 @@ Load `references/idea-judgment.md` and only the relevant private records.
 
 ## Job 4 — Develop an Issue Brief
 
-Load `references/issue-development.md` and only linked sources.
+Load `references/issue-development.md` and only linked sources. When this is the first issue, also load `references/welcome.md` and name that new subscribers will not automatically receive the issue.
 
 1. Clarify reader situation, promised payoff, and one central claim.
 2. Map the argument, story, example, or demonstration needed to earn the claim.
@@ -116,7 +118,7 @@ Load `references/editorial-review.md`, `references/evidence-and-claims.md`, `ref
 2. Preserve natural language, useful caveats, and clear factual placeholders. Cut filler instead of meeting an arbitrary length.
 3. Run Send Check for reader payoff, founder relevance, evidence, structure, voice, continuity, commercial integrity, and the human send boundary.
 4. Separate blockers, recommended edits, and optional refinements.
-5. Return the complete draft inline while also saving the editable private artifact.
+5. Return the complete draft inline while also saving the editable private artifact. With the draft, show a short source list (what each URL supports) unless the founder asked to skip it. Reader-facing links belong in the issue only where a subscriber would click.
 6. Use the delivery envelope: completed, caveats, updated checklist, current review gate, smallest next action, what happens after the answer, and remaining launch work.
 7. Never send, schedule, or publish. There is no “approve and send” flow; the founder completes those actions inside beehiiv.
 
@@ -124,11 +126,11 @@ Load `references/editorial-review.md`, `references/evidence-and-claims.md`, `ref
 
 ## Job 6 — Guide lean beehiiv launch readiness
 
-Load `references/launch-checklist.md`, `references/publication-strategy.md`, and `references/beehiiv-handoff.md`.
+Load `references/launch-checklist.md`, `references/publication-strategy.md`, and `references/beehiiv-handoff.md`. When the current gate is a working title, publication identity, or how the newsletter relates to an existing business name, also load `references/naming.md`. When the current gate is the recurring issue shape, also load `references/issue-format.md`. When the current gate is welcome or first-issue capture, also load `references/welcome.md`. Do not open a naming, format, or welcome workshop during kickoff.
 
 1. Establish whether a beehiiv account and publication exist before fixing a publication deadline.
 2. Separate required, recommended, and optional setup; distinguish what the agent can prepare from what needs user access or confirmation.
-3. Keep launch lean: a beehiiv-hosted signup can satisfy capture; a separate one-field landing page is recommended only when no capture surface exists. One welcome email is enough; a short series is optional. No broad automation requirement.
+3. Keep launch lean: a beehiiv-hosted signup can satisfy capture; a separate one-field landing page is recommended only when no capture surface exists. Follow `references/welcome.md` for welcome: one built-in email on free plans; a short automation only when paid and useful. No broad automation requirement.
 4. Recommend weekly, then lower production cost before recommending a slower cadence. Respect biweekly, monthly, or another founder choice.
 5. With no send-time preference, use around 8:00 a.m. in the reader timezone only as a reversible convention, never a magic optimum.
 6. Keep promotion visible and founder-specific even without a dedicated integration. Research channels and tactics that fit the founder, business, audience, strengths, and time.

@@ -9,6 +9,7 @@
 - Beehiiv account/publication readiness:
 - Current stage:
 - Newsletter objective:
+- Publication kind (company-builder default unless classified otherwise):
 - Active cadence (weekly recommended; founder choice may differ):
 - Send-time preference or provisional around-8:00-a.m. convention:
 
@@ -49,6 +50,16 @@
 1.
 2.
 3.
+
+## What's already out there
+
+- Scan date:
+- What already covers this reader:
+- The usual take this beat defaults to:
+- Where this founder could be usefully different:
+- What would be dime-a-dozen from this publication:
+- Field label: crowded / distinctive / thin / unknown
+- How thin the scan was:
 
 ## Evidence Available
 

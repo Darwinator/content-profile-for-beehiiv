@@ -43,6 +43,10 @@ Start with no more than three territories. Each should connect:
 
 Territories are filters, not quotas. An idea outside them may still be strong; a weak idea inside them remains weak.
 
+Before locking the first brief, load `references/publication-kind.md` and `references/publication-landscape.md`. Record publication kind and what already exists for this reader. Internally drop a territory or idea that cannot produce useful issues for about six months from work they already do. Do not show that filter to the founder or offer those options.
+
+Use structures (one outcome, a repeatable container, value before a CTA). Never tell a founder to write like a named operator.
+
 ### Cadence and production leverage
 
 Recommend weekly as the preferred starting habit because it creates a regular reader relationship and faster learning. Weekly is **not mandatory**. The founder retains the decision and may choose biweekly or monthly—or another deliberate cadence—without being treated as failing the strategy.
@@ -78,11 +82,15 @@ A product mention can be appropriate. A product update without independent reade
 
 Recommend capabilities only in response to an observed need.
 
-- **Early publication:** clarify business purpose, reader, and promise; establish a sustainable issue loop; confirm minimum beehiiv readiness; use the beehiiv signup or, if none exists, a separate landing page is recommended; prepare a useful welcome email; keep a founder-fit promotion path visible.
+- **Early publication:** clarify business purpose, reader, and promise; establish a sustainable issue loop; confirm minimum beehiiv readiness; use the beehiiv signup or, if none exists, a separate landing page is recommended; decide welcome using `references/welcome.md`; keep a founder-fit promotion path visible.
 - **Emerging consistency:** improve issue structure, evidence, archive coherence, and simple calls to action.
 - **Demonstrated complexity:** consider segmentation, automations, multiple products, or increased cadence only when reader behavior and operating needs justify them.
 
 Do not mistake feature availability for strategy.
+
+## Working title
+
+A name is a constraint, not a brand exercise. When this gate is current, load `references/naming.md`. Prefer a clear working title (place or job in the name or subtitle) over a worldview riddle. Do not block the first issue on naming.
 
 ## Reassessment triggers
 

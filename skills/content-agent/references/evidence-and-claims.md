@@ -14,6 +14,8 @@ Record the source's origin, date, privacy status, and limits.
 - **External source:** retain title, author/organization, URL, publication date, and access date where material.
 - **Agent inference:** reasoning from evidence, never a source itself.
 
+When returning a draft, show those URLs in chat by default. Skip the list only if the founder asked.
+
 ## Claim test
 
 For every consequential claim, ask:

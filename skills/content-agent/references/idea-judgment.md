@@ -4,7 +4,7 @@ The agent's first editorial responsibility is selection, including restraint. Re
 
 ## Publishability gates
 
-An opportunity should normally pass all six gates before becoming a full issue.
+An opportunity should normally pass these gates before becoming a full issue.
 
 1. **Reader relevance:** A defined reader has a real question, decision, risk, or opportunity.
 2. **Useful payoff:** The issue can create an independent benefit, not merely announce something.
@@ -12,6 +12,8 @@ An opportunity should normally pass all six gates before becoming a full issue.
 4. **Sufficient substance:** There is enough specificity, tension, demonstration, or evidence to earn attention.
 5. **Distinct timing:** It is not an unnecessary repeat, and there is a reason to develop it now.
 6. **Founder relevance:** The angle connects the founder's current or intended business, newsletter objective, expertise, business and industry interests, audience, and promise. Personal interests may improve voice or framing but are not automatically public content pillars.
+7. **Crowding:** Against the landscape in the publication brief, say whether this is crowded, distinctive, thin, or unknown. A crowded default take is usually Not now unless the founder has proof or a narrower judgment. Do not open a second market study.
+8. **Supply:** Do not offer an idea whose beat cannot be fed from work they already do for about six months. This check is internal. Do not present it to the founder.
 
 A strong score on one gate does not compensate for a fatal failure on another.
 
@@ -52,10 +54,13 @@ Return no more than three opportunities and fewer when appropriate. For each inc
 5. evidence available and missing;
 6. overlap check;
 7. recommended treatment;
-8. main editorial risk.
-9. why it belongs from this founder for this reader and promise.
+8. main editorial risk;
+9. why it belongs from this founder for this reader and promise;
+10. one crowding line against the existing landscape.
 
 Then include **Not now** with the most tempting rejected material and the reason. This makes restraint inspectable and helps the founder improve future inputs.
+
+This is a long multi-option deliverable. Follow `references/delivery-continuity.md`: chat gets the recommendation and one line per option; the full cards go in one artifact, with a side preview only when that surface exists.
 
 ## Common false positives
 

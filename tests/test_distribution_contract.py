@@ -106,14 +106,121 @@ class DistributionContractTests(unittest.TestCase):
         for gate in (
             "Founder and business baseline",
             "Reader, promise, and positioning",
+            "Working title and brand",
             "Beehiiv readiness",
             "Landing page and signup form",
-            "Welcome email or short welcome series",
+            "Welcome",
             "Research and draft",
             "Promotion",
             "Founder-completed send inside beehiiv",
         ):
             self.assertIn(gate, checklist)
+
+    def test_naming_reference_is_a_working_title_gate_not_a_brand_workshop(self) -> None:
+        naming = authored_text("skills/content-agent/references/naming.md")
+        for required in (
+            "Load this reference only when the current job is a working title",
+            "cannot block the first issue",
+            "Named business or product exists",
+            "No business or product name yet",
+            "Do not invent an “endorsed by X” question",
+            "two short slates",
+            "place or job",
+            "Do not say “provisional default.”",
+            "Do not justify a title with rhyme studies",
+            "There is no study that randomly assigns newsletter titles",
+        ):
+            self.assertIn(required, naming)
+        skill = authored_text("skills/content-agent/SKILL.md")
+        self.assertIn("references/naming.md", skill)
+        self.assertIn("Do not open a naming, format, or welcome workshop during kickoff", skill)
+
+    def test_issue_format_reference_offers_a_menu_not_only_1_2_1(self) -> None:
+        fmt = authored_text("skills/content-agent/references/issue-format.md")
+        for required in (
+            "working format",
+            "Do not say “provisional.”",
+            "Do not default every publication to the same shell",
+            "One outcome",
+            "1–2–1",
+            "Tight container",
+            "Judged shorts",
+            "Never add filler",
+            "filters, not weekly quotas",
+            "Do not lock a persona into the format",
+            "Never say “write like” a named newsletter",
+        ):
+            self.assertIn(required, fmt)
+        skill = authored_text("skills/content-agent/SKILL.md")
+        self.assertIn("references/issue-format.md", skill)
+
+    def test_publication_kind_and_silent_supply_filter_are_encoded(self) -> None:
+        kind = authored_text("skills/content-agent/references/publication-kind.md")
+        for required in (
+            "This is a classification, not five products",
+            "Building a company",
+            "do not run the founder script",
+            "Never tell a founder to write like a named operator",
+        ):
+            self.assertIn(required, kind)
+        landscape = authored_text("skills/content-agent/references/publication-landscape.md")
+        judgment = authored_text("skills/content-agent/references/idea-judgment.md")
+        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        skill = authored_text("skills/content-agent/SKILL.md")
+        brief = authored_text(
+            "skills/content-agent/templates/editorial-memory/publication-brief.md"
+        )
+        self.assertIn("about six months", landscape)
+        self.assertIn("Do not explain this as a quiz", landscape)
+        self.assertIn("This check is internal", judgment)
+        self.assertIn("that filter is internal", onboarding)
+        self.assertIn("references/publication-kind.md", skill)
+        self.assertIn("Publication kind", brief)
+
+    def test_welcome_depends_on_plan_and_cadence_and_is_raised_at_first_issue(self) -> None:
+        welcome = authored_text("skills/content-agent/references/welcome.md")
+        for required in (
+            "do **not** automatically receive the latest issue",
+            "Raise that fact as soon as the first issue is in motion",
+            "Recommend one easy path",
+            "Free / Launch",
+            "Paid, and weekly or more",
+            "Paid, and not sending regularly yet",
+            "low-risk way to start",
+            "recommendation, not a requirement",
+            "turn the preset welcome email **off**",
+        ):
+            self.assertIn(required, welcome)
+        skill = authored_text("skills/content-agent/SKILL.md")
+        self.assertIn("references/welcome.md", skill)
+        self.assertIn("new subscribers will not automatically receive the issue", skill)
+
+    def test_landscape_scan_lands_in_the_brief_before_ideas_go_deep(self) -> None:
+        landscape = authored_text("skills/content-agent/references/publication-landscape.md")
+        for required in (
+            "**before** showing the publication brief",
+            "baseline, not a market study",
+            "not a reason to quit",
+            "Crowded",
+            "Distinctive",
+            "Thin",
+            "Unknown",
+            "Do not redo a full landscape for every issue",
+        ):
+            self.assertIn(required, landscape)
+        skill = authored_text("skills/content-agent/SKILL.md")
+        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        brief = authored_text(
+            "skills/content-agent/templates/editorial-memory/publication-brief.md"
+        )
+        judgment = authored_text("skills/content-agent/references/idea-judgment.md")
+        issue_brief = authored_text("skills/content-agent/templates/issue-brief.md")
+        self.assertIn("references/publication-landscape.md", skill)
+        self.assertIn("**before** showing the publication brief", skill)
+        self.assertIn("without being talked out of publishing", onboarding)
+        self.assertIn("## What's already out there", brief)
+        self.assertIn("one crowding line against the existing landscape", judgment)
+        self.assertIn("## Crowding against the landscape", issue_brief)
 
     def test_landing_page_is_recommended_not_required(self) -> None:
         checklist = authored_text("skills/content-agent/references/launch-checklist.md")
@@ -210,6 +317,8 @@ class DistributionContractTests(unittest.TestCase):
             "current review gate",
             "smallest next action",
             "what happens after the answer",
+            "Long multi-option deliverables",
+            "Do not use this split for a single draft",
         ):
             self.assertIn(required, delivery)
 
@@ -221,6 +330,18 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("founder completes the final send inside beehiiv", combined)
         self.assertIn("future Send API", combined)
         self.assertIn("not a current capability", combined)
+        self.assertIn("Sources by default", handoff)
+        self.assertIn("unless the founder asked to skip it", handoff)
+
+    def test_drafts_show_source_urls_in_chat_by_default(self) -> None:
+        skill = authored_text("skills/content-agent/SKILL.md")
+        review = authored_text("skills/content-agent/references/editorial-review.md")
+        evidence = authored_text("skills/content-agent/references/evidence-and-claims.md")
+        template = authored_text("skills/content-agent/templates/beehiiv-handoff.md")
+        self.assertIn("unless the founder asked to skip it", skill)
+        self.assertIn("source URLs shown in chat with the draft", review)
+        self.assertIn("show those URLs in chat by default", evidence)
+        self.assertIn("| URL |", template)
 
     def test_distribution_contains_no_host_specific_paths_or_secret_values(self) -> None:
         forbidden_fragments = (

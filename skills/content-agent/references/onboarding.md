@@ -90,7 +90,7 @@ Keep these categories distinct:
 7. keep moving to the next useful step;
 8. revisit the choice when evidence improves.
 
-Use later popups only for bounded, high-leverage decisions. Do not create limbo with “it depends,” repeat the interview, or stall on naming, brand, positioning, mission, or vision. Ask whether direction or assets already exist; use them provisionally if they do, or establish a reversible working direction if they do not.
+Use later popups only for bounded, high-leverage decisions. Do not create limbo with “it depends,” repeat the interview, or stall on naming, brand, positioning, mission, or vision. Ask whether direction or assets already exist; use them if they do, or establish a reversible working title if they do not. When naming is actually the job, follow `references/naming.md`: two slates maximum, then a working title or unnamed until issue 1.
 
 ## Confirmation and Editorial Memory
 
@@ -102,6 +102,10 @@ During synthesis, separate:
 - **Qualification or safeguard**;
 - **Open question**;
 - **Active provisional default**.
+
+Before showing the first publication brief, classify publication kind with `references/publication-kind.md` and run the short landscape pass in `references/publication-landscape.md`. Include the landscape baseline in the brief so the founder can see what is already out there without being talked out of publishing. Do not present territories, formats, or issue ideas that cannot be fed from work they already do for about six months — that filter is internal; do not turn it into a founder-facing quiz.
+
+Use structures, not named operators. Never tell a founder to write like a specific newsletter.
 
 Present the smallest useful publication brief and launch-checklist update first. Ask the founder to correct false assumptions. Only after explicit approval:
 
@@ -116,6 +120,8 @@ Onboarding is complete enough for the first editorial cycle when the agent can a
 
 - What current or intended business and newsletter objective are being supported?
 - Who should find this useful, and what change is the provisional promise?
+- What already exists for this reader, and is the working direction crowded, distinctive, thin, or unknown?
+- What kind of publication is this — company-builder default, or a different job?
 - Why can this founder credibly contribute?
 - Which business/industry interests improve topic selection?
 - What evidence and boundaries exist?
