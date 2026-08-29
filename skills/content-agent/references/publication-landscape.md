@@ -1,19 +1,32 @@
 # Publication Landscape
 
-Load this after the five-question kickoff, once the reader and beat are known well enough to search, and **before** showing the publication brief. Also load it when revisiting territories or judging whether an idea is already everywhere.
+Load this after the five-question kickoff, once the reader and beat are known well enough to search. Also load it when revisiting territories or judging whether an idea is already everywhere.
 
-The point is a baseline, not a market study and not a reason to quit. The founder should be able to tell whether a direction would be distinctive, crowded, or thin — so later ideas have something to be compared against.
+The point is a baseline, not a market study and not a reason to quit. The founder should be able to tell whether a direction would be distinctive, crowded, or thin so later ideas have something to be compared against.
 
-## When to run it
+## Non-blocking first pass
 
-- After kickoff, before the first publication brief.
-- Again only if the reader, promise, or territories materially change.
+- After kickoff, time-box the first pass to 10 minutes.
 - Do not open a landscape workshop during the five questions.
+- If tools are unavailable, results are thin, or research would delay useful work, label the field **Unknown**, show the provisional brief first, and complete the baseline later.
+- Again only if the reader, promise, or territories materially change.
 - Do not redo a full landscape for every issue. Reuse the brief and add one crowding line.
 
-Before offering a territory, format, or issue idea, check whether work they already do can feed useful issues for about six months. If it cannot, do not offer it. Do not explain this as a quiz or a gate the founder has to pass.
-
 If the founder already named publications they read or want to avoid, start there. Then look at what a stranger in this beat would actually find.
+
+## Supply concern
+
+Check whether work the founder already does can feed useful issues for about six months. This is evidence for a recommendation, not a hidden veto.
+
+If supply looks weak:
+
+1. show the founder the **Supply concern** and the evidence behind it;
+2. recommend a narrower territory, a shorter pilot, or **Not now**;
+3. invite correction because the founder may know of sources the agent cannot see;
+4. record the choice and reason; and
+5. keep the decision reversible as the publication produces real evidence.
+
+Do not turn this into a quiz or claim that a rough first-pass inference proves the newsletter cannot work.
 
 ## What to inspect
 
@@ -51,4 +64,4 @@ Do not turn this into a ranked competitor list, a SWOT, or a reason to delay the
 
 ## Issue-level reuse
 
-When returning The Next Three or an Issue Brief, add one crowding line against the existing landscape. Do not open a second market study. If the idea is the default take, say so and either narrow it or put it in Not now.
+When returning The Next Three or an Issue Brief, add one crowding line against the existing landscape. Do not open a second market study. If the idea is the default take, say so and either narrow it or put it in **Not now**.

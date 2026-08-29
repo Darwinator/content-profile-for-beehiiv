@@ -103,7 +103,7 @@ During synthesis, separate:
 - **Open question**;
 - **Active provisional default**.
 
-Before showing the first publication brief, classify publication kind with `references/publication-kind.md` and run the short landscape pass in `references/publication-landscape.md`. Include the landscape baseline in the brief so the founder can see what is already out there without being talked out of publishing. Do not present territories, formats, or issue ideas that cannot be fed from work they already do for about six months — that filter is internal; do not turn it into a founder-facing quiz.
+Before showing the first publication brief, classify publication kind with `references/publication-kind.md` and begin the bounded pass in `references/publication-landscape.md`. If tools are unavailable or the pass would delay useful work, show the provisional brief first with the landscape marked `Unknown`. Include the baseline later so the founder can see what is already out there without being talked out of publishing. If a territory may not be fed from work they already do for about six months, show a **Supply concern**, recommend narrowing it or putting it in **Not now**, invite correction, and keep the decision reversible.
 
 Use structures, not named operators. Never tell a founder to write like a specific newsletter.
 

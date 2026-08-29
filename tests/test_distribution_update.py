@@ -6,6 +6,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import unittest
 from pathlib import Path
@@ -14,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 HERMES = Path(os.environ.get("HERMES_BIN") or shutil.which("hermes") or "hermes")
 PROFILE_NAME = "content-agent-update-test"
+BASE_RELEASE_SHA = "5aa34cc274322170d6075120d8ddafcc769644a0"
 
 
 def sha256(path: Path) -> str:
@@ -36,7 +38,105 @@ def run_hermes(home: Path, *args: str) -> subprocess.CompletedProcess[str]:
     )
 
 
+def export_git_revision(revision: str, destination: Path) -> None:
+    archive = destination.parent / f"{revision[:8]}.tar"
+    exported = subprocess.run(
+        ["git", "archive", "--format=tar", "--output", str(archive), revision],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=60,
+    )
+    if exported.returncode != 0:
+        raise AssertionError(exported.stderr or exported.stdout)
+    destination.mkdir(parents=True, exist_ok=True)
+    with tarfile.open(archive) as bundle:
+        bundle.extractall(destination)
+
+
 class DistributionUpdateTests(unittest.TestCase):
+    def test_actual_0_1_1_to_0_1_2_update_preserves_workspace_and_adds_reconciliation(self) -> None:
+        if not HERMES.is_file():
+            self.fail("Set HERMES_BIN to the Hermes executable before running this test")
+        with tempfile.TemporaryDirectory() as tmp:
+            temp = Path(tmp)
+            source = temp / "source"
+            profile_root = temp / "hermes-home"
+            export_git_revision(BASE_RELEASE_SHA, source)
+
+            install = run_hermes(
+                profile_root,
+                "profile",
+                "install",
+                str(source),
+                "--name",
+                PROFILE_NAME,
+                "--yes",
+            )
+            self.assertEqual(install.returncode, 0, install.stderr or install.stdout)
+
+            installed = profile_root / "profiles" / PROFILE_NAME
+            init = subprocess.run(
+                [
+                    sys.executable,
+                    str(installed / "skills/content-agent/scripts/init_workspace.py"),
+                    "--hermes-home",
+                    str(installed),
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+                timeout=60,
+            )
+            self.assertEqual(init.returncode, 0, init.stderr or init.stdout)
+
+            private_root = installed / "workspace" / "editorial-memory"
+            publication_brief = private_root / "publication-brief.md"
+            publication_brief.write_bytes(
+                publication_brief.read_bytes()
+                + b"\n## Founder-owned legacy note\nPreserve this byte-for-byte.\n"
+            )
+            before = {
+                str(path.relative_to(private_root)): sha256(path)
+                for path in private_root.rglob("*")
+                if path.is_file()
+            }
+
+            shutil.rmtree(source)
+            shutil.copytree(
+                ROOT,
+                source,
+                ignore=shutil.ignore_patterns(".git", ".tmp", "__pycache__", "*.pyc"),
+            )
+            update = run_hermes(
+                profile_root,
+                "profile",
+                "update",
+                PROFILE_NAME,
+                "--yes",
+            )
+            self.assertEqual(update.returncode, 0, update.stderr or update.stdout)
+
+            after = {
+                str(path.relative_to(private_root)): sha256(path)
+                for path in private_root.rglob("*")
+                if path.is_file()
+            }
+            self.assertEqual(after, before)
+            self.assertIn(
+                "Version: 0.1.2",
+                (
+                    installed
+                    / "skills/content-agent/references/release-marker.md"
+                ).read_text(encoding="utf-8"),
+            )
+            installed_skill = (
+                installed / "skills/content-agent/SKILL.md"
+            ).read_text(encoding="utf-8")
+            self.assertIn("approval-based reconciliation", installed_skill)
+            self.assertIn("never rewrite existing private files automatically", installed_skill)
+
     def test_real_profile_update_replaces_shared_intelligence_and_preserves_user_state(self) -> None:
         if not HERMES.is_file():
             self.fail("Set HERMES_BIN to the Hermes executable before running this test")
@@ -69,7 +169,7 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "references"
                 / "release-marker.md"
             )
-            self.assertIn("0.1.1", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.2", shared_marker.read_text(encoding="utf-8"))
 
             sentinels = {
                 "memory": installed / "memories" / "MEMORY.md",
@@ -106,14 +206,14 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "release-marker.md"
             )
             marker_source.write_text(
-                "# Shared intelligence release marker\n\nVersion: 0.1.2\n",
+                "# Shared intelligence release marker\n\nVersion: 0.1.3\n",
                 encoding="utf-8",
             )
             manifest = source / "distribution.yaml"
             manifest_text = manifest.read_text(encoding="utf-8")
-            self.assertIn("version: 0.1.1", manifest_text)
+            self.assertIn("version: 0.1.2", manifest_text)
             manifest.write_text(
-                manifest_text.replace("version: 0.1.1", "version: 0.1.2", 1),
+                manifest_text.replace("version: 0.1.2", "version: 0.1.3", 1),
                 encoding="utf-8",
             )
 
@@ -128,15 +228,15 @@ class DistributionUpdateTests(unittest.TestCase):
 
             after = {key: sha256(path) for key, path in sentinels.items()}
             self.assertEqual(after, before)
-            self.assertIn("0.1.2", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.3", shared_marker.read_text(encoding="utf-8"))
 
             installed_manifest = (installed / "distribution.yaml").read_text(
                 encoding="utf-8"
             )
-            self.assertIn("version: 0.1.2", installed_manifest)
+            self.assertIn("version: 0.1.3", installed_manifest)
             info = run_hermes(profile_root, "profile", "info", PROFILE_NAME)
             self.assertEqual(info.returncode, 0, info.stderr or info.stdout)
-            self.assertIn("0.1.2", info.stdout)
+            self.assertIn("0.1.3", info.stdout)
 
 
 if __name__ == "__main__":

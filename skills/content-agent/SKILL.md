@@ -1,7 +1,7 @@
 ---
 name: content-agent
 description: Use when guiding a founder's beehiiv newsletter launch and issues.
-version: 0.1.1
+version: 0.1.2
 author: Darwin
 license: All rights reserved
 metadata:
@@ -42,6 +42,20 @@ Use the minimum retrieval set:
 
 Do not load the entire private workspace by default.
 
+### Workspace compatibility after updates
+
+Older profiles may retain private briefs, checklists, or ledgers whose fields predate the current shared templates. Treat missing fields as unknown, not as permission to reset the workspace.
+
+Use **approval-based reconciliation**:
+
+1. compare the existing private record with the current template by meaning, including renamed gates;
+2. show a compact additive diff for missing fields or labels;
+3. preserve every founder-authored value and unresolved decision;
+4. ask for approval before adding or renaming anything; and
+5. never rewrite existing private files automatically.
+
+A profile update may replace shared intelligence, but reconciliation of user-owned state remains a separate, inspectable founder decision.
+
 ## Always-on workflow contract
 
 Load `references/launch-checklist.md` and `references/delivery-continuity.md` for any multi-step launch or editorial journey.
@@ -55,7 +69,7 @@ Load `references/launch-checklist.md` and `references/delivery-continuity.md` fo
 
 ## Job 1 — Orient and onboard
 
-Load `references/onboarding.md` and `references/publication-strategy.md`. After the kickoff, once current work and the reader are known, also load `references/publication-kind.md` and `references/publication-landscape.md`. Classify publication kind and do a short landscape scan **before** showing the publication brief.
+Load `references/onboarding.md` and `references/publication-strategy.md`. After the kickoff, once current work and the reader are known, also load `references/publication-kind.md` and `references/publication-landscape.md`. Classify publication kind and begin a bounded landscape scan without blocking the provisional publication brief.
 
 1. Give the opening contract before asking anything: beehiiv-tuned, beginner-friendly, provisional, finite, and accepting of “I don't know yet.”
 2. Ask exactly five typed-answer popup questions, one at a time, showing `1 of 5` through `5 of 5`. If popup UI is unavailable, preserve the same typed one-at-a-time conversation.
@@ -63,7 +77,7 @@ Load `references/onboarding.md` and `references/publication-strategy.md`. After 
 4. After question five, summarize what is known, update the checklist, and continue in paragraph-style conversation rather than another questionnaire.
 5. Learn operating leverage, boundaries, beehiiv state, business/industry interests, selective personal context, and references only as needed.
 6. Classify publication kind. If they are not building a company, do not run the founder operating-week script.
-7. Run a short landscape scan of what already exists for this reader and beat. Put the baseline in the brief. Silently drop directions that cannot produce useful issues for about six months. Do not use the scan to discourage the founder or to delay the first issue.
+7. Run a short landscape scan of what already exists for this reader and beat. If tools are unavailable or the pass would delay progress, label the landscape `Unknown`, show the provisional brief first, and fill the baseline later. Make a **Supply concern** visible when a direction may not produce useful issues for about six months; recommend narrowing it or putting it in **Not now**, explain the evidence, and let the founder correct the assumption. The decision stays reversible.
 8. Separate confirmed facts, provenance, inferences, recommendations, safeguards, provisional defaults, and open questions.
 9. Show the publication brief and boundary record for correction. Save durable Editorial Memory only after explicit approval.
 
@@ -118,7 +132,7 @@ Load `references/editorial-review.md`, `references/evidence-and-claims.md`, `ref
 2. Preserve natural language, useful caveats, and clear factual placeholders. Cut filler instead of meeting an arbitrary length.
 3. Run Send Check for reader payoff, founder relevance, evidence, structure, voice, continuity, commercial integrity, and the human send boundary.
 4. Separate blockers, recommended edits, and optional refinements.
-5. Return the complete draft inline while also saving the editable private artifact. With the draft, show a short source list (what each URL supports) unless the founder asked to skip it. Reader-facing links belong in the issue only where a subscriber would click.
+5. Return the complete draft inline while also saving the editable private artifact. With the draft, show a short source list with public, non-sensitive URLs and what each supports unless the founder asked to skip it. Represent private or local sources by source ID and description only. Reader-facing links belong in the issue only where a subscriber would click.
 6. Use the delivery envelope: completed, caveats, updated checklist, current review gate, smallest next action, what happens after the answer, and remaining launch work.
 7. Never send, schedule, or publish. There is no “approve and send” flow; the founder completes those actions inside beehiiv.
 
@@ -130,7 +144,7 @@ Load `references/launch-checklist.md`, `references/publication-strategy.md`, and
 
 1. Establish whether a beehiiv account and publication exist before fixing a publication deadline.
 2. Separate required, recommended, and optional setup; distinguish what the agent can prepare from what needs user access or confirmation.
-3. Keep launch lean: a beehiiv-hosted signup can satisfy capture; a separate one-field landing page is recommended only when no capture surface exists. Follow `references/welcome.md` for welcome: one built-in email on free plans; a short automation only when paid and useful. No broad automation requirement.
+3. Keep launch lean: a beehiiv-hosted signup can satisfy capture; a separate one-field landing page is recommended only when no capture surface exists. Follow `references/welcome.md`: the lean default is one welcome email on every plan; a short automation is optional only when paid access, existing source material, and a distinct reader benefit justify it. No broad automation requirement.
 4. Recommend weekly, then lower production cost before recommending a slower cadence. Respect biweekly, monthly, or another founder choice.
 5. With no send-time preference, use around 8:00 a.m. in the reader timezone only as a reversible convention, never a magic optimum.
 6. Keep promotion visible and founder-specific even without a dedicated integration. Research channels and tactics that fit the founder, business, audience, strengths, and time.

@@ -17,7 +17,7 @@ Review in this order so sentence polish does not conceal a weak issue.
 ### 2. Claim integrity
 
 - Does every consequential claim match linked evidence?
-- Were the source URLs shown in chat with the draft, unless the founder asked to skip them?
+- Were public, non-sensitive URLs shown in chat with the draft unless the founder asked to skip them, while private/local sources remained source IDs and descriptions?
 - Are inference, opinion, and direct observation distinguishable?
 - Are limitations and uncertainty present where they affect interpretation?
 - Are quotation, permission, confidentiality, and disclosure requirements satisfied?

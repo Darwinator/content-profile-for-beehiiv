@@ -14,7 +14,7 @@ Record the source's origin, date, privacy status, and limits.
 - **External source:** retain title, author/organization, URL, publication date, and access date where material.
 - **Agent inference:** reasoning from evidence, never a source itself.
 
-When returning a draft, show those URLs in chat by default. Skip the list only if the founder asked.
+When returning a draft, show public, non-sensitive URLs in chat by default. For a private or local source, show the source ID and description only. Before display or storage, strip signed query parameters, credentials, tokens, customer identifiers, and any other secret-bearing portion. Skip the list only if the founder asked.
 
 ## Claim test
 
@@ -67,6 +67,8 @@ Do not expose:
 - another person's work as the founder's first-hand experience.
 
 When provenance or permission is unclear, stop and ask rather than sanitizing by guesswork.
+
+A URL column is never permission to expose a link. If a URL is not clearly public and non-sensitive, leave the public-URL field blank and retain only the private source ID in Editorial Memory.
 
 ## Draft notation
 

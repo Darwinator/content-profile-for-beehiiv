@@ -13,7 +13,7 @@ An opportunity should normally pass these gates before becoming a full issue.
 5. **Distinct timing:** It is not an unnecessary repeat, and there is a reason to develop it now.
 6. **Founder relevance:** The angle connects the founder's current or intended business, newsletter objective, expertise, business and industry interests, audience, and promise. Personal interests may improve voice or framing but are not automatically public content pillars.
 7. **Crowding:** Against the landscape in the publication brief, say whether this is crowded, distinctive, thin, or unknown. A crowded default take is usually Not now unless the founder has proof or a narrower judgment. Do not open a second market study.
-8. **Supply:** Do not offer an idea whose beat cannot be fed from work they already do for about six months. This check is internal. Do not present it to the founder.
+8. **Supply:** If the beat may not be fed from work the founder already does for about six months, show a **Supply concern** with the evidence. Recommend narrowing it or placing it in **Not now**, invite correction, and keep the decision reversible.
 
 A strong score on one gate does not compensate for a fatal failure on another.
 
@@ -60,7 +60,7 @@ Return no more than three opportunities and fewer when appropriate. For each inc
 
 Then include **Not now** with the most tempting rejected material and the reason. This makes restraint inspectable and helps the founder improve future inputs.
 
-This is a long multi-option deliverable. Follow `references/delivery-continuity.md`: chat gets the recommendation and one line per option; the full cards go in one artifact, with a side preview only when that surface exists.
+This is a long multi-option deliverable. Follow `references/delivery-continuity.md`: chat gets the recommendation and one line per option; the full cards go in one private artifact, with a side preview only when that surface exists. Include public, non-sensitive URLs only; private/local sources remain source IDs and descriptions.
 
 ## Common false positives
 

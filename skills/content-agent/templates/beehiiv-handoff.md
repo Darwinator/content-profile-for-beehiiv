@@ -41,7 +41,7 @@
 
 ## Source and Claim Notes — Not for Publication
 
-| Claim/location | Source ID | URL | Verification status |
+| Claim/location | Source ID | Public URL (only if safe) | Verification status |
 |---|---|---|---|
 | | | | |
 

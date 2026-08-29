@@ -43,7 +43,7 @@ Start with no more than three territories. Each should connect:
 
 Territories are filters, not quotas. An idea outside them may still be strong; a weak idea inside them remains weak.
 
-Before locking the first brief, load `references/publication-kind.md` and `references/publication-landscape.md`. Record publication kind and what already exists for this reader. Internally drop a territory or idea that cannot produce useful issues for about six months from work they already do. Do not show that filter to the founder or offer those options.
+Before locking the first brief, load `references/publication-kind.md` and `references/publication-landscape.md`. Record publication kind and what already exists for this reader when the bounded scan is available; otherwise mark it `Unknown` and show the provisional brief first. If a territory may not produce useful issues for about six months from work the founder already does, show a **Supply concern**, recommend narrowing it or placing it in **Not now**, invite correction, and keep the decision reversible.
 
 Use structures (one outcome, a repeatable container, value before a CTA). Never tell a founder to write like a named operator.
 
@@ -90,7 +90,7 @@ Do not mistake feature availability for strategy.
 
 ## Working title
 
-A name is a constraint, not a brand exercise. When this gate is current, load `references/naming.md`. Prefer a clear working title (place or job in the name or subtitle) over a worldview riddle. Do not block the first issue on naming.
+A name is a constraint, not a brand exercise. When this gate is current, load `references/naming.md`. Prefer a clear working title whose pattern fits the publication kind and reader. Do not block the first issue on naming.
 
 ## Reassessment triggers
 
