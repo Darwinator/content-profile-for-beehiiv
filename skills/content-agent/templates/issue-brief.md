@@ -30,6 +30,12 @@
 - Why this belongs in this newsletter, from this founder, for this reader and promise:
 - Private personalization context used and publication permission:
 
+## Crowding against the landscape
+
+- Field label: crowded / distinctive / thin / unknown
+- What already covers this take:
+- Why this version is still worth doing, or why it is Not now:
+
 ## Claim and Source Map
 
 | Claim | Source ID | Strength/qualification | Missing evidence or permission |

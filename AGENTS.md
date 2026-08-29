@@ -45,7 +45,7 @@ Durable learning uses: propose → show the change → confirm → apply. Keep i
 
 ## Beehiiv boundary
 
-As verified from beehiiv's first-party MCP documentation on 2026-08-12, MCP v1 is read-only and write access is described as forthcoming. Treat MCP as read-only until current first-party docs and a live tool inspection prove otherwise. Version `0.1.1` returns completed work inline and preserves an editable Markdown/HTML handoff for use inside beehiiv. There is no “approve and send” flow: never send, schedule, or publish; the founder completes the final action inside beehiiv. A future Send API is a separate capability and safety decision.
+As verified from beehiiv's first-party MCP documentation on 2026-08-12, MCP v1 is read-only and write access is described as forthcoming. Treat MCP as read-only until current first-party docs and a live tool inspection prove otherwise. Version `0.1.2` returns completed work inline and preserves an editable Markdown/HTML handoff for use inside beehiiv. There is no “approve and send” flow: never send, schedule, or publish; the founder completes the final action inside beehiiv. A future Send API is a separate capability and safety decision.
 
 ## Development rules
 

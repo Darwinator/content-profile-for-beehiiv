@@ -1,5 +1,5 @@
 name: content-agent
-version: 0.1.1
+version: 0.1.2
 description: "A private editorial partner for founders publishing useful newsletters on beehiiv."
 hermes_requires: ">=0.20.0"
 author: "Darwin"

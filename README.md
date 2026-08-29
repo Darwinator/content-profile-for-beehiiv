@@ -10,7 +10,7 @@ This is an independent product. It is not an official beehiiv product and does n
 
 ## Current product slice
 
-Version `0.1.1` supports:
+Version `0.1.2` supports:
 
 1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;
@@ -129,7 +129,7 @@ The agent should initialize Editorial Memory, orient the founder, ask exactly fi
 
 The distribution includes an optional disabled Beehiiv MCP configuration. Beehiiv's first-party documentation described MCP v1 as read-only when verified on 2026-08-12. The connector is fail-closed: it ships disabled with a deliberately nonmatching tool allowlist, and prompts, resources, sampling, and elicitation are disabled. A human must authenticate, inspect the live tool names, replace the placeholder with reviewed read-only tools, and only then enable it. It does not provide draft creation, scheduling, or publishing in this release.
 
-The `0.1.1` deliverable is an inline draft plus an editable local Markdown handoff for human review and use inside beehiiv. There is no “approve and send” flow: the founder schedules or sends inside beehiiv. A future Send API or write-capable connector must pass the upgrade gate in `skills/content-agent/references/beehiiv-handoff.md`.
+The `0.1.2` deliverable is an inline draft plus an editable local Markdown handoff for human review and use inside beehiiv. There is no “approve and send” flow: the founder schedules or sends inside beehiiv. A future Send API or write-capable connector must pass the upgrade gate in `skills/content-agent/references/beehiiv-handoff.md`.
 
 ## Collaboration workflow
 

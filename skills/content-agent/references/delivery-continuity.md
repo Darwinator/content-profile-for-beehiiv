@@ -8,6 +8,24 @@ When the founder is present and the work can be completed now, research, draft, 
 
 Do not default to cron, background work, a local-file-only answer, or a retrieval phrase. Use deferred execution only when timing genuinely matters or the founder explicitly requests later delivery.
 
+## Long multi-option deliverables
+
+Keep ordinary work **inline**: one brief, one draft, one short rec, one question. Do not open a side preview for those.
+
+Split presentation only when **both** are true:
+
+1. the founder must choose among multiple options; and
+2. the full writeup would be long enough to bury the choice.
+
+Then:
+
+- **Chat** holds the decision: the recommendation, one line per option, Not now if needed, and the choice control.
+- **One private artifact** holds the full cards under `$HERMES_HOME/workspace/editorial-memory/idea-options/YYYY-MM-DD-working-slug.md`. Open it in a side preview when that surface exists. If it does not, keep the artifact available without making the founder hunt for a retrieval phrase.
+- Store only the decision material needed for the choice. Include public, non-sensitive URLs only. Private or local sources stay as source IDs and descriptions; remove credentials, signed query parameters, customer identifiers, and unnecessary raw excerpts.
+- Retain or delete the artifact under the same private Editorial Memory policy as the related idea decision; do not copy it into the distribution or a public preview.
+
+Do not use this split for a single draft, a single brief, or a short recommendation. Do not dump the full cards into chat *and* the preview.
+
 ## Background-work gate
 
 If background work is justified:

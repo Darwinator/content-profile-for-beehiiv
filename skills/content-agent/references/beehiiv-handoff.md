@@ -30,6 +30,14 @@ Show the completed draft inline first, then use `templates/beehiiv-handoff.md` t
 $HERMES_HOME/workspace/editorial-memory/drafts/YYYY-MM-DD-working-slug.md
 ```
 
+## Sources by default
+
+Show a short source list **in chat with the draft**, unless the founder asked to skip it. Each line says what the source supports and includes a public, non-sensitive URL only when safe.
+
+For private/local material, show the source ID and description without its URL. Strip signed query parameters, credentials, tokens, customer identifiers, and unnecessary private paths before any display or storage. If safety is unclear, omit the URL and ask rather than guessing.
+
+In the **issue body**, add a reader-facing link only where a subscriber would click. Do not turn the issue into a footnote paper. Public sources should remain inspectable; private provenance remains in Editorial Memory.
+
 Include:
 
 - working title and two bounded alternatives;
