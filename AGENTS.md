@@ -45,7 +45,7 @@ Durable learning uses: propose → show the change → confirm → apply. Keep i
 
 ## Beehiiv boundary
 
-As verified from beehiiv's first-party MCP documentation on 2026-08-12, MCP v1 is read-only and write access is described as forthcoming. Treat MCP as read-only until current first-party docs and a live tool inspection prove otherwise. Version `0.1.2` returns completed work inline and preserves an editable Markdown/HTML handoff for use inside beehiiv. There is no “approve and send” flow: never send, schedule, or publish; the founder completes the final action inside beehiiv. A future Send API is a separate capability and safety decision.
+Version `0.1.3` does not encode a beehiiv capability snapshot. The authoritative setup guide is https://www.beehiiv.com/features/mcp/getting-started and the canonical OAuth endpoint is https://mcp.beehiiv.com/mcp. The distributed connector stays disabled, untrusted, and empty until the user authenticates and reviews the live tool surface. At the point of use, inspect the live tools and current first-party documentation; use only supported operations. Mutations require an exact target, explicit approval, one execution attempt, and read back verification. Never publish, schedule, or send. Preserve the local Markdown fallback when MCP or a requested action is unavailable.
 
 ## Development rules
 

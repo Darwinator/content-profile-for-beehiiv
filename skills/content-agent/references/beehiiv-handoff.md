@@ -1,34 +1,60 @@
 # Beehiiv Handoff
 
-The current integration boundary is inline delivery plus an editable local artifact for human review and use inside beehiiv.
+Content Agent uses beehiiv through whatever current MCP tools the user's installation actually exposes. The product does not freeze a tool inventory or infer capabilities from an old release note.
 
-## Current capability boundary
+## Authoritative setup reference
 
-Beehiiv's first-party MCP documentation described MCP v1 as read-only when checked on 2026-08-12. It supports publication and post context, but the documentation says write capabilities are forthcoming. Verify current first-party documentation and inspect live tools before changing this assumption.
+Read the current first-party setup guide:
 
-First-party references:
-
-- https://www.beehiiv.com/features/mcp
 - https://www.beehiiv.com/features/mcp/getting-started
 
-Until write access is both documented and live-verified:
+Connect using beehiiv's canonical OAuth endpoint:
 
-- use MCP only to read authorized publication/post context;
-- do not claim the agent can create or update a beehiiv draft through MCP;
-- never send, schedule, or publish;
-- do not block the editorial loop on connector access.
+- https://mcp.beehiiv.com/mcp
 
-There is no “approve and send” flow. Approval is the founder's content decision; the founder completes the final send inside beehiiv. The beehiiv MCP rule remains no send, schedule, or publish. A future Send API or another write-capable connector may eventually support bounded direct actions, but that is not a current capability and must not be promised.
+In Hermes, the distributed connector is disabled, marked `trust: untrusted`, and has `tools.include: []`. This exposes no server tools by default. After the user authenticates, inspect the live tools and let the user select the minimum tools needed for their job through the normal Hermes MCP configuration flow.
 
-The connector is fail-closed: it is shipped disabled with a deliberately nonmatching tool allowlist, and prompts, resources, sampling, and elicitation are disabled. OAuth authentication and enabling are explicit local user actions. Before enabling it, inspect the live tool surface and replace the placeholder only with reviewed read-only tool names. OAuth tokens remain user-owned runtime data.
+### Connecting when the founder is ready
 
-## Handoff artifact
+Offer this only when draft handoff or a beehiiv job actually needs it — never as a setup prerequisite for editorial work. Prefer a native in-product consent/authorization flow when the runtime provides one (for example a `setup_mcp` enable/authorize card). Otherwise walk the founder through the CLI:
 
-Show the completed draft inline first, then use `templates/beehiiv-handoff.md` to save the private editable copy under:
+```bash
+hermes mcp login beehiiv        # opens beehiiv's OAuth page in the browser
+hermes mcp configure beehiiv    # live tool discovery; select the minimum tools
+hermes mcp test beehiiv         # verify the connection works
+```
+
+Then start a fresh session (or `/reload-mcp` where supported) so the selected tools load, and return the founder directly to the prepared draft — do not restart onboarding. Complete tool selection before or immediately after enabling the server: on Hermes versions before 0.20.6 an empty `tools.include` list is treated as no filter once the server is enabled, so an explicit selected list must exist by the time the connector is live. If authentication or selection fails, say what actually happened, keep the local draft, and continue.
+
+Do not treat a capability snapshot as durable. Tool names, schemas, plan requirements, and available actions can change. At the point of use:
+
+1. inspect the live tool name, description, schema, and read/write annotations;
+2. consult current first-party beehiiv documentation when capability or plan behavior is unclear;
+3. use only operations the live installation actually supports; and
+4. fail closed when the tool's authority or outcome is ambiguous.
+
+## Stable product policy
+
+Regardless of what a future MCP surface exposes, Content Agent must never publish, schedule, or send. The founder completes those final actions inside beehiiv unless a later explicit product decision changes this policy.
+
+For any other mutating action:
+
+1. prepare the editorial artifact first;
+2. show the exact publication or object, intended change, and whether the operation is reversible;
+3. obtain explicit approval for that exact mutation;
+4. execute once, without blind retry after an unknown outcome;
+5. read back the exact target and verify the requested state before claiming success; and
+6. report failures or plan/permission limits honestly.
+
+## Local artifact
+
+Show completed editorial work inline first, then use `templates/beehiiv-handoff.md` to save the private editable copy under:
 
 ```text
 $HERMES_HOME/workspace/editorial-memory/drafts/YYYY-MM-DD-working-slug.md
 ```
+
+This is the **local Markdown fallback** whenever MCP is unavailable, unauthenticated, permission-blocked, plan-blocked, lacks the requested operation, or returns an unknown outcome. Never block the editorial loop on connector access.
 
 ## Sources by default
 
@@ -36,11 +62,26 @@ Show a short source list **in chat with the draft**, unless the founder asked to
 
 For private/local material, show the source ID and description without its URL. Strip signed query parameters, credentials, tokens, customer identifiers, and unnecessary private paths before any display or storage. If safety is unclear, omit the URL and ask rather than guessing.
 
-In the **issue body**, add a reader-facing link only where a subscriber would click. Do not turn the issue into a footnote paper. Public sources should remain inspectable; private provenance remains in Editorial Memory.
+In the issue body, add a reader-facing link only where a subscriber would click. Public sources should remain inspectable; private provenance remains in Editorial Memory.
+
+## Action state machine
+
+1. **Prepared** — inline work, private fallback, source notes, and Send Check exist.
+2. **Content approved** — founder approves the editorial content. This does not authorize an external mutation.
+3. **Capability checked** — current docs and the live tool schema support the requested operation.
+4. **Action proposed** — exact target and intended change are shown.
+5. **Action approved** — founder explicitly approves this operation for this target.
+6. **Submitted** — call the selected live tool once. Do not blind-retry an unknown outcome.
+7. **Verified** — read back the exact target and verify the requested state.
+8. **Failed or unknown** — report the actual outcome, preserve the local fallback, and ask before any retry.
+
+Do not claim success from an accepted request alone.
+
+## Handoff contents
 
 Include:
 
-- working title and two bounded alternatives;
+- working title and bounded alternatives;
 - subject-line options;
 - preview text;
 - issue body in editable Markdown;
@@ -48,21 +89,7 @@ Include:
 - source/claim notes kept outside the publishable body;
 - unresolved blockers or placeholders;
 - Send Check verdict;
-- founder approval status;
-- explicit human next step in beehiiv.
+- content-approval and action-approval status;
+- exact human next step in beehiiv.
 
 If HTML is useful, generate a separate sibling file while preserving Markdown as the inspectable source. Avoid platform-specific markup whose meaning cannot be reviewed locally.
-
-## Live connector upgrade gate
-
-A future write-capable connector may be added only after all of these pass:
-
-1. first-party documentation confirms the operation and access requirements;
-2. live tool discovery confirms exact tool names and schemas;
-3. least-privilege filtering exposes draft-only operations;
-4. a disposable publication test proves no send, schedule, or publish action is possible;
-5. human content approval remains separate from the draft-creation action;
-6. local Markdown handoff remains available as a fallback;
-7. credential and update-preservation tests remain green.
-
-Do not infer write access from older REST API documentation or from a product announcement about future MCP capability.

@@ -56,7 +56,7 @@ def export_git_revision(revision: str, destination: Path) -> None:
 
 
 class DistributionUpdateTests(unittest.TestCase):
-    def test_actual_0_1_1_to_0_1_2_update_preserves_workspace_and_adds_reconciliation(self) -> None:
+    def test_actual_0_1_1_to_0_1_3_update_preserves_workspace_and_adds_reconciliation(self) -> None:
         if not HERMES.is_file():
             self.fail("Set HERMES_BIN to the Hermes executable before running this test")
         with tempfile.TemporaryDirectory() as tmp:
@@ -125,7 +125,7 @@ class DistributionUpdateTests(unittest.TestCase):
             }
             self.assertEqual(after, before)
             self.assertIn(
-                "Version: 0.1.2",
+                "Version: 0.1.3",
                 (
                     installed
                     / "skills/content-agent/references/release-marker.md"
@@ -169,7 +169,7 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "references"
                 / "release-marker.md"
             )
-            self.assertIn("0.1.2", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.3", shared_marker.read_text(encoding="utf-8"))
 
             sentinels = {
                 "memory": installed / "memories" / "MEMORY.md",
@@ -206,14 +206,14 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "release-marker.md"
             )
             marker_source.write_text(
-                "# Shared intelligence release marker\n\nVersion: 0.1.3\n",
+                "# Shared intelligence release marker\n\nVersion: 0.1.4\n",
                 encoding="utf-8",
             )
             manifest = source / "distribution.yaml"
             manifest_text = manifest.read_text(encoding="utf-8")
-            self.assertIn("version: 0.1.2", manifest_text)
+            self.assertIn("version: 0.1.3", manifest_text)
             manifest.write_text(
-                manifest_text.replace("version: 0.1.2", "version: 0.1.3", 1),
+                manifest_text.replace("version: 0.1.3", "version: 0.1.4", 1),
                 encoding="utf-8",
             )
 
@@ -228,15 +228,15 @@ class DistributionUpdateTests(unittest.TestCase):
 
             after = {key: sha256(path) for key, path in sentinels.items()}
             self.assertEqual(after, before)
-            self.assertIn("0.1.3", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.4", shared_marker.read_text(encoding="utf-8"))
 
             installed_manifest = (installed / "distribution.yaml").read_text(
                 encoding="utf-8"
             )
-            self.assertIn("version: 0.1.3", installed_manifest)
+            self.assertIn("version: 0.1.4", installed_manifest)
             info = run_hermes(profile_root, "profile", "info", PROFILE_NAME)
             self.assertEqual(info.returncode, 0, info.stderr or info.stdout)
-            self.assertIn("0.1.3", info.stdout)
+            self.assertIn("0.1.4", info.stdout)
 
 
 if __name__ == "__main__":
