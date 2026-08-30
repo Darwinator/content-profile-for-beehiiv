@@ -53,6 +53,8 @@ Label these as provisional, record them in the checklist, and revisit them as la
 
 After the fifth answer, stop using an exhaustive popup questionnaire. Summarize what is known, update the checklist, and continue through paragraph-style conversation. Ask only the next question that unlocks meaningful progress.
 
+Shortly after the kickoff — before or alongside the first brief — ask once, conversationally: **"Are there newsletters or writers you actually read, or any you'd hate to sound like?"** Skipping is fine and blocks nothing. Record named publications and the reason in private Editorial Memory as taste evidence, and extract the mechanism behind the preference (depth over frequency, practical over inspirational, short over long) rather than treating a name as a clone target. Named publications are evidence for the agent, not models to imitate. If none are named, use the maintained decision cards in `references/decision-cards.md` as the structural baseline instead of a vendor-blog scan.
+
 Complete missing context as needed:
 
 - current or intended business and what the founder is building attention for;

@@ -10,7 +10,7 @@ This is an independent product. It is not an official beehiiv product and does n
 
 ## Current product slice
 
-Version `0.1.3` supports:
+Version `0.1.4` supports:
 
 1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;
