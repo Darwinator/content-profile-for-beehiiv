@@ -8,12 +8,12 @@ mcp_servers:
     url: https://mcp.beehiiv.com/mcp
     auth: oauth
     enabled: false
+    trust: untrusted
     sampling:
       enabled: false
     elicitation:
       enabled: false
     tools:
-      include:
-        - __enable_only_after_reviewing_read_only_tool_names__
+      include: []
       prompts: false
       resources: false

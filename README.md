@@ -10,14 +10,14 @@ This is an independent product. It is not an official beehiiv product and does n
 
 ## Current product slice
 
-Version `0.1.2` supports:
+Version `0.1.3` supports:
 
 1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;
 3. no more than three worthwhile editorial opportunities;
 4. collaborative Issue Brief development;
 5. drafting and Send Check review;
-6. inline draft delivery plus an editable Markdown handoff for work inside beehiiv;
+6. inline draft delivery, a private Markdown fallback, and approved beehiiv actions when the user's live MCP tools support them;
 7. a persistent lean-launch checklist covering beehiiv readiness, capture, welcome, promotion, preview/test, approval, and founder-completed sending;
 8. inspectable learning proposals that require human approval.
 
@@ -127,9 +127,13 @@ The agent should initialize Editorial Memory, orient the founder, ask exactly fi
 
 ## Beehiiv connector boundary
 
-The distribution includes an optional disabled Beehiiv MCP configuration. Beehiiv's first-party documentation described MCP v1 as read-only when verified on 2026-08-12. The connector is fail-closed: it ships disabled with a deliberately nonmatching tool allowlist, and prompts, resources, sampling, and elicitation are disabled. A human must authenticate, inspect the live tool names, replace the placeholder with reviewed read-only tools, and only then enable it. It does not provide draft creation, scheduling, or publishing in this release.
+The distribution points to beehiiv's canonical OAuth MCP endpoint but ships disabled, untrusted, and with `tools.include: []`, so it exposes no server tools until the user reviews the live surface. Read the current first-party setup guide at https://www.beehiiv.com/features/mcp/getting-started and connect to https://mcp.beehiiv.com/mcp. After authentication, run live discovery and select only the tools needed for the user's job.
 
-The `0.1.2` deliverable is an inline draft plus an editable local Markdown handoff for human review and use inside beehiiv. There is no “approve and send” flow: the founder schedules or sends inside beehiiv. A future Send API or write-capable connector must pass the upgrade gate in `skills/content-agent/references/beehiiv-handoff.md`.
+Hermes `>=0.20.6` is recommended: earlier versions treat an empty `tools.include` list as no filter once a server is enabled, which would expose the full tool surface without review. The shipped connector is disabled, so nothing is exposed until a human enables it — on older Hermes versions, always complete tool selection (`hermes mcp configure beehiiv`) in the same step as enabling, and never enable the server with the include list still empty.
+
+Note for existing installs: `hermes profile update` preserves the profile's `config.yaml`, so connector-config changes in a new release do not reach an already-installed profile automatically. Until a migration path exists, apply config changes by reinstalling the profile fresh or by reviewing and merging the new `config.yaml` manually.
+
+The profile does not freeze a beehiiv capability list. It directs the agent to inspect the live tools and current first-party documentation, use only supported operations, request explicit approval for mutations, and read back the exact target before claiming success. As a stable product policy, Content Agent must never publish, schedule, or send. A private local Markdown fallback remains available whenever the requested operation is unavailable or blocked.
 
 ## Collaboration workflow
 

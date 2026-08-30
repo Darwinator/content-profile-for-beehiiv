@@ -16,7 +16,7 @@ def authored_text(relative: str) -> str:
 
 
 class DistributionContractTests(unittest.TestCase):
-    def test_release_markers_are_0_1_2(self) -> None:
+    def test_release_markers_are_0_1_3(self) -> None:
         for relative in (
             "distribution.yaml",
             "skills/content-agent/SKILL.md",
@@ -24,8 +24,8 @@ class DistributionContractTests(unittest.TestCase):
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.1.2", authored_text(relative), relative)
-            self.assertNotIn("0.1.1", authored_text(relative), relative)
+            self.assertIn("0.1.3", authored_text(relative), relative)
+            self.assertNotIn("0.1.2", authored_text(relative), relative)
 
     def test_onboarding_has_a_five_question_kickoff_and_progress_contract(self) -> None:
         onboarding = authored_text("skills/content-agent/references/onboarding.md")
@@ -66,18 +66,42 @@ class DistributionContractTests(unittest.TestCase):
         ):
             self.assertNotIn(forbidden, prompt)
 
-    def test_soul_enforces_the_first_response_before_general_workflow(self) -> None:
-        soul = authored_text("SOUL.md")
+    def test_skill_enforces_the_first_conversation_before_general_workflow(self) -> None:
+        skill = authored_text("skills/content-agent/SKILL.md")
         for required in (
-            "## First-response contract",
+            "## First-conversation contract",
             "Before showing a checklist or asking for work",
             "Setup 1 of 5",
             "What are you working on or building right now?",
             "Do not end the first response without asking that question",
             "Never invoke `clarify` as the first visible action",
             "visible assistant text before the tool call",
+            "First sitting ends with a draft, not a dashboard",
+            "do not park the founder on beehiiv readiness first",
+        ):
+            self.assertIn(required, skill)
+
+    def test_soul_is_compact_identity_without_scripts_or_urls(self) -> None:
+        soul = authored_text("SOUL.md")
+        for required in (
+            "newsletter editor",
+            "Never publish, schedule, or send",
+            "founder completes those final actions inside beehiiv",
+            "inspect the live tools",
+            "read back",
+            "load the `content-agent` skill",
+            "first-issue draft",
+            "Orient in visible text before asking",
         ):
             self.assertIn(required, soul)
+        for forbidden in (
+            "Setup 1 of 5",
+            "https://",
+            "longitudinal",
+            "## First-response contract",
+        ):
+            self.assertNotIn(forbidden, soul)
+        self.assertLess(len(soul), 4000, "SOUL.md should stay a compact always-on identity")
 
     def test_unknowns_use_bounded_choices_and_reversible_defaults(self) -> None:
         onboarding = authored_text("skills/content-agent/references/onboarding.md")
@@ -351,14 +375,15 @@ class DistributionContractTests(unittest.TestCase):
         ):
             self.assertIn(required, delivery)
 
-    def test_current_mcp_never_promises_approve_and_send(self) -> None:
+    def test_mcp_policy_keeps_final_sending_human_and_mutations_verified(self) -> None:
         soul = authored_text("SOUL.md")
         handoff = authored_text("skills/content-agent/references/beehiiv-handoff.md")
         combined = soul + "\n" + handoff
-        self.assertIn("There is no “approve and send” flow", combined)
-        self.assertIn("founder completes the final send inside beehiiv", combined)
-        self.assertIn("future Send API", combined)
-        self.assertIn("not a current capability", combined)
+        self.assertIn("Never publish, schedule, or send", combined)
+        self.assertIn("founder completes those final actions inside beehiiv", combined)
+        self.assertIn("explicit approval", combined)
+        self.assertIn("read back", combined)
+        self.assertIn("local Markdown fallback", combined)
         self.assertIn("Sources by default", handoff)
         self.assertIn("unless the founder asked to skip it", handoff)
 
@@ -393,18 +418,50 @@ class DistributionContractTests(unittest.TestCase):
             for fragment in forbidden_fragments:
                 self.assertNotIn(fragment, text, f"{fragment!r} found in {path.relative_to(ROOT)}")
 
-    def test_beehiiv_connector_is_runtime_configured_disabled_and_read_only(self) -> None:
+    def test_beehiiv_connector_is_fail_closed_and_runtime_discovered(self) -> None:
         config = (ROOT / "config.yaml").read_text(encoding="utf-8")
         self.assertRegex(config, r"(?m)^mcp_servers:\s*$")
         self.assertRegex(config, r"(?m)^  beehiiv:\s*$")
         self.assertIn("url: https://mcp.beehiiv.com/mcp", config)
         self.assertRegex(config, r"(?m)^    auth: oauth\s*$")
         self.assertRegex(config, r"(?m)^    enabled: false\s*$")
+        self.assertRegex(config, r"(?m)^    trust: untrusted\s*$")
         self.assertEqual(len(re.findall(r"(?m)^      enabled: false\s*$", config)), 2)
-        self.assertIn("- __enable_only_after_reviewing_read_only_tool_names__", config)
+        self.assertRegex(config, r"(?m)^      include: \[\]\s*$")
         self.assertRegex(config, r"(?m)^      prompts: false\s*$")
         self.assertRegex(config, r"(?m)^      resources: false\s*$")
         self.assertFalse((ROOT / "mcp.json").exists(), "current Hermes runtime reads MCP config from config.yaml")
+
+        combined = "\n".join(
+            authored_text(relative)
+            for relative in (
+                "AGENTS.md",
+                "README.md",
+                "SOUL.md",
+                "skills/content-agent/SKILL.md",
+                "skills/content-agent/references/beehiiv-handoff.md",
+            )
+        )
+        for required in (
+            "https://www.beehiiv.com/features/mcp/getting-started",
+            "https://mcp.beehiiv.com/mcp",
+            "inspect the live tools",
+            "treat a capability snapshot as durable",
+            "explicit approval",
+            "read back",
+            "never publish, schedule, or send",
+            "local Markdown fallback",
+        ):
+            self.assertIn(required, combined)
+        for stale in (
+            "Live-verified: 2026-08-29",
+            "12-tool",
+            "209 beehiiv tools",
+            "`save_post`",
+            "write capabilities are forthcoming",
+            "reviewed read-only tool names",
+        ):
+            self.assertNotIn(stale, combined)
 
     def test_every_reference_named_by_the_skill_exists(self) -> None:
         skill_text = SKILL.read_text(encoding="utf-8")
