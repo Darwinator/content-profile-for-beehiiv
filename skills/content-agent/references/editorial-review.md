@@ -55,6 +55,7 @@ Review in this order so sentence polish does not conceal a weak issue.
 ### 7. Beehiiv handoff
 
 - Are title and subject options honest rather than overpromising?
+- Are the three packaging layers doing three different jobs? The web title can carry the full editorial framing; the email subject should be shorter with a truthful curiosity gap; the preview text should extend the subject with the issue's actual mechanism, never repeat it. One string copied across all three is a packaging failure.
 - Is preview text useful and non-duplicative?
 - Are headings, links, image notes, and formatting portable?
 - Is the final human editing and publishing boundary explicit?

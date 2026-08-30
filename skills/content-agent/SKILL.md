@@ -1,7 +1,7 @@
 ---
 name: content-agent
 description: Use when guiding a founder's beehiiv newsletter launch and issues.
-version: 0.1.4
+version: 0.1.5
 author: Darwin
 license: All rights reserved
 metadata:
@@ -161,16 +161,26 @@ Load `references/editorial-review.md`, `references/evidence-and-claims.md`, `ref
 
 **Complete when:** the founder can review the inline draft, the saved artifact is editable, unresolved issues are obvious, and the next launch gate is visible.
 
+### Finish the launch packet in the same sitting
+
+When the first issue draft is delivered and the founder is still present, offer to complete the launch packet immediately rather than deferring it to a future gate:
+
+1. **Welcome email draft** — one short welcome per `references/welcome.md`, drafted from the approved brief (who this is for, the promise, what to expect, one worthwhile next step). Inline plus the private artifact.
+2. **Signup copy** — a headline, one supporting line, and button text for the beehiiv-hosted signup, written from the publication promise. No landing-page project; just the words the founder pastes in.
+3. **Runway view** — reopen the idea ledger and show the publication runway: issue 1 complete, the remaining Next Three directions with one-line reminders, and salvageable Not-now material. Do not draft future issues; show that the next month already exists.
+
+Each piece is offered, not forced; a founder who is out of time leaves with the issue draft and a named next step. When all three land, say plainly what is now true: everything except pressing send exists.
+
 ## Job 6 — Guide lean beehiiv launch readiness
 
-Load `references/launch-checklist.md`, `references/publication-strategy.md`, and `references/beehiiv-handoff.md`. When the current gate is a working title, publication identity, or how the newsletter relates to an existing business name, also load `references/naming.md`. When the current gate is the recurring issue shape, also load `references/issue-format.md`. When the current gate is welcome or first-issue capture, also load `references/welcome.md`. Do not open a naming, format, or welcome workshop during kickoff.
+Load `references/launch-checklist.md`, `references/publication-strategy.md`, and `references/beehiiv-handoff.md`. When the current gate is a working title, publication identity, or how the newsletter relates to an existing business name, also load `references/naming.md`. When the current gate is the recurring issue shape, also load `references/issue-format.md`. When the current gate is welcome or first-issue capture, also load `references/welcome.md`. When the current gate is promotion, or the founder asks how to get readers, load `references/promotion.md`. Do not open a naming, format, welcome, or growth workshop during kickoff.
 
 1. Establish whether a beehiiv account and publication exist before fixing a publication deadline.
 2. Separate required, recommended, and optional setup; distinguish what the agent can prepare from what needs user access or confirmation.
 3. Keep launch lean: a beehiiv-hosted signup can satisfy capture; a separate one-field landing page is recommended only when no capture surface exists. Follow `references/welcome.md`: the lean default is one welcome email on every plan; a short automation is optional only when paid access, existing source material, and a distinct reader benefit justify it. No broad automation requirement.
 4. Recommend weekly, then lower production cost before recommending a slower cadence. Respect biweekly, monthly, or another founder choice.
 5. With no send-time preference, use around 8:00 a.m. in the reader timezone only as a reversible convention, never a magic optimum.
-6. Keep promotion visible and founder-specific even without a dedicated integration. Research channels and tactics that fit the founder, business, audience, strengths, and time.
+6. Keep promotion visible and founder-specific even without a dedicated integration. When promotion becomes current, follow `references/promotion.md`: one primary channel plus one supporting motion toward the first 25 real readers; no generic channel checklists, paid acquisition, or growth machinery at this stage.
 7. Guide preview and testing. Content approval remains separate from the founder's scheduling or sending inside beehiiv.
 
 **Complete when:** all minimum launch gates are complete or explicitly deferred, and every user-only beehiiv action is truthful and visible.
