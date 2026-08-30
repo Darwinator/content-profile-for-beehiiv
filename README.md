@@ -1,12 +1,43 @@
 # Content Agent for founders publishing on beehiiv
 
-A dedicated Hermes profile that acts as a private, longitudinal editorial partner for solo founders and small-business owners publishing useful newsletters on beehiiv.
+Your newsletter's editor, running in your own AI agent. Content Agent is a [Hermes](https://hermes-agent.nousresearch.com/) profile that takes a founder from "I signed up for beehiiv but I don't know what to write" to a real first issue: five short questions, a publication direction you can correct, three researched issue options, and a complete draft with a welcome email and signup copy — in one sitting.
 
 > It learns your business. We keep teaching it publishing.
 
-This repository is the clean profile-distribution source. It contains the agent's identity, operating procedure, maintained editorial guidance, templates, and safety tests. It deliberately does **not** contain a founder's private publication history, sources, drafts, credentials, conversations, or Editorial Memory.
+It is opinionated where it saves you time (weekly default, one welcome email, no automation machinery on day one) and honest where it matters: it cites what its recommendations are based on, refuses ideas that aren't worth publishing yet, and **never sends, schedules, or publishes** — you always press send.
 
-This is an independent product. It is not an official beehiiv product and does not imply beehiiv endorsement or privileged access.
+## Quick start
+
+```bash
+# 1. Install Hermes (skip if you have it)
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+
+# 2. Install Content Agent as an isolated profile
+hermes profile install github.com/Darwinator/content-agent-for-beehiiv --name content-agent --yes
+
+# 3. Start talking
+hermes -p content-agent
+```
+
+Open with something like: *"I signed up for beehiiv because I think I should start a newsletter, but I don't really know what it should be yet."* The agent takes it from there. You bring your own model (any Hermes-supported provider) and your own beehiiv account; nothing about your business ever leaves your machine.
+
+## What you get
+
+- **A finite kickoff** — exactly five questions, one at a time. "I don't know yet" is a valid answer to every one of them.
+- **A publication brief you approve** — reader, promise, territories, boundaries. Provisional and reversible, not homework.
+- **Maintained editorial judgment** — recommendations grounded in researched mechanism cards from real founder-led newsletters (Big Desk Energy, The Bootstrapped Founder, and others), applied as transferable rules, never "write like X."
+- **A complete first issue in the first sitting** — plus a welcome email draft, signup copy, and a runway of your next issue directions.
+- **A private editorial memory** — your publication's decisions, sources, and taste survive across sessions and product updates, byte-for-byte.
+- **An honest beehiiv bridge** — when you connect beehiiv's MCP, the agent can create editable drafts in your account with your explicit approval and read-back verification. Publishing stays yours.
+- **Restraint** — it will tell you when an idea isn't worth publishing yet, and what would change that.
+
+This repository is the clean product source: identity, operating procedure, maintained editorial guidance, templates, and safety tests. It deliberately contains **no** founder's private data — your publication history, sources, drafts, credentials, and Editorial Memory live only in your installed profile.
+
+Content Agent is an independent product. It is not an official beehiiv product and does not imply beehiiv endorsement or privileged access.
+
+## Status
+
+Early and honest: this is a `0.1.x` release that has completed full clean-install founder journeys in testing. Expect rough edges; expect fast iteration. Versioned updates replace the shared intelligence while preserving everything private (`hermes profile update content-agent`). Career-builder, expert/service, and creator tracks are on the roadmap after the founder path proves itself in the wild.
 
 ## Current product slice
 
@@ -94,7 +125,7 @@ Static-only validation is available for review environments without Hermes:
 python3 scripts/validate_distribution.py --skip-tests
 ```
 
-## Install a local dogfood profile
+## Install from a local checkout (development)
 
 Install from the clean checkout into a separate named profile:
 
@@ -159,6 +190,6 @@ A second local agent can safely review this checkout if it:
 
 Use branches or Git worktrees for concurrent writes. Do not let two agents edit the risky shared files (`SOUL.md`, `SKILL.md`, `config.yaml`, `distribution.yaml`) simultaneously.
 
-## Status
+## License
 
-This is an initial private dogfood scaffold, not a public release. It must complete real How to beehiiv editorial cycles and demonstrate retained-context improvement before cohort expansion or broad product claims.
+Source-available: view, install, and use freely for your own publication (personal or commercial). Do not redistribute or resell the distribution or offer it as a hosted service. See `LICENSE`.
