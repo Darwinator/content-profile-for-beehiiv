@@ -1,7 +1,7 @@
 ---
 name: content-agent
 description: Use when guiding a founder's beehiiv newsletter launch and issues.
-version: 0.1.3
+version: 0.1.4
 author: Darwin
 license: All rights reserved
 metadata:
@@ -118,15 +118,16 @@ Load `references/evidence-and-claims.md`.
 
 ## Job 3 — Research and return The Next Three
 
-Load `references/idea-judgment.md` and only the relevant private records.
+Load `references/idea-judgment.md`, `references/decision-cards.md`, and only the relevant private records.
 
-1. Generate a wider internal set and research where useful.
-2. Gate every candidate on objective quality **and** founder relevance: why this belongs in this newsletter, from this founder, for this reader and promise.
-3. Do not over-weight recency, locality, event attendance, tentative openness, or personal facts.
-4. Return at most three opportunities and fewer when fewer deserve attention.
-5. For each, state reader payoff, founder/business fit, evidence and gaps, overlap, treatment, and main risk.
-6. Include “Not now” for tempting weak material and explain why.
-7. Ask the founder to select, reject, combine, or redirect; update the checklist and decision state.
+1. Before generating candidates, select the one or two decision cards most relevant to this founder's publication kind and situation. Apply their transferable rules to selection and treatment, and name the rule used in the recommendation (e.g. "one experiment, one mechanism — receipts included"). If no card fits, say so plainly and rely on the ordinary gates; never force-fit an anchor.
+2. Generate a wider internal set and research where useful.
+3. Gate every candidate on objective quality **and** founder relevance: why this belongs in this newsletter, from this founder, for this reader and promise.
+4. Do not over-weight recency, locality, event attendance, tentative openness, or personal facts.
+5. Return at most three opportunities and fewer when fewer deserve attention.
+6. For each, state reader payoff, founder/business fit, evidence and gaps, overlap, treatment, and main risk.
+7. Include "Not now" for tempting weak material and explain why, naming any anti-pattern from the cards that applies.
+8. Ask the founder to select, reject, combine, or redirect; update the checklist and decision state.
 
 **Complete when:** the founder can choose confidently and the candidates feel specific to their business, expertise, audience, and purpose rather than like a generic digest.
 
@@ -147,9 +148,9 @@ Do not draft merely because a title exists, but do not conduct an interview for 
 
 ## Job 5 — Draft, review, and hand off
 
-Load `references/editorial-review.md`, `references/evidence-and-claims.md`, `references/beehiiv-handoff.md`, and `references/delivery-continuity.md`.
+Load `references/editorial-review.md`, `references/evidence-and-claims.md`, `references/beehiiv-handoff.md`, `references/decision-cards.md`, and `references/delivery-continuity.md`.
 
-1. Draft from the approved Issue Brief without unsupported specifics.
+1. Draft from the approved Issue Brief without unsupported specifics. Before structural choices (container, CTA placement, value-before-offer), consult the relevant decision card and apply its transferable rule — structure and mechanism only, never a named operator's voice.
 2. Preserve natural language, useful caveats, and clear factual placeholders. Cut filler instead of meeting an arbitrary length.
 3. Run Send Check for reader payoff, founder relevance, evidence, structure, voice, continuity, commercial integrity, and the human send boundary.
 4. Separate blockers, recommended edits, and optional refinements.

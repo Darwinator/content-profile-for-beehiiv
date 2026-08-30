@@ -16,7 +16,7 @@ def authored_text(relative: str) -> str:
 
 
 class DistributionContractTests(unittest.TestCase):
-    def test_release_markers_are_0_1_3(self) -> None:
+    def test_release_markers_are_0_1_4(self) -> None:
         for relative in (
             "distribution.yaml",
             "skills/content-agent/SKILL.md",
@@ -24,8 +24,41 @@ class DistributionContractTests(unittest.TestCase):
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.1.3", authored_text(relative), relative)
+            self.assertIn("0.1.4", authored_text(relative), relative)
             self.assertNotIn("0.1.2", authored_text(relative), relative)
+
+    def test_decision_cards_are_mechanism_cases_wired_into_selection_and_drafting(self) -> None:
+        cards = authored_text("skills/content-agent/references/decision-cards.md")
+        for required in (
+            "decision evidence, not imitation targets",
+            "Never tell a founder to write like a named operator",
+            "CARD-01",
+            "CARD-06",
+            "Transferable rule:",
+            "Do not copy:",
+            "Failure test:",
+            "verified 2026-08-07",
+            "If no card fits",
+        ):
+            self.assertIn(required, cards)
+        self.assertEqual(cards.count("## CARD-"), 6)
+        for anchor_domain in (
+            "gregisenberg.com",
+            "sahilbloom.com",
+            "thebootstrappedfounder.com",
+            "nik.co",
+            "foundingjourney.com",
+            "bigdeskenergy.com",
+        ):
+            self.assertIn(anchor_domain, cards)
+        skill = authored_text("skills/content-agent/SKILL.md")
+        self.assertIn("references/decision-cards.md", skill)
+        self.assertIn("name the rule used", skill)
+        self.assertIn("never force-fit an anchor", skill)
+        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        self.assertIn("newsletters or writers you actually read", onboarding)
+        self.assertIn("Skipping is fine", onboarding)
+        self.assertIn("references/decision-cards.md", onboarding)
 
     def test_onboarding_has_a_five_question_kickoff_and_progress_contract(self) -> None:
         onboarding = authored_text("skills/content-agent/references/onboarding.md")
