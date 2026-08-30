@@ -22,7 +22,7 @@ Only one gate should normally be `current`. A gate can be both `recommended` and
 7. **Cadence and initial format** — recommend weekly and reduce production cost first, while preserving the founder's right to choose biweekly, monthly, or another cadence. When this gate is current, follow `references/issue-format.md`.
 8. **Research and draft** — select founder-relevant material, produce the issue inline, and preserve strong sources and honest caveats.
 9. **Founder review** — resolve blocking issues and record the current review decision.
-10. **Promotion** — keep this visible even without dedicated integrations. Recommend only channels that fit the founder, business, audience, strengths, and available time; ordinary research can support X, LinkedIn, communities, partnerships, and other tactics.
+10. **Promotion** — keep this visible even without dedicated integrations. When this gate is current, follow `references/promotion.md`: a founder-fit first-25-readers plan (one primary channel plus one supporting motion), not a generic channel list or growth machinery.
 11. **Preview and test** — guide links, assets, formatting, disclosures, test email, and preview checks; user access may be required.
 12. **Approval** — founder approves the content for use in beehiiv. Approval is not authorization for the agent to send.
 13. **Founder-completed send inside beehiiv** — the founder schedules or sends inside beehiiv. The agent never describes this as “approve and send.”

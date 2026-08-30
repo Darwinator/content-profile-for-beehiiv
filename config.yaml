@@ -1,8 +1,12 @@
-model:
-  default: gpt-5.6-sol
-  provider: openai-codex
+# Content Agent ships no model or provider configuration.
+# The installed profile inherits the model the user's Hermes is already
+# configured to use — any provider, any model. Set a profile-specific model
+# with:  hermes -p content-agent config set model.default <model>
+# Tested model/provider combinations are listed in the README.
+
 memory:
   write_approval: true
+
 mcp_servers:
   beehiiv:
     url: https://mcp.beehiiv.com/mcp

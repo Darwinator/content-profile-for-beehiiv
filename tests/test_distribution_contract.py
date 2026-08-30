@@ -16,7 +16,7 @@ def authored_text(relative: str) -> str:
 
 
 class DistributionContractTests(unittest.TestCase):
-    def test_release_markers_are_0_1_4(self) -> None:
+    def test_release_markers_are_0_1_5(self) -> None:
         for relative in (
             "distribution.yaml",
             "skills/content-agent/SKILL.md",
@@ -24,8 +24,55 @@ class DistributionContractTests(unittest.TestCase):
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.1.4", authored_text(relative), relative)
+            self.assertIn("0.1.5", authored_text(relative), relative)
             self.assertNotIn("0.1.2", authored_text(relative), relative)
+
+    def test_distribution_ships_no_model_or_provider_choice(self) -> None:
+        config = (ROOT / "config.yaml").read_text(encoding="utf-8")
+        self.assertNotRegex(config, r"(?m)^model:")
+        self.assertNotIn("provider:", config)
+        self.assertNotIn("gpt-", config)
+        self.assertNotIn("openai-codex", config)
+        readme = authored_text("README.md")
+        self.assertIn("no model or provider configuration", readme)
+        self.assertIn("Any Hermes-supported provider works", readme)
+
+    def test_launch_packet_completes_the_first_sitting(self) -> None:
+        skill = authored_text("skills/content-agent/SKILL.md")
+        for required in (
+            "Finish the launch packet in the same sitting",
+            "Welcome email draft",
+            "Signup copy",
+            "Runway view",
+            "Do not draft future issues",
+            "offered, not forced",
+            "everything except pressing send exists",
+        ):
+            self.assertIn(required, skill)
+
+    def test_promotion_reference_is_founder_fit_first_25_not_growth_machinery(self) -> None:
+        promotion = authored_text("skills/content-agent/references/promotion.md")
+        for required in (
+            "first 25 real readers",
+            "one primary channel plus one supporting motion",
+            "Personal invitations, not a blast",
+            "One community they are already in",
+            "Never recommend paid acquisition",
+            "change the channel, not the publication",
+            "CARD-03",
+            "CARD-05",
+            "not V1 defaults",
+        ):
+            self.assertIn(required, promotion)
+        skill = authored_text("skills/content-agent/SKILL.md")
+        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        self.assertIn("references/promotion.md", skill)
+        self.assertIn("references/promotion.md", checklist)
+
+    def test_packaging_layers_have_three_distinct_jobs(self) -> None:
+        review = authored_text("skills/content-agent/references/editorial-review.md")
+        self.assertIn("three packaging layers doing three different jobs", review)
+        self.assertIn("One string copied across all three is a packaging failure", review)
 
     def test_decision_cards_are_mechanism_cases_wired_into_selection_and_drafting(self) -> None:
         cards = authored_text("skills/content-agent/references/decision-cards.md")
@@ -196,7 +243,7 @@ class DistributionContractTests(unittest.TestCase):
         self.assertNotIn("place or job in the **name or the subtitle**, not neither", naming)
         skill = authored_text("skills/content-agent/SKILL.md")
         self.assertIn("references/naming.md", skill)
-        self.assertIn("Do not open a naming, format, or welcome workshop during kickoff", skill)
+        self.assertIn("Do not open a naming, format, welcome, or growth workshop during kickoff", skill)
 
     def test_issue_format_reference_offers_a_menu_not_only_1_2_1(self) -> None:
         fmt = authored_text("skills/content-agent/references/issue-format.md")

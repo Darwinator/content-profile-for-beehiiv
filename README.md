@@ -10,7 +10,7 @@ This is an independent product. It is not an official beehiiv product and does n
 
 ## Current product slice
 
-Version `0.1.4` supports:
+Version `0.1.5` supports:
 
 1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;
@@ -103,6 +103,17 @@ hermes profile install . --name content-agent --yes
 ```
 
 Resolve the installed home through the profile runtime rather than assuming a global path. Do not point `HERMES_HOME` at this repository.
+
+### Choose your model
+
+Content Agent ships no model or provider configuration — it works with whatever provider and model you already use with Hermes. Profiles are isolated, so set the model for this profile once:
+
+```bash
+hermes -p content-agent config set model.default <your-model>
+hermes -p content-agent config set model.provider <your-provider>
+```
+
+or run `hermes -p content-agent` and follow the provider prompt. Any Hermes-supported provider works (OpenRouter, Anthropic, OpenAI, Nous, DeepSeek, xAI, local models, and others). Behavior has been most extensively verified on `gpt-5.6-sol`; strong frontier or near-frontier models are recommended for editorial-judgment quality.
 
 Initialize blank private Editorial Memory inside the installed profile:
 
