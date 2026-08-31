@@ -1,6 +1,6 @@
 # Content Profile Working Protocol
 
-This repository is the clean, publisher-owned source for Content Profile — a private editorial partner for founders publishing useful newsletters on beehiiv. It is a Hermes profile distribution, not a customer workspace. This file is the contract for any agent (or human) reading, reviewing, or contributing to this checkout.
+This repository is the clean, publisher-owned source for Content Profile, a private editorial partner for founders publishing useful newsletters on beehiiv. It is a Hermes profile distribution, not a customer workspace. This file is the contract for any agent (or human) reading, reviewing, or contributing to this checkout.
 
 ## Product contract
 

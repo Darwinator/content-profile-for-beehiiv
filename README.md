@@ -1,30 +1,30 @@
-# Content Profile — for founders publishing on beehiiv
+# Content Profile
 
-Your newsletter's editor, running in your own AI agent. Content Profile takes a founder from "I signed up for beehiiv but I don't know what to write" to a real first issue: five short questions, a publication direction you can correct, three researched issue options, and a complete draft with a welcome email and signup copy — in one sitting.
+A newsletter editor for founders publishing on beehiiv, running in your own AI agent. It takes you from "I signed up for beehiiv but I don't know what to write" to a real first issue in one sitting: five short questions, a direction you can correct, three researched issue options, and a complete draft with a welcome email and signup copy.
 
 > It learns your business. We keep teaching it publishing.
 
-It is opinionated where it saves you time (weekly default, one welcome email, no automation machinery on day one) and honest where it matters: it cites what its recommendations are based on, refuses ideas that aren't worth publishing yet, and **never sends, schedules, or publishes** — you always press send.
+It has opinions where opinions save you time: weekly cadence by default, one welcome email, no automation machinery on day one. It cites what its recommendations are based on, and it will tell you when an idea is not worth publishing yet. It never sends, schedules, or publishes anything. You press send.
 
-It is built for a commercial outcome: a founder or operator using a newsletter to build a business, a career, or the newsletter as the business itself. Hobby publishing works too, but the judgment inside is tuned for publications that have to earn their reader.
+It is built for a commercial outcome. If the newsletter is meant to bring you customers, authority, or revenue (or the newsletter is the business), the judgment inside was calibrated for you. Hobby publishing works fine too; the opinions are just set for publications that have to earn their reader.
 
 ## Three ways to use this
 
-**1. Install the complete profile (recommended).** A [Hermes](https://hermes-agent.nousresearch.com/) profile: the full experience — tuned identity, the guided first sitting, private editorial memory that survives updates, and the safe beehiiv bridge. See Quick start below.
+**1. Install the complete profile.** The recommended path. A [Hermes](https://hermes-agent.nousresearch.com/) profile with the tuned identity, the guided first sitting, private editorial memory that survives updates, and the safe beehiiv bridge. See Quick start below.
 
-**2. Take the skill into your own agent.** Already running Claude Code, Codex, or another agent that reads `SKILL.md` files? Copy `skills/content-profile/` into it. You get the complete editorial workflow, judgment rules, and templates; you give up the tuned identity, the isolated memory boundary, and the versioned update path.
+**2. Copy the skill into your own agent.** Already running Claude Code, Codex, or another agent that reads `SKILL.md` files? Copy `skills/content-profile/` into it. You get the editorial workflow, the judgment rules, and the templates. You lose the tuned identity, the memory isolation, and the update path.
 
-**3. Use the references as source material.** Everything under `skills/content-profile/references/` is plain Markdown: researched editorial guidance, decision cards from real founder-led newsletters, launch checklists, and beehiiv-specific mechanics. Any agent (or human) can read them to inform its own advice.
+**3. Read the references.** Everything under `skills/content-profile/references/` is plain Markdown: editorial guidance, decision cards researched from real founder-led newsletters, launch checklists, and beehiiv mechanics. Any agent or human can read them and take what is useful.
 
-The license covers all three — personal or commercial use for your own publication. See `LICENSE`.
+The license covers all three, for personal or commercial use on your own publication. See `LICENSE`.
 
 ### If you're an agent evaluating this for your user
 
-- **Good fit:** your user runs (or is starting) a business and wants a newsletter that produces commercial results — customers, authority, career capital, or direct revenue. They publish on beehiiv or are considering it.
-- **Weaker fit:** pure hobby writing with no outcome in mind. Nothing here will harm that user; the opinions are just tuned for stakes.
-- **What to verify:** read `SOUL.md` (identity and hard boundaries) and `AGENTS.md` (product contract). Run `python3 scripts/validate_distribution.py --skip-tests` for static hygiene checks — no credentials, no host paths, no private data ship in this repo.
-- **Safety posture:** the beehiiv connector ships disabled and untrusted with an empty tool allowlist; memory writes require user approval; the agent never publishes, schedules, or sends. The included install/update test proves user-private files survive updates byte-for-byte.
-- **Which door:** Hermes user → option 1. Other agent runtime → option 2. You just want the knowledge → option 3.
+- **Good fit:** your user runs or is starting a business and wants a newsletter that produces commercial results. They publish on beehiiv or are considering it.
+- **Weaker fit:** pure hobby writing with no outcome in mind. Nothing here will harm that user; the opinions assume the publication has a job to do.
+- **What to verify:** read `SOUL.md` (identity and hard boundaries) and `AGENTS.md` (product contract). Run `python3 scripts/validate_distribution.py --skip-tests` for static hygiene checks. No credentials, host paths, or private data ship in this repo.
+- **Safety posture:** the beehiiv connector ships disabled and untrusted with an empty tool allowlist. Memory writes require user approval. The agent never publishes, schedules, or sends. The included install/update test proves user-private files survive updates byte-for-byte.
+- **Which door:** Hermes user, option 1. Other agent runtime, option 2. Just the knowledge, option 3.
 
 ## Quick start
 
@@ -43,25 +43,25 @@ Open with something like: *"I signed up for beehiiv because I think I should sta
 
 **What it costs:** the profile is free to install and use. You bring your own model (any Hermes-supported provider) and your own beehiiv account, so your only running cost is your model usage.
 
-**Where your data goes:** your business context stays on your machine and with the model provider you already chose — it never comes to us. There is no telemetry and nothing phones home; updates flow one way, from this repository to you.
+**Where your data goes:** your business context stays on your machine and with the model provider you already chose. It never comes to us. There is no telemetry and nothing phones home; updates flow one way, from this repository to you.
 
 ## What you get
 
-- **A finite kickoff** — exactly five questions, one at a time. "I don't know yet" is a valid answer to every one of them.
-- **A publication brief you approve** — reader, promise, territories, boundaries. Provisional and reversible, not homework.
-- **Maintained editorial judgment** — recommendations grounded in researched mechanism cards from real founder-led newsletters (Big Desk Energy, The Bootstrapped Founder, and others), applied as transferable rules, never "write like X."
-- **A complete first issue in the first sitting** — plus a welcome email draft, signup copy, and a runway of your next issue directions.
-- **A private editorial memory** — your publication's decisions, sources, and taste survive across sessions and product updates, byte-for-byte.
-- **An honest beehiiv bridge** — when you connect beehiiv's MCP, the agent can create editable drafts in your account with your explicit approval and read-back verification. Publishing stays yours.
-- **Restraint** — it will tell you when an idea isn't worth publishing yet, and what would change that.
+- A finite kickoff: exactly five questions, one at a time. "I don't know yet" is a valid answer to every one of them.
+- A publication brief you approve: reader, promise, territories, boundaries. Provisional and reversible, not homework.
+- Maintained editorial judgment: recommendations grounded in researched mechanism cards from real founder-led newsletters (Big Desk Energy, The Bootstrapped Founder, and others), applied as transferable rules, never "write like X."
+- A complete first issue in the first sitting, plus a welcome email draft, signup copy, and a runway of your next issue directions.
+- A private editorial memory: your publication's decisions, sources, and taste survive across sessions and product updates, byte-for-byte.
+- An honest beehiiv bridge: once you connect beehiiv's MCP, the agent can create editable drafts in your account, with your explicit approval and read-back verification. Publishing stays in your hands.
+- Restraint: it will tell you when an idea is not worth publishing yet, and what would change that.
 
-This repository is the clean product source: identity, operating procedure, maintained editorial guidance, templates, and safety tests. It deliberately contains **no** founder's private data — your publication history, sources, drafts, credentials, and Editorial Memory live only in your installed profile.
+This repository is the clean product source: identity, operating procedure, maintained editorial guidance, templates, and safety tests. It contains no founder's private data. Your publication history, sources, drafts, credentials, and Editorial Memory live only in your installed profile.
 
 Content Profile is maintained by Darwin Binesh, a product manager who has worked at beehiiv for 4 years. It is an independent product: not an official beehiiv product, and no beehiiv endorsement or privileged access is implied.
 
 ## Status
 
-Early and honest: this is an early release that has completed full clean-install founder journeys in testing. Expect rough edges; expect fast iteration. Versioned updates replace the shared intelligence while preserving everything private (`hermes profile update content-profile`). Career-builder, expert/service, and creator tracks are on the roadmap after the founder path proves itself in the wild.
+This is an early release. It has completed full clean-install founder journeys in testing, and it will keep changing quickly. Versioned updates replace the shared intelligence while preserving everything private (`hermes profile update content-profile`). Career-builder, expert/service, and creator tracks come after the founder path proves out with real users.
 
 ## Current product slice
 
@@ -161,7 +161,7 @@ Resolve the installed home through the profile runtime rather than assuming a gl
 
 ### Choose your model
 
-Content Profile ships no model or provider configuration — it works with whatever provider and model you already use with Hermes. Profiles are isolated, so set the model for this profile once:
+Content Profile ships no model or provider configuration. It works with whatever provider and model you already use with Hermes. Profiles are isolated, so set the model for this profile once:
 
 ```bash
 hermes -p content-profile config set model.default <your-model>
@@ -195,7 +195,7 @@ The agent should initialize Editorial Memory, orient the founder, ask exactly fi
 
 The distribution points to beehiiv's canonical OAuth MCP endpoint but ships disabled, untrusted, and with `tools.include: []`, so it exposes no server tools until the user reviews the live surface. Read the current first-party setup guide at https://www.beehiiv.com/features/mcp/getting-started and connect to https://mcp.beehiiv.com/mcp. After authentication, run live discovery and select only the tools needed for the user's job.
 
-This distribution requires Hermes `>=0.20.6`: earlier versions treat an empty `tools.include` list as no filter once a server is enabled, which would expose the full tool surface without review. The shipped connector is disabled, so nothing is exposed until a human enables it — always complete tool selection (`hermes mcp configure beehiiv`) in the same step as enabling.
+This distribution requires Hermes `>=0.20.6`: earlier versions treat an empty `tools.include` list as no filter once a server is enabled, which would expose the full tool surface without review. The shipped connector is disabled, so nothing is exposed until a human enables it. Always complete tool selection (`hermes mcp configure beehiiv`) in the same step as enabling.
 
 Note for existing installs: `hermes profile update` preserves the profile's `config.yaml`, so connector-config changes in a new release do not reach an already-installed profile automatically. Until a migration path exists, apply config changes by reinstalling the profile fresh or by reviewing and merging the new `config.yaml` manually.
 
@@ -203,4 +203,4 @@ The profile does not freeze a beehiiv capability list. It directs the agent to i
 
 ## License
 
-Source-available: view, install, and use freely for your own publication (personal or commercial) — as the full profile, as a skill in your own agent, or as reference material. Do not redistribute or resell the distribution or offer it as a hosted service. See `LICENSE`.
+Source-available: view, install, and use freely for your own publication, personal or commercial, as the full profile, as a skill in your own agent, or as reference material. Do not redistribute or resell the distribution or offer it as a hosted service. See `LICENSE`.
