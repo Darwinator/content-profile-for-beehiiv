@@ -138,9 +138,29 @@ class DistributionUpdateTests(unittest.TestCase):
             ).read_text(encoding="utf-8")
             self.assertIn("approval-based reconciliation", installed_skill)
             self.assertIn("never rewrite existing private files automatically", installed_skill)
-            # The rename must not leave a stale duplicate skill behind: the old
-            # distribution-owned skills/content-agent/ path was replaced by
-            # skills/content-profile/ and must be gone after the update.
+            # The rename must not leave a stale duplicate skill behind. The
+            # update itself preserves paths the new manifest no longer owns,
+            # so the shipped startup initializer performs the provenance-checked
+            # cleanup on the profile's next run — simulate that next run here.
+            post_update_init = subprocess.run(
+                [
+                    sys.executable,
+                    str(installed / "skills/content-profile/scripts/init_workspace.py"),
+                    "--hermes-home",
+                    str(installed),
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+                timeout=60,
+            )
+            self.assertEqual(
+                post_update_init.returncode,
+                0,
+                post_update_init.stderr or post_update_init.stdout,
+            )
+            report = json.loads(post_update_init.stdout)
+            self.assertEqual(report["removed_stale"], ["skills/content-agent/"])
             self.assertFalse(
                 (installed / "skills" / "content-agent").exists(),
                 "stale skills/content-agent/ left behind after rename update",

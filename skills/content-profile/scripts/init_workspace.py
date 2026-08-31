@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 from pathlib import Path
 
 
@@ -51,6 +52,8 @@ def initialize_workspace(hermes_home: Path) -> dict[str, list[str]]:
             "Missing bundled Editorial Memory templates: " + ", ".join(missing_templates)
         )
 
+    removed_stale = migrate_renamed_skill(hermes_home)
+
     target_dir = hermes_home / "workspace" / "editorial-memory"
     target_dir.mkdir(parents=True, exist_ok=True)
 
@@ -89,7 +92,34 @@ def initialize_workspace(hermes_home: Path) -> dict[str, list[str]]:
         "preserved_files": preserved_files,
         "created_directories": created_directories,
         "preserved_directories": preserved_directories,
+        "removed_stale": removed_stale,
     }
+
+
+def migrate_renamed_skill(hermes_home: Path) -> list[str]:
+    """Remove the pre-0.2.0 distribution-owned skill left behind by the rename.
+
+    Hermes profile updates replace paths the new manifest owns but preserve
+    paths it no longer names, so the 0.1.x `skills/content-agent/` directory
+    survives an update to 0.2.0 as a stale duplicate. Delete it only when
+    provenance proves it is the old shipped skill and the renamed skill is
+    already installed; anything else is preserved untouched.
+    """
+    old_dir = hermes_home / "skills" / "content-agent"
+    new_skill = hermes_home / "skills" / "content-profile" / "SKILL.md"
+    if not old_dir.is_dir() or not new_skill.is_file():
+        return []
+    old_skill = old_dir / "SKILL.md"
+    if not old_skill.is_file():
+        return []
+    try:
+        frontmatter = old_skill.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        return []
+    if "name: content-agent" not in frontmatter:
+        return []
+    shutil.rmtree(old_dir)
+    return ["skills/content-agent/"]
 
 
 def main() -> int:

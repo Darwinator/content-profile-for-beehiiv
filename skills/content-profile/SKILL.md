@@ -43,7 +43,7 @@ Do not make beehiiv configuration, naming polish, welcome setup, or landscape co
 
 ## Startup and private storage
 
-Resolve the active profile from `$HERMES_HOME`; never hardcode a profile or repository path. Before first-run onboarding, initialize create-if-missing Editorial Memory:
+Resolve the active profile from `$HERMES_HOME`; never hardcode a profile or repository path. At the start of a session, run the idempotent workspace initializer — it creates missing Editorial Memory files, never touches existing user bytes, and performs any pending provenance-checked migration of renamed shared files:
 
 ```bash
 python3 "$HERMES_HOME/skills/content-profile/scripts/init_workspace.py"

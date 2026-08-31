@@ -92,6 +92,69 @@ class WorkspaceInitializationTests(unittest.TestCase):
             self.assertNotIn("decision-log.md", report["created_files"])
             self.assertEqual(set(report["created_files"]), EXPECTED_FILES - {"decision-log.md"})
 
+    def test_rename_migration_removes_only_the_provenance_matched_old_skill(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            home = Path(tmp) / "profile"
+            old_skill = home / "skills" / "content-agent"
+            old_skill.mkdir(parents=True)
+            (old_skill / "SKILL.md").write_text(
+                "---\nname: content-agent\ndescription: Old shipped skill.\n---\n",
+                encoding="utf-8",
+            )
+            new_skill = home / "skills" / "content-profile"
+            new_skill.mkdir(parents=True)
+            (new_skill / "SKILL.md").write_text(
+                "---\nname: content-profile\n---\n", encoding="utf-8"
+            )
+
+            result = run_initializer(home)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["removed_stale"], ["skills/content-agent/"])
+            self.assertFalse(old_skill.exists())
+            self.assertTrue((new_skill / "SKILL.md").is_file())
+
+    def test_rename_migration_preserves_unrelated_or_user_authored_skills(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            home = Path(tmp) / "profile"
+            # User-authored skill that happens to reuse the old directory name:
+            # frontmatter does not match the shipped skill, so it must survive.
+            user_skill = home / "skills" / "content-agent"
+            user_skill.mkdir(parents=True)
+            user_bytes = "---\nname: my-own-thing\n---\nUser-authored.\n"
+            (user_skill / "SKILL.md").write_text(user_bytes, encoding="utf-8")
+            new_skill = home / "skills" / "content-profile"
+            new_skill.mkdir(parents=True)
+            (new_skill / "SKILL.md").write_text(
+                "---\nname: content-profile\n---\n", encoding="utf-8"
+            )
+
+            result = run_initializer(home)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["removed_stale"], [])
+            self.assertEqual(
+                (user_skill / "SKILL.md").read_text(encoding="utf-8"), user_bytes
+            )
+
+    def test_rename_migration_is_inert_when_new_skill_is_absent(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            home = Path(tmp) / "profile"
+            old_skill = home / "skills" / "content-agent"
+            old_skill.mkdir(parents=True)
+            (old_skill / "SKILL.md").write_text(
+                "---\nname: content-agent\n---\n", encoding="utf-8"
+            )
+
+            result = run_initializer(home)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["removed_stale"], [])
+            self.assertTrue((old_skill / "SKILL.md").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()
