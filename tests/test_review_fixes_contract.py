@@ -116,6 +116,26 @@ class ReviewFixesContractTests(unittest.TestCase):
         ):
             self.assertIn(required, review)
 
+    # Update awareness (0.2.0): the agent surfaces new releases itself, with
+    # strict quiet-by-default guardrails and no telemetry.
+    def test_update_awareness_is_consensual_quiet_and_telemetry_free(self) -> None:
+        skill = authored_text("skills/content-profile/SKILL.md")
+        for required in (
+            "### Update awareness",
+            "Once a week at most",
+            "never mid-draft",
+            "raw.githubusercontent.com/Darwinator/content-profile-for-beehiiv",
+            "references/release-marker.md",
+            "If the versions match, say nothing",
+            "only with the founder's approval",
+            "Mention a given version at most once",
+            "Never send usage data, conversation content, or founder context anywhere",
+            "Never mention a failed check",
+            "preserves the installed `config.yaml`",
+            "Update nagging",
+        ):
+            self.assertIn(required, skill)
+
 
 class ReleaseMarker016Tests(unittest.TestCase):
     def test_release_markers_are_0_1_6(self) -> None:

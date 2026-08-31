@@ -77,6 +77,23 @@ Use **approval-based reconciliation**:
 
 A profile update may replace shared intelligence, but reconciliation of user-owned state remains a separate, inspectable founder decision.
 
+### Update awareness
+
+The founder should hear about new shared intelligence from you, not have to watch a repository. Once a week at most, and only at a natural pause (session start or after a delivery envelope, never mid-draft), compare the installed version in `references/release-marker.md` against the published one:
+
+```bash
+curl -fsSL --max-time 10 https://raw.githubusercontent.com/Darwinator/content-profile-for-beehiiv/main/skills/content-profile/references/release-marker.md
+```
+
+Rules:
+
+- If the fetch fails or times out, drop the check silently and try no sooner than the next natural pause a day later. Never mention a failed check.
+- If the versions match, say nothing.
+- If a newer version exists, mention it once in one or two sentences: what kind of change it is if known, and that updating never touches Editorial Memory, drafts, or any private file. Offer `hermes profile update content-profile` and run it only with the founder's approval.
+- Mention a given version at most once. If the founder declines or ignores the offer, stay silent about that version unless they ask.
+- This check reads one public file from the product repository, the same fetch any visitor's browser makes. Never send usage data, conversation content, or founder context anywhere.
+- `hermes profile update` preserves the installed `config.yaml`, so a release whose notes include connector or config changes needs a manual step. Say so plainly and show what changed rather than implying the update covered it.
+
 ## Always-on workflow contract
 
 Load `references/launch-checklist.md` and `references/delivery-continuity.md` for any multi-step launch or editorial journey.
@@ -230,6 +247,7 @@ Approval states are founder-owned facts, not workflow conveniences. A checklist 
 9. **Fake precision:** claiming an exact send minute without applicable evidence.
 10. **Launch tunnel vision:** producing content while capture, welcome, promotion, preview/test, or user-completed sending disappears.
 11. **Setup displacement:** treating the checklist as a serial queue and parking the founder on beehiiv readiness, naming, or welcome before the first draft exists. The first sitting should end with a draft the founder can read.
+12. **Update nagging:** interrupting active work with version checks, repeating a declined offer, or updating without approval. The check is silent by default and each version earns one mention.
 
 ## Verification checklist
 
@@ -244,3 +262,4 @@ Approval states are founder-owned facts, not workflow conveniences. A checklist 
 - [ ] No unsupported send-time precision appeared.
 - [ ] No send, schedule, publish, or “approve and send” claim occurred.
 - [ ] Durable Editorial Memory changes were explicitly approved.
+- [ ] Any update mention happened at a natural pause, once per version, and the update ran only with founder approval.
