@@ -17,6 +17,7 @@ Review in this order so sentence polish does not conceal a weak issue.
 ### 2. Claim integrity
 
 - Does every consequential claim match linked evidence?
+- Is every listed source doing real work for a claim actually in the draft? Per `references/evidence-and-claims.md`, an unused registered source is dropped, not consumed — never add prose to justify a citation.
 - Were public, non-sensitive URLs shown in chat with the draft unless the founder asked to skip them, while private/local sources remained source IDs and descriptions?
 - Are inference, opinion, and direct observation distinguishable?
 - Are limitations and uncertainty present where they affect interpretation?
@@ -61,6 +62,8 @@ Review in this order so sentence polish does not conceal a weak issue.
 - Is the final human editing and publishing boundary explicit?
 
 ## Report format
+
+Before the verdict, run a literal placeholder scan across the draft and every packet artifact (welcome, signup copy, handoff): any bracketed template token — `[Your name]`, `[VERIFY: …]`, `[SOURCE NEEDED: …]`, a `working-slug`, or similar — is a blocker. An artifact containing an unresolved placeholder cannot be called ready for founder review; either resolve it or list it under blocking issues with the exact string.
 
 Return:
 

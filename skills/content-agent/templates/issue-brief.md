@@ -3,6 +3,7 @@
 - Brief ID:
 - Related idea ID:
 - Status: developing | needs-evidence | approved-for-drafting | parked
+- Decision card applied (ID and rule, or 'no card fits'):
 - Created:
 - Last updated:
 

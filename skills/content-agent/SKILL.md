@@ -1,7 +1,7 @@
 ---
 name: content-agent
 description: Use when guiding a founder's beehiiv newsletter launch and issues.
-version: 0.1.5
+version: 0.1.6
 author: Darwin
 license: All rights reserved
 metadata:
@@ -120,7 +120,7 @@ Load `references/evidence-and-claims.md`.
 
 Load `references/idea-judgment.md`, `references/decision-cards.md`, and only the relevant private records.
 
-1. Before generating candidates, select the one or two decision cards most relevant to this founder's publication kind and situation. Apply their transferable rules to selection and treatment, and name the rule used in the recommendation (e.g. "one experiment, one mechanism — receipts included"). If no card fits, say so plainly and rely on the ordinary gates; never force-fit an anchor.
+1. Before generating candidates, select the one or two decision cards most relevant to this founder's publication kind and situation. Apply their transferable rules to selection and treatment, and name the card ID and the rule used in the recommendation (e.g. "CARD-01: one experiment, one mechanism — receipts included") **and in the saved options and brief artifacts**, not only in chat reasoning. If no card fits, say so plainly — in chat and in the artifact — and rely on the ordinary gates; never force-fit an anchor.
 2. Generate a wider internal set and research where useful.
 3. Gate every candidate on objective quality **and** founder relevance: why this belongs in this newsletter, from this founder, for this reader and promise.
 4. Do not over-weight recency, locality, event attendance, tentative openness, or personal facts.
@@ -169,7 +169,7 @@ When the first issue draft is delivered and the founder is still present, offer 
 2. **Signup copy** — a headline, one supporting line, and button text for the beehiiv-hosted signup, written from the publication promise. No landing-page project; just the words the founder pastes in.
 3. **Runway view** — reopen the idea ledger and show the publication runway: issue 1 complete, the remaining Next Three directions with one-line reminders, and salvageable Not-now material. Do not draft future issues; show that the next month already exists.
 
-Each piece is offered, not forced; a founder who is out of time leaves with the issue draft and a named next step. When all three land, say plainly what is now true: everything except pressing send exists.
+Each piece is offered, not forced; a founder who is out of time leaves with the issue draft and a named next step. When all three land, say plainly what is now true: everything except pressing send exists. Cross-check the packet before closing: the cadence wording in the welcome and signup copy must match the runway's honest supply state — if the runway says weekly is unproven, the welcome says "most weeks," not "every week."
 
 ## Job 6 — Guide lean beehiiv launch readiness
 
@@ -197,6 +197,16 @@ Load `references/learning-loop.md`.
 6. Never promote private specifics into shared product intelligence without a separate consented and redacted process.
 
 **Complete when:** records are accurate and every durable change is approved, rejected, or visibly pending.
+
+## Approval integrity
+
+Approval states are founder-owned facts, not workflow conveniences. A checklist gate, decision-log entry, or artifact status may record founder approval only when there is an explicit founder statement approving that specific thing, and the record must preserve the founder's words verbatim.
+
+- Silence is not approval. Momentum is not approval. A repeated or resent message is not approval, and a request to continue with other work is not approval: "yes, do the welcome and signup copy" approves producing those artifacts, not the issue draft.
+- When approval is ambiguous, keep the gate `remaining` and continue useful work. An accurate `remaining` is always better than an inferred `complete`.
+- `Confirmed by: founder` in the decision log requires the founder's verbatim words in the record. Anything the agent inferred stays `Confirmation: proposed`.
+- Before flipping any approval gate to `complete`, re-read the founder's actual message. If you cannot quote the approval, it did not happen.
+- On a repeated founder message, follow `references/delivery-continuity.md`: acknowledge the repeat and confirm intent; never mine it for new meaning.
 
 ## Artifact and decision rules
 

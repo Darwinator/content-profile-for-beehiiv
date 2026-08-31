@@ -41,7 +41,7 @@ Early and honest: this is a `0.1.x` release that has completed full clean-instal
 
 ## Current product slice
 
-Version `0.1.5` supports:
+Version `0.1.6` supports:
 
 1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;

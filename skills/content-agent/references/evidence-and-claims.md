@@ -16,6 +16,14 @@ Record the source's origin, date, privacy status, and limits.
 
 When returning a draft, show public, non-sensitive URLs in chat by default. For a private or local source, show the source ID and description only. Before display or storage, strip signed query parameters, credentials, tokens, customer identifiers, and any other secret-bearing portion. Skip the list only if the founder asked.
 
+## Sources serve the draft
+
+Sources serve the draft; the draft never serves the source list. Registering a source during research creates no obligation to cite it.
+
+- Never add or reshape a sentence so that a registered source gets used or a citation count looks better. If a source turned out not to support the argument, drop it from the source list without touching the prose.
+- No citation-density quota exists, in either direction. The right number of citations is exactly the number of consequential claims that need external support.
+- If a review pass flags an "unused source," the default resolution is removal from the list, not insertion into the draft. Add a sentence only when the draft genuinely gains from the point — and then because the reader needs it, not because the checker does.
+
 ## Claim test
 
 For every consequential claim, ask:

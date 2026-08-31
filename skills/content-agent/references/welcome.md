@@ -31,7 +31,7 @@ The first welcome has one job: they are glad they signed up and sure what this i
 
 - who it is for;
 - what it is;
-- cadence, honestly;
+- cadence, honestly — promise only the cadence the runway can already support. If weekly supply is unproven, say "most weeks" or "roughly weekly while I find the rhythm" rather than a hard weekly commitment. Do not promise a cadence the runway calls unproven;
 - one promise;
 - one useful thing they can use now;
 - a quiet disclosure if a business is attached;

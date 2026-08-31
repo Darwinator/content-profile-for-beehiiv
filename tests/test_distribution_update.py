@@ -125,7 +125,7 @@ class DistributionUpdateTests(unittest.TestCase):
             }
             self.assertEqual(after, before)
             self.assertIn(
-                "Version: 0.1.5",
+                "Version: 0.1.6",
                 (
                     installed
                     / "skills/content-agent/references/release-marker.md"
@@ -169,7 +169,7 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "references"
                 / "release-marker.md"
             )
-            self.assertIn("0.1.5", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.6", shared_marker.read_text(encoding="utf-8"))
 
             sentinels = {
                 "memory": installed / "memories" / "MEMORY.md",
@@ -206,14 +206,14 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "release-marker.md"
             )
             marker_source.write_text(
-                "# Shared intelligence release marker\n\nVersion: 0.1.6\n",
+                "# Shared intelligence release marker\n\nVersion: 0.1.7\n",
                 encoding="utf-8",
             )
             manifest = source / "distribution.yaml"
             manifest_text = manifest.read_text(encoding="utf-8")
-            self.assertIn("version: 0.1.5", manifest_text)
+            self.assertIn("version: 0.1.6", manifest_text)
             manifest.write_text(
-                manifest_text.replace("version: 0.1.5", "version: 0.1.6", 1),
+                manifest_text.replace("version: 0.1.6", "version: 0.1.7", 1),
                 encoding="utf-8",
             )
 
@@ -228,15 +228,15 @@ class DistributionUpdateTests(unittest.TestCase):
 
             after = {key: sha256(path) for key, path in sentinels.items()}
             self.assertEqual(after, before)
-            self.assertIn("0.1.6", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.7", shared_marker.read_text(encoding="utf-8"))
 
             installed_manifest = (installed / "distribution.yaml").read_text(
                 encoding="utf-8"
             )
-            self.assertIn("version: 0.1.6", installed_manifest)
+            self.assertIn("version: 0.1.7", installed_manifest)
             info = run_hermes(profile_root, "profile", "info", PROFILE_NAME)
             self.assertEqual(info.returncode, 0, info.stderr or info.stdout)
-            self.assertIn("0.1.6", info.stdout)
+            self.assertIn("0.1.7", info.stdout)
 
 
 if __name__ == "__main__":

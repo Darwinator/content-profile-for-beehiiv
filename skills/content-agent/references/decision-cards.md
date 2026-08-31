@@ -4,6 +4,8 @@ Six maintained mechanism cases from verified public research (29-case corpus, 20
 
 When a founder asks what a recommendation is based on, cite the relevant card and its public source honestly. If no card fits the founder's situation, say so and fall back to bounded live research — do not force-fit an anchor.
 
+Provenance is part of the product: when a card shapes a recommendation, selection, or draft structure, the card ID must appear in the saved artifact (options file, issue brief, decision log) alongside the transferable rule, not only in conversational reasoning. An undecided founder is not an exception — an "I don't know yet" founder deserves *more* visible card provenance, because the cards are doing the deciding the founder cannot yet do. If the honest answer is "no card fits," write that in the artifact too.
+
 ## CARD-01 — Greg's Letter (Greg Isenberg / Late Checkout)
 
 - **Situation:** portfolio operator with many concurrent experiments; risk of breadth outrunning evidence.

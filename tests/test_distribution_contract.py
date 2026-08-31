@@ -16,7 +16,7 @@ def authored_text(relative: str) -> str:
 
 
 class DistributionContractTests(unittest.TestCase):
-    def test_release_markers_are_0_1_5(self) -> None:
+    def test_release_markers_are_0_1_6(self) -> None:
         for relative in (
             "distribution.yaml",
             "skills/content-agent/SKILL.md",
@@ -24,7 +24,7 @@ class DistributionContractTests(unittest.TestCase):
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.1.5", authored_text(relative), relative)
+            self.assertIn("0.1.6", authored_text(relative), relative)
             self.assertNotIn("0.1.2", authored_text(relative), relative)
 
     def test_distribution_ships_no_model_or_provider_choice(self) -> None:
@@ -100,7 +100,7 @@ class DistributionContractTests(unittest.TestCase):
             self.assertIn(anchor_domain, cards)
         skill = authored_text("skills/content-agent/SKILL.md")
         self.assertIn("references/decision-cards.md", skill)
-        self.assertIn("name the rule used", skill)
+        self.assertIn("name the card ID and the rule used", skill)
         self.assertIn("never force-fit an anchor", skill)
         onboarding = authored_text("skills/content-agent/references/onboarding.md")
         self.assertIn("newsletters or writers you actually read", onboarding)

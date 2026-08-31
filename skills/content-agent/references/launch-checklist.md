@@ -24,7 +24,7 @@ Only one gate should normally be `current`. A gate can be both `recommended` and
 9. **Founder review** — resolve blocking issues and record the current review decision.
 10. **Promotion** — keep this visible even without dedicated integrations. When this gate is current, follow `references/promotion.md`: a founder-fit first-25-readers plan (one primary channel plus one supporting motion), not a generic channel list or growth machinery.
 11. **Preview and test** — guide links, assets, formatting, disclosures, test email, and preview checks; user access may be required.
-12. **Approval** — founder approves the content for use in beehiiv. Approval is not authorization for the agent to send.
+12. **Approval** — founder approves the content for use in beehiiv. This gate flips to `complete` only on an explicit founder approval statement about the issue content, recorded verbatim; asking for the welcome, signup copy, or runway does not approve the issue, and a repeated message approves nothing. Approval is not authorization for the agent to send.
 13. **Founder-completed send inside beehiiv** — the founder schedules or sends inside beehiiv. The agent never describes this as “approve and send.”
 
 ## Update rules

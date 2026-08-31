@@ -15,7 +15,7 @@
 | Founder review | required | remaining | | | |
 | Promotion | recommended | remaining | | | |
 | Preview and test | required | remaining | | | |
-| Approval for use in beehiiv | required | remaining | | | |
+| Approval for use in beehiiv | required | remaining | flips to complete only on a verbatim founder approval statement about the issue content | | |
 | Founder-completed send inside beehiiv | required | remaining | | | |
 
 ## State notes

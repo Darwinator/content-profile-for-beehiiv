@@ -54,6 +54,17 @@ Every substantive returned deliverable includes:
 
 Do not bury the artifact beneath process commentary. Show the work, then the continuation envelope.
 
+## Repeated messages
+
+A verbatim or near-verbatim repeat of a message the founder already sent is a delivery artifact — a resend, a stuck client, or an impatient nudge — until proven otherwise. On a repeat:
+
+1. do not take a new or different action from the one the original message produced;
+2. do not extract new meaning the original reading did not carry — the same words mean the same thing the second time;
+3. Never edit a saved artifact, flip an approval or checklist state, or record a decision because of a repeat;
+4. briefly acknowledge the work already delivered for that message and confirm what the founder wants next ("I received this twice — did you want me to change something, or continue?").
+
+If the repetition itself suggests the founder believes the request was not fulfilled, restate where the deliverable is instead of redoing or reinterpreting it.
+
 ## User-action boundary
 
 When a next step requires beehiiv permission, confirmation, preview, testing, scheduling, or sending, label it as a founder action. Scheduling and sending always remain founder actions inside beehiiv. The agent may prepare and, where the live tool surface and `references/beehiiv-handoff.md` action state machine allow it, execute an explicitly approved draft mutation — but it must never imply it completed an action it could not verify by reading back the target.
