@@ -97,11 +97,11 @@ def initialize_workspace(hermes_home: Path) -> dict[str, list[str]]:
 
 
 def migrate_renamed_skill(hermes_home: Path) -> list[str]:
-    """Remove the pre-0.2.0 distribution-owned skill left behind by the rename.
+    """Remove the pre-0.1.0 distribution-owned skill left behind by the rename.
 
     Hermes profile updates replace paths the new manifest owns but preserve
     paths it no longer names, so the 0.1.x `skills/content-agent/` directory
-    survives an update to 0.2.0 as a stale duplicate. Delete it only when
+    survives an update to 0.1.0 as a stale duplicate. Delete it only when
     provenance proves it is the old shipped skill and the renamed skill is
     already installed; anything else is preserved untouched.
     """

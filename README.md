@@ -65,7 +65,7 @@ This is an early release. It has completed full clean-install founder journeys i
 
 ## Current product slice
 
-Version `0.2.0` supports:
+Version `0.1.0` supports:
 
 1. a finite five-question founder/business kickoff and confirmation;
 2. evidence-aware source capture;

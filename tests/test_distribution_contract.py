@@ -24,7 +24,7 @@ class DistributionContractTests(unittest.TestCase):
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.2.0", authored_text(relative), relative)
+            self.assertIn("0.1.0", authored_text(relative), relative)
             self.assertNotIn("0.1.2", authored_text(relative), relative)
 
     def test_distribution_ships_no_model_or_provider_choice(self) -> None:

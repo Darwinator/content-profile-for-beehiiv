@@ -1,4 +1,4 @@
-"""Contract tests for the 0.2.0 fixes driven by the independent review of the
+"""Contract tests for the 0.1.0 fixes driven by the independent review of the
 2026-08-30 four-instance coverage run (REVIEW.md).
 
 Each test names the review finding it closes. These are text contracts on the
@@ -116,7 +116,7 @@ class ReviewFixesContractTests(unittest.TestCase):
         ):
             self.assertIn(required, review)
 
-    # Update awareness (0.2.0): the agent surfaces new releases itself, with
+    # Update awareness (0.1.0): the agent surfaces new releases itself, with
     # strict quiet-by-default guardrails and no telemetry.
     def test_update_awareness_is_consensual_quiet_and_telemetry_free(self) -> None:
         skill = authored_text("skills/content-profile/SKILL.md")
@@ -146,7 +146,7 @@ class ReleaseMarker016Tests(unittest.TestCase):
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.2.0", authored_text(relative), relative)
+            self.assertIn("0.1.0", authored_text(relative), relative)
             self.assertNotIn("0.1.5", authored_text(relative), relative)
 
 

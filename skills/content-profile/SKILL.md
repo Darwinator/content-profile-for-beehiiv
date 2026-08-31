@@ -1,7 +1,7 @@
 ---
 name: content-profile
 description: Use when guiding a founder's beehiiv newsletter launch and issues.
-version: 0.2.0
+version: 0.1.0
 author: Darwin Binesh
 license: Source-available (see LICENSE)
 metadata:

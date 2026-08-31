@@ -127,7 +127,7 @@ class DistributionUpdateTests(unittest.TestCase):
             }
             self.assertEqual(after, before)
             self.assertIn(
-                "Version: 0.2.0",
+                "Version: 0.1.0",
                 (
                     installed
                     / "skills/content-profile/references/release-marker.md"
@@ -198,7 +198,7 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "references"
                 / "release-marker.md"
             )
-            self.assertIn("0.2.0", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn("0.1.0", shared_marker.read_text(encoding="utf-8"))
 
             sentinels = {
                 "memory": installed / "memories" / "MEMORY.md",
@@ -240,9 +240,9 @@ class DistributionUpdateTests(unittest.TestCase):
             )
             manifest = source / "distribution.yaml"
             manifest_text = manifest.read_text(encoding="utf-8")
-            self.assertIn("version: 0.2.0", manifest_text)
+            self.assertIn("version: 0.1.0", manifest_text)
             manifest.write_text(
-                manifest_text.replace("version: 0.2.0", "version: 0.1.7", 1),
+                manifest_text.replace("version: 0.1.0", "version: 0.1.7", 1),
                 encoding="utf-8",
             )
 
