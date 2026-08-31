@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Initialize Content Agent private Editorial Memory without overwriting user data."""
+"""Initialize Content Profile private Editorial Memory without overwriting user data."""
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ DIRECTORY_NAMES = ("issue-history", "drafts")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Create missing Content Agent Editorial Memory files."
+        description="Create missing Content Profile Editorial Memory files."
     )
     parser.add_argument(
         "--hermes-home",

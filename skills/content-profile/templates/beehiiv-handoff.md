@@ -51,12 +51,12 @@
 
 ## Human Next Step
 
-Review and edit the inline draft or this artifact. If beehiiv is connected and the live tools support draft creation, the Content Agent may create or update the beehiiv draft after explicit approval and read-back verification; otherwise create or update the issue in beehiiv yourself from this artifact. Complete preview/testing and schedule or send inside beehiiv. The Content Agent must not send, schedule, publish, or describe approval as “approve and send.”
+Review and edit the inline draft or this artifact. If beehiiv is connected and the live tools support draft creation, the Content Profile may create or update the beehiiv draft after explicit approval and read-back verification; otherwise create or update the issue in beehiiv yourself from this artifact. Complete preview/testing and schedule or send inside beehiiv. The Content Profile must not send, schedule, publish, or describe approval as “approve and send.”
 
 ## Workflow Continuation
 
 - Updated launch-checklist state:
 - Current review gate:
 - Recommended next action:
-- What the Content Agent will do after the answer:
+- What the Content Profile will do after the answer:
 - Remaining launch work:

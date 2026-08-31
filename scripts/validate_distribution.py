@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate that a Content Agent checkout is a clean Hermes distribution."""
+"""Validate that a Content Profile checkout is a clean Hermes distribution."""
 
 from __future__ import annotations
 
@@ -19,8 +19,8 @@ REQUIRED_FILES = {
     "SOUL.md",
     "config.yaml",
     "distribution.yaml",
-    "skills/content-agent/SKILL.md",
-    "skills/content-agent/scripts/init_workspace.py",
+    "skills/content-profile/SKILL.md",
+    "skills/content-profile/scripts/init_workspace.py",
 }
 PRIVATE_TOP_LEVEL = {
     ".env",
@@ -78,7 +78,7 @@ EXPECTED_OWNED = {
     "distribution.yaml",
     "SOUL.md",
     "config.yaml",
-    "skills/content-agent/",
+    "skills/content-profile/",
 }
 
 
@@ -190,7 +190,7 @@ def static_errors(root: Path) -> list[str]:
             except json.JSONDecodeError as exc:
                 errors.append(f"invalid JSON in {relative}: {exc}")
 
-    skill = root / "skills" / "content-agent" / "SKILL.md"
+    skill = root / "skills" / "content-profile" / "SKILL.md"
     if skill.is_file():
         skill_text = skill.read_text(encoding="utf-8")
         references = set(re.findall(r"references/[a-z0-9-]+\.md", skill_text))

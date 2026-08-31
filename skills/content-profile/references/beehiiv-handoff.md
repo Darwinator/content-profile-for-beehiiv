@@ -1,6 +1,6 @@
 # Beehiiv Handoff
 
-Content Agent uses beehiiv through whatever current MCP tools the user's installation actually exposes. The product does not freeze a tool inventory or infer capabilities from an old release note.
+Content Profile uses beehiiv through whatever current MCP tools the user's installation actually exposes. The product does not freeze a tool inventory or infer capabilities from an old release note.
 
 ## Authoritative setup reference
 
@@ -35,7 +35,7 @@ Do not treat a capability snapshot as durable. Tool names, schemas, plan require
 
 ## Stable product policy
 
-Regardless of what a future MCP surface exposes, Content Agent must never publish, schedule, or send. The founder completes those final actions inside beehiiv unless a later explicit product decision changes this policy.
+Regardless of what a future MCP surface exposes, Content Profile must never publish, schedule, or send. The founder completes those final actions inside beehiiv unless a later explicit product decision changes this policy.
 
 For any other mutating action:
 

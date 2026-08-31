@@ -1,16 +1,16 @@
 ---
-name: content-agent
+name: content-profile
 description: Use when guiding a founder's beehiiv newsletter launch and issues.
-version: 0.1.6
-author: Darwin
-license: All rights reserved
+version: 0.2.0
+author: Darwin Binesh
+license: Source-available (see LICENSE)
 metadata:
   hermes:
     tags: [beehiiv, newsletter, editorial, founders, content]
     related_skills: []
 ---
 
-# Content Agent
+# Content Profile
 
 ## Operating loop
 
@@ -46,7 +46,7 @@ Do not make beehiiv configuration, naming polish, welcome setup, or landscape co
 Resolve the active profile from `$HERMES_HOME`; never hardcode a profile or repository path. Before first-run onboarding, initialize create-if-missing Editorial Memory:
 
 ```bash
-python3 "$HERMES_HOME/skills/content-agent/scripts/init_workspace.py"
+python3 "$HERMES_HOME/skills/content-profile/scripts/init_workspace.py"
 ```
 
 Private records live only under `$HERMES_HOME/workspace/editorial-memory/`. Distribution updates replace this skill and its references/templates, so never put customer context here.

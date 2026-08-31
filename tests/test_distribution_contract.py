@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "skills" / "content-agent" / "SKILL.md"
+SKILL = ROOT / "skills" / "content-profile" / "SKILL.md"
 REFERENCES = SKILL.parent / "references"
 
 
@@ -19,12 +19,12 @@ class DistributionContractTests(unittest.TestCase):
     def test_release_markers_are_0_1_6(self) -> None:
         for relative in (
             "distribution.yaml",
-            "skills/content-agent/SKILL.md",
-            "skills/content-agent/references/release-marker.md",
+            "skills/content-profile/SKILL.md",
+            "skills/content-profile/references/release-marker.md",
             "README.md",
             "AGENTS.md",
         ):
-            self.assertIn("0.1.6", authored_text(relative), relative)
+            self.assertIn("0.2.0", authored_text(relative), relative)
             self.assertNotIn("0.1.2", authored_text(relative), relative)
 
     def test_distribution_ships_no_model_or_provider_choice(self) -> None:
@@ -38,7 +38,7 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("Any Hermes-supported provider works", readme)
 
     def test_launch_packet_completes_the_first_sitting(self) -> None:
-        skill = authored_text("skills/content-agent/SKILL.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         for required in (
             "Finish the launch packet in the same sitting",
             "Welcome email draft",
@@ -51,7 +51,7 @@ class DistributionContractTests(unittest.TestCase):
             self.assertIn(required, skill)
 
     def test_promotion_reference_is_founder_fit_first_25_not_growth_machinery(self) -> None:
-        promotion = authored_text("skills/content-agent/references/promotion.md")
+        promotion = authored_text("skills/content-profile/references/promotion.md")
         for required in (
             "first 25 real readers",
             "one primary channel plus one supporting motion",
@@ -64,18 +64,18 @@ class DistributionContractTests(unittest.TestCase):
             "not V1 defaults",
         ):
             self.assertIn(required, promotion)
-        skill = authored_text("skills/content-agent/SKILL.md")
-        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
+        checklist = authored_text("skills/content-profile/references/launch-checklist.md")
         self.assertIn("references/promotion.md", skill)
         self.assertIn("references/promotion.md", checklist)
 
     def test_packaging_layers_have_three_distinct_jobs(self) -> None:
-        review = authored_text("skills/content-agent/references/editorial-review.md")
+        review = authored_text("skills/content-profile/references/editorial-review.md")
         self.assertIn("three packaging layers doing three different jobs", review)
         self.assertIn("One string copied across all three is a packaging failure", review)
 
     def test_decision_cards_are_mechanism_cases_wired_into_selection_and_drafting(self) -> None:
-        cards = authored_text("skills/content-agent/references/decision-cards.md")
+        cards = authored_text("skills/content-profile/references/decision-cards.md")
         for required in (
             "decision evidence, not imitation targets",
             "Never tell a founder to write like a named operator",
@@ -98,17 +98,17 @@ class DistributionContractTests(unittest.TestCase):
             "bigdeskenergy.com",
         ):
             self.assertIn(anchor_domain, cards)
-        skill = authored_text("skills/content-agent/SKILL.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         self.assertIn("references/decision-cards.md", skill)
         self.assertIn("name the card ID and the rule used", skill)
         self.assertIn("never force-fit an anchor", skill)
-        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        onboarding = authored_text("skills/content-profile/references/onboarding.md")
         self.assertIn("newsletters or writers you actually read", onboarding)
         self.assertIn("Skipping is fine", onboarding)
         self.assertIn("references/decision-cards.md", onboarding)
 
     def test_onboarding_has_a_five_question_kickoff_and_progress_contract(self) -> None:
-        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        onboarding = authored_text("skills/content-profile/references/onboarding.md")
         for required in (
             "beehiiv-tuned",
             "exactly five",
@@ -147,7 +147,7 @@ class DistributionContractTests(unittest.TestCase):
             self.assertNotIn(forbidden, prompt)
 
     def test_skill_enforces_the_first_conversation_before_general_workflow(self) -> None:
-        skill = authored_text("skills/content-agent/SKILL.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         for required in (
             "## First-conversation contract",
             "Before showing a checklist or asking for work",
@@ -169,7 +169,7 @@ class DistributionContractTests(unittest.TestCase):
             "founder completes those final actions inside beehiiv",
             "inspect the live tools",
             "read back",
-            "load the `content-agent` skill",
+            "load the `content-profile` skill",
             "first-issue draft",
             "Orient in visible text before asking",
         ):
@@ -184,7 +184,7 @@ class DistributionContractTests(unittest.TestCase):
         self.assertLess(len(soul), 4000, "SOUL.md should stay a compact always-on identity")
 
     def test_unknowns_use_bounded_choices_and_reversible_defaults(self) -> None:
-        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        onboarding = authored_text("skills/content-profile/references/onboarding.md")
         for required in (
             "Mandatory safeguard",
             "Provisional default",
@@ -199,7 +199,7 @@ class DistributionContractTests(unittest.TestCase):
             self.assertIn(required, onboarding)
 
     def test_launch_checklist_covers_the_minimum_viable_launch(self) -> None:
-        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        checklist = authored_text("skills/content-profile/references/launch-checklist.md")
         for state in (
             "complete",
             "current",
@@ -224,7 +224,7 @@ class DistributionContractTests(unittest.TestCase):
             self.assertIn(gate, checklist)
 
     def test_naming_reference_is_a_working_title_gate_not_a_brand_workshop(self) -> None:
-        naming = authored_text("skills/content-agent/references/naming.md")
+        naming = authored_text("skills/content-profile/references/naming.md")
         for required in (
             "Load this reference only when the current job is a working title",
             "cannot block the first issue",
@@ -241,12 +241,12 @@ class DistributionContractTests(unittest.TestCase):
         ):
             self.assertIn(required, naming)
         self.assertNotIn("place or job in the **name or the subtitle**, not neither", naming)
-        skill = authored_text("skills/content-agent/SKILL.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         self.assertIn("references/naming.md", skill)
         self.assertIn("Do not open a naming, format, welcome, or growth workshop during kickoff", skill)
 
     def test_issue_format_reference_offers_a_menu_not_only_1_2_1(self) -> None:
-        fmt = authored_text("skills/content-agent/references/issue-format.md")
+        fmt = authored_text("skills/content-profile/references/issue-format.md")
         for required in (
             "working format",
             "Do not say “provisional.”",
@@ -261,11 +261,11 @@ class DistributionContractTests(unittest.TestCase):
             "Never say “write like” a named newsletter",
         ):
             self.assertIn(required, fmt)
-        skill = authored_text("skills/content-agent/SKILL.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         self.assertIn("references/issue-format.md", skill)
 
     def test_publication_kind_and_supply_concerns_are_visible_and_reversible(self) -> None:
-        kind = authored_text("skills/content-agent/references/publication-kind.md")
+        kind = authored_text("skills/content-profile/references/publication-kind.md")
         for required in (
             "This is a classification, not five products",
             "Building a company",
@@ -273,13 +273,13 @@ class DistributionContractTests(unittest.TestCase):
             "Never tell a founder to write like a named operator",
         ):
             self.assertIn(required, kind)
-        landscape = authored_text("skills/content-agent/references/publication-landscape.md")
-        judgment = authored_text("skills/content-agent/references/idea-judgment.md")
-        onboarding = authored_text("skills/content-agent/references/onboarding.md")
-        skill = authored_text("skills/content-agent/SKILL.md")
-        strategy = authored_text("skills/content-agent/references/publication-strategy.md")
+        landscape = authored_text("skills/content-profile/references/publication-landscape.md")
+        judgment = authored_text("skills/content-profile/references/idea-judgment.md")
+        onboarding = authored_text("skills/content-profile/references/onboarding.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
+        strategy = authored_text("skills/content-profile/references/publication-strategy.md")
         brief = authored_text(
-            "skills/content-agent/templates/editorial-memory/publication-brief.md"
+            "skills/content-profile/templates/editorial-memory/publication-brief.md"
         )
         self.assertIn("about six months", landscape)
         for source in (landscape, judgment, onboarding, skill, strategy):
@@ -294,8 +294,8 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("Publication kind", brief)
 
     def test_welcome_depends_on_plan_and_cadence_and_is_raised_at_first_issue(self) -> None:
-        welcome = authored_text("skills/content-agent/references/welcome.md")
-        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        welcome = authored_text("skills/content-profile/references/welcome.md")
+        checklist = authored_text("skills/content-profile/references/launch-checklist.md")
         for required in (
             "do **not** automatically receive the latest issue",
             "Raise that fact as soon as the first issue is in motion",
@@ -312,7 +312,7 @@ class DistributionContractTests(unittest.TestCase):
         ):
             self.assertIn(required, welcome)
         self.assertNotIn("longer series as a **low-risk way to start**", welcome)
-        skill = authored_text("skills/content-agent/SKILL.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         self.assertIn("references/welcome.md", skill)
         self.assertIn("new subscribers will not automatically receive the issue", skill)
         for required in (
@@ -325,7 +325,7 @@ class DistributionContractTests(unittest.TestCase):
         self.assertNotIn("depends on plan and whether they will send regularly", checklist)
 
     def test_landscape_scan_is_bounded_and_never_blocks_the_provisional_brief(self) -> None:
-        landscape = authored_text("skills/content-agent/references/publication-landscape.md")
+        landscape = authored_text("skills/content-profile/references/publication-landscape.md")
         for required in (
             "baseline, not a market study",
             "not a reason to quit",
@@ -339,13 +339,13 @@ class DistributionContractTests(unittest.TestCase):
             "Do not redo a full landscape for every issue",
         ):
             self.assertIn(required, landscape)
-        skill = authored_text("skills/content-agent/SKILL.md")
-        onboarding = authored_text("skills/content-agent/references/onboarding.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
+        onboarding = authored_text("skills/content-profile/references/onboarding.md")
         brief = authored_text(
-            "skills/content-agent/templates/editorial-memory/publication-brief.md"
+            "skills/content-profile/templates/editorial-memory/publication-brief.md"
         )
-        judgment = authored_text("skills/content-agent/references/idea-judgment.md")
-        issue_brief = authored_text("skills/content-agent/templates/issue-brief.md")
+        judgment = authored_text("skills/content-profile/references/idea-judgment.md")
+        issue_brief = authored_text("skills/content-profile/templates/issue-brief.md")
         self.assertIn("references/publication-landscape.md", skill)
         self.assertNotIn("**before** showing the publication brief", skill)
         self.assertIn("without being talked out of publishing", onboarding)
@@ -354,12 +354,12 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("## Crowding against the landscape", issue_brief)
 
     def test_landing_page_is_recommended_not_required(self) -> None:
-        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
+        checklist = authored_text("skills/content-profile/references/launch-checklist.md")
         template = authored_text(
-            "skills/content-agent/templates/editorial-memory/launch-checklist.md"
+            "skills/content-profile/templates/editorial-memory/launch-checklist.md"
         )
-        skill = authored_text("skills/content-agent/SKILL.md")
-        strategy = authored_text("skills/content-agent/references/publication-strategy.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
+        strategy = authored_text("skills/content-profile/references/publication-strategy.md")
         self.assertIn("recommended, not required", checklist)
         self.assertIn("no capture surface", checklist)
         self.assertRegex(
@@ -374,15 +374,15 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("separate landing page is recommended", strategy)
 
     def test_checklist_updates_at_material_transitions_not_every_answer(self) -> None:
-        checklist = authored_text("skills/content-agent/references/launch-checklist.md")
-        skill = authored_text("skills/content-agent/SKILL.md")
+        checklist = authored_text("skills/content-profile/references/launch-checklist.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
         for source in (checklist, skill):
             self.assertIn("material transitions", source)
             self.assertNotIn("after every founder answer", source)
             self.assertNotIn("after each answer", source)
 
     def test_cadence_is_recommended_not_mandated_and_timing_has_no_fake_precision(self) -> None:
-        strategy = authored_text("skills/content-agent/references/publication-strategy.md")
+        strategy = authored_text("skills/content-profile/references/publication-strategy.md")
         self.assertIn("Recommend weekly", strategy)
         self.assertIn("not mandatory", strategy)
         self.assertIn("biweekly or monthly", strategy)
@@ -391,7 +391,7 @@ class DistributionContractTests(unittest.TestCase):
         self.assertNotIn("lowest cadence", strategy)
 
     def test_research_requires_founder_relevance_not_only_source_quality(self) -> None:
-        judgment = authored_text("skills/content-agent/references/idea-judgment.md")
+        judgment = authored_text("skills/content-profile/references/idea-judgment.md")
         for required in (
             "founder's current or intended business",
             "business and industry interests",
@@ -403,7 +403,7 @@ class DistributionContractTests(unittest.TestCase):
 
     def test_decisions_preserve_class_state_provenance_and_reassessment(self) -> None:
         decision_log = authored_text(
-            "skills/content-agent/templates/editorial-memory/decision-log.md"
+            "skills/content-profile/templates/editorial-memory/decision-log.md"
         )
         for required in (
             "mandatory safeguard",
@@ -419,10 +419,10 @@ class DistributionContractTests(unittest.TestCase):
 
     def test_relevance_rationale_persists_from_selection_through_send_check(self) -> None:
         idea_ledger = authored_text(
-            "skills/content-agent/templates/editorial-memory/idea-ledger.md"
+            "skills/content-profile/templates/editorial-memory/idea-ledger.md"
         )
-        issue_brief = authored_text("skills/content-agent/templates/issue-brief.md")
-        review = authored_text("skills/content-agent/references/editorial-review.md")
+        issue_brief = authored_text("skills/content-profile/templates/issue-brief.md")
+        review = authored_text("skills/content-profile/references/editorial-review.md")
 
         for required in (
             "Founder/business relevance",
@@ -440,7 +440,7 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("this founder, this business, this reader, and this promise", review)
 
     def test_delivery_is_inline_continuous_and_does_not_default_to_cron(self) -> None:
-        delivery = authored_text("skills/content-agent/references/delivery-continuity.md")
+        delivery = authored_text("skills/content-profile/references/delivery-continuity.md")
         for required in (
             "inline",
             "Do not default to cron",
@@ -457,7 +457,7 @@ class DistributionContractTests(unittest.TestCase):
 
     def test_mcp_policy_keeps_final_sending_human_and_mutations_verified(self) -> None:
         soul = authored_text("SOUL.md")
-        handoff = authored_text("skills/content-agent/references/beehiiv-handoff.md")
+        handoff = authored_text("skills/content-profile/references/beehiiv-handoff.md")
         combined = soul + "\n" + handoff
         self.assertIn("Never publish, schedule, or send", combined)
         self.assertIn("founder completes those final actions inside beehiiv", combined)
@@ -468,10 +468,10 @@ class DistributionContractTests(unittest.TestCase):
         self.assertIn("unless the founder asked to skip it", handoff)
 
     def test_draft_source_lists_never_expose_private_or_signed_urls(self) -> None:
-        skill = authored_text("skills/content-agent/SKILL.md")
-        review = authored_text("skills/content-agent/references/editorial-review.md")
-        evidence = authored_text("skills/content-agent/references/evidence-and-claims.md")
-        template = authored_text("skills/content-agent/templates/beehiiv-handoff.md")
+        skill = authored_text("skills/content-profile/SKILL.md")
+        review = authored_text("skills/content-profile/references/editorial-review.md")
+        evidence = authored_text("skills/content-profile/references/evidence-and-claims.md")
+        template = authored_text("skills/content-profile/templates/beehiiv-handoff.md")
         self.assertIn("unless the founder asked to skip it", skill)
         for source in (skill, review, evidence):
             self.assertIn("public, non-sensitive URLs", source)
@@ -518,8 +518,8 @@ class DistributionContractTests(unittest.TestCase):
                 "AGENTS.md",
                 "README.md",
                 "SOUL.md",
-                "skills/content-agent/SKILL.md",
-                "skills/content-agent/references/beehiiv-handoff.md",
+                "skills/content-profile/SKILL.md",
+                "skills/content-profile/references/beehiiv-handoff.md",
             )
         )
         for required in (
@@ -556,7 +556,7 @@ class DistributionContractTests(unittest.TestCase):
             "distribution.yaml",
             "SOUL.md",
             "config.yaml",
-            "skills/content-agent/",
+            "skills/content-profile/",
         }
         owned = {
             match.group(1).strip()

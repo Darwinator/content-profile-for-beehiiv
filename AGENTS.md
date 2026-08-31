@@ -1,6 +1,6 @@
-# Content Agent Working Protocol
+# Content Profile Working Protocol
 
-This repository is the clean, publisher-owned source for the Content Agent for founders publishing on beehiiv. It is a Hermes profile distribution, not a customer workspace and not part of Stacko.
+This repository is the clean, publisher-owned source for Content Profile — a private editorial partner for founders publishing useful newsletters on beehiiv. It is a Hermes profile distribution, not a customer workspace. This file is the contract for any agent (or human) reading, reviewing, or contributing to this checkout.
 
 ## Product contract
 
@@ -21,7 +21,7 @@ Publisher-owned and replaceable on profile update:
 - `distribution.yaml`
 - `SOUL.md`
 - `config.yaml`
-- `skills/content-agent/**`
+- `skills/content-profile/**`
 
 User-owned and never allowed in this repository:
 
@@ -30,7 +30,7 @@ User-owned and never allowed in this repository:
 - credentials, OAuth data, `.env`, and `auth.json`;
 - business context, private sources, conversations, and local configuration.
 
-The authored source checkout and the installed dogfood profile must be separate directories. The installed profile belongs under `$HERMES_HOME/profiles/content-agent`. Never point `HERMES_HOME` at this repository while dogfooding.
+A source checkout and an installed profile must stay separate. The installed profile belongs under `$HERMES_HOME/profiles/<name>`. Never point `HERMES_HOME` at this repository.
 
 ## Memory and recommendation precedence
 
@@ -45,7 +45,7 @@ Durable learning uses: propose → show the change → confirm → apply. Keep i
 
 ## Beehiiv boundary
 
-Version `0.1.6` does not encode a beehiiv capability snapshot. The authoritative setup guide is https://www.beehiiv.com/features/mcp/getting-started and the canonical OAuth endpoint is https://mcp.beehiiv.com/mcp. The distributed connector stays disabled, untrusted, and empty until the user authenticates and reviews the live tool surface. At the point of use, inspect the live tools and current first-party documentation; use only supported operations. Mutations require an exact target, explicit approval, one execution attempt, and read back verification. Never publish, schedule, or send. Preserve the local Markdown fallback when MCP or a requested action is unavailable.
+Version `0.2.0` does not encode a beehiiv capability snapshot. The authoritative setup guide is https://www.beehiiv.com/features/mcp/getting-started and the canonical OAuth endpoint is https://mcp.beehiiv.com/mcp. The distributed connector stays disabled, untrusted, and empty until the user authenticates and reviews the live tool surface. At the point of use, inspect the live tools and current first-party documentation; use only supported operations. Mutations require an exact target, explicit approval, one execution attempt, and read back verification. Never publish, schedule, or send. Preserve the local Markdown fallback when MCP or a requested action is unavailable.
 
 ## Development rules
 
@@ -54,8 +54,19 @@ Version `0.1.6` does not encode a beehiiv capability snapshot. The authoritative
 - Initialize private workspace files with create-if-missing semantics. Repeated initialization must preserve every existing user byte.
 - Keep one lean orchestration skill; place branch-specific knowledge in `references/` and reusable private-file starters in `templates/`.
 - Never write user-specific facts into `SOUL.md`, the skill, references, templates, evaluations, fixtures, or Git history.
-- Do not commit, push, publish, or create a public repository unless Darwin explicitly authorizes that operation. A private GitHub repository is the intended initial remote.
 - Do not add competing newsletter-platform guidance or marketing.
+- Treat repository publishing, profile updates, and connector authentication as explicit side-effect boundaries: they happen only on the maintainer's explicit direction, never as a side effect of routine work.
+
+## Review workflow for agents
+
+An agent reviewing or contributing to this checkout should:
+
+1. read this file first;
+2. inspect current Git status before editing;
+3. work only in the source checkout, never in an installed profile;
+4. never copy private user artifacts into fixtures, examples, or documentation;
+5. run the validator before proposing a commit;
+6. use branches or Git worktrees for concurrent writes, and never let two agents edit the risky shared files (`SOUL.md`, `SKILL.md`, `config.yaml`, `distribution.yaml`) simultaneously.
 
 ## Verification commands
 

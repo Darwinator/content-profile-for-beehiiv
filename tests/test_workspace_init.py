@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / "skills" / "content-agent" / "scripts" / "init_workspace.py"
+SCRIPT = ROOT / "skills" / "content-profile" / "scripts" / "init_workspace.py"
 EXPECTED_FILES = {
     "launch-checklist.md",
     "publication-brief.md",
