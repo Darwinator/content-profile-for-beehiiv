@@ -41,9 +41,17 @@ hermes -p content-profile
 
 Open with something like: *"I signed up for beehiiv because I think I should start a newsletter, but I don't really know what it should be yet."* The agent takes it from there.
 
-**What it costs:** the profile is free to install and use. You bring your own model (any Hermes-supported provider) and your own beehiiv account, so your only running cost is your model usage.
+**What it costs:** the profile is free to install and use. You bring your own Hermes-supported model and beehiiv account. Model usage, your beehiiv plan, and any paid tools or hosting you choose are your costs. A strong model is recommended for editorial judgment. Compatibility is not a quality guarantee; results vary by model.
 
-**Where your data goes:** your business context stays on your machine and with the model provider you already chose. It never comes to us. There is no telemetry and nothing phones home; updates flow one way, from this repository to you.
+**Where your data goes:** with a local install, your records are stored on your machine. Relevant context is processed by your chosen model provider and connected services when used. If you run Hermes on a hosted machine, your records live there instead. Content Profile adds no author telemetry; I do not receive your conversations unless you choose to share them with me. Update checks contact GitHub for release information without sending your editorial records.
+
+**Need help or have feedback?** [DM me on Twitter @DarwinBinesh](https://x.com/DarwinBinesh). Tell me where it fell short. Share only what you are comfortable sending; leave out credentials and private customer information.
+
+## After the first issue
+
+The first draft is the beginning of the working relationship. Content Profile helps you decide what is worth writing next, drawing on your business, sources, and approved preferences. You review what it remembers, so a passing suggestion does not become a permanent rule.
+
+I keep developing the publishing guidance it draws on as I learn and test better approaches. Your agent can flag new releases, and you choose when to install them. Shared guidance changes; your private editorial records are preserved. You do not have to start over with each issue or give up your own decisions to receive an update.
 
 ## What you get
 
@@ -54,6 +62,8 @@ Open with something like: *"I signed up for beehiiv because I think I should sta
 - A private editorial memory: your publication's decisions, sources, and taste survive across sessions and product updates, byte-for-byte.
 - An honest beehiiv bridge: once you connect beehiiv's MCP, the agent can create editable drafts in your account, with your explicit approval and read-back verification. Publishing stays in your hands.
 - Restraint: it will tell you when an idea is not worth publishing yet, and what would change that.
+
+The first-sitting deliverable is an editorial packet, not a fully configured publication. You still connect and configure beehiiv, preview and test the result, approve it, and decide when to send. If the live connector cannot complete a supported draft handoff, the editable local draft remains available.
 
 This repository is the clean product source: identity, operating procedure, maintained editorial guidance, templates, and safety tests. It contains no founder's private data. Your publication history, sources, drafts, credentials, and Editorial Memory live only in your installed profile.
 
@@ -161,14 +171,14 @@ Resolve the installed home through the profile runtime rather than assuming a gl
 
 ### Choose your model
 
-Content Profile ships no model or provider configuration. It works with whatever provider and model you already use with Hermes. Profiles are isolated, so set the model for this profile once:
+Content Profile ships no model or provider configuration. You can configure a Hermes-supported provider and model; editorial quality depends on the model you choose. Profiles are isolated, so set the model for this profile once:
 
 ```bash
 hermes -p content-profile config set model.default <your-model>
 hermes -p content-profile config set model.provider <your-provider>
 ```
 
-or run `hermes -p content-profile` and follow the provider prompt. Any Hermes-supported provider works (OpenRouter, Anthropic, OpenAI, Nous, DeepSeek, xAI, local models, and others). Behavior has been most extensively verified on `gpt-5.6-sol`; strong frontier or near-frontier models are recommended for editorial-judgment quality.
+or run `hermes -p content-profile` and follow the provider prompt. Hermes supports providers including OpenRouter, Anthropic, OpenAI, Nous, DeepSeek, xAI, and local models. Behavior has been most extensively verified on `gpt-5.6-sol`; this is not certification of every supported model. Strong frontier or near-frontier models are recommended for editorial-judgment quality.
 
 Initialize blank private Editorial Memory inside the installed profile:
 

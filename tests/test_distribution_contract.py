@@ -35,7 +35,8 @@ class DistributionContractTests(unittest.TestCase):
         self.assertNotIn("openai-codex", config)
         readme = authored_text("README.md")
         self.assertIn("no model or provider configuration", readme)
-        self.assertIn("Any Hermes-supported provider works", readme)
+        self.assertIn("Hermes-supported provider and model", readme)
+        self.assertIn("Compatibility is not a quality guarantee", readme)
 
     def test_launch_packet_completes_the_first_sitting(self) -> None:
         skill = authored_text("skills/content-profile/SKILL.md")
