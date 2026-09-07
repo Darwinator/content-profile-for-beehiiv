@@ -1,62 +1,29 @@
 # Beehiiv Handoff — Working Title
 
-> Editable private handoff paired with an inline draft. This artifact does not authorize sending, scheduling, or publishing.
+Editable private companion to the inline draft. Optional layout, not a required packet. Content approval does not authorize external mutation or sending.
 
-- Issue record:
-- Issue Brief:
-- Handoff created:
-- Send Check verdict: ready for founder review | needs revision | blocked
-- Founder approval: pending | approved for use inside beehiiv | revision requested
+- Issue record (sources, direction, and approval provenance):
+- Review state / material unresolved caveat:
+- Final content approval: pending | approved | revision requested
 
-## Title Options
+## Packaging
 
-1.
-2.
-3.
+- Web title:
+- Email subject:
+- Preview text:
 
-## Subject Line Options
-
-1.
-2.
-3.
-
-## Preview Text
-
--
-
----
-
-## Publishable Body
+## Draft body
 
 [Editable Markdown body]
 
----
-
-## Link and Asset Checklist
-
-- [ ] Links verified
-- [ ] Image/asset rights and alt text checked
-- [ ] Disclosures included where needed
-- [ ] No private source notes appear in the publishable body
-
-## Source and Claim Notes — Not for Publication
+## Private source notes, if not linked from the issue
 
 | Claim/location | Source ID | Public URL (only if safe) | Verification status |
 |---|---|---|---|
 | | | | |
 
-## Unresolved Blockers or Placeholders
+## Handoff when requested
 
--
+Inspect live capabilities, show the exact target and intended change, obtain explicit approval, execute once, and read back before claiming success. Preserve local Markdown if the requested operation is unsupported. Separate private source notes from content transferred into beehiiv.
 
-## Human Next Step
-
-Review and edit the inline draft or this artifact. If beehiiv is connected and the live tools support draft creation, the Content Profile may create or update the beehiiv draft after explicit approval and read-back verification; otherwise create or update the issue in beehiiv yourself from this artifact. Complete preview/testing and schedule or send inside beehiiv. The Content Profile must not send, schedule, publish, or describe approval as “approve and send.”
-
-## Workflow Continuation
-
-- Updated launch-checklist state:
-- Current review gate:
-- Recommended next action:
-- What the Content Profile will do after the answer:
-- Remaining launch work:
+The founder completes preview/testing, asset-rights and link checks, final edits, scheduling, and sending inside beehiiv. The agent must not send, schedule, or publish. Describe only actions actually completed.

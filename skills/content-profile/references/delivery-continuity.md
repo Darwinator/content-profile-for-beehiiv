@@ -1,70 +1,27 @@
 # Delivery Continuity
 
-A completed artifact is a workflow state transition, not an endpoint.
+Return the useful work **inline** while the founder is present. An editable private artifact adds durability, not a retrieval burden. Do not default to cron, background work, local-file-only replies, or retrieval phrases. Defer only when timing matters or the founder asks.
 
-## Default execution mode
+## Ordinary delivery
 
-When the founder is present and the work can be completed now, research, draft, review, and revise in the current conversation. Return the useful result **inline** first. Saving an editable private artifact is additional durability, not a retrieval burden.
-
-Do not default to cron, background work, a local-file-only answer, or a retrieval phrase. Use deferred execution only when timing genuinely matters or the founder explicitly requests later delivery.
+Show the work first, any material caveat, and one recommended next action when useful. Use natural prose and only headings that help read the artifact. A finished bounded request can simply end; there is no compulsory status report or follow-up question. Keep launch state private unless launch readiness is requested, a launch action is current, or a consequential blocker changes the next step. A returning weekly edit needs the edit, not a launch tour.
 
 ## Long multi-option deliverables
 
-Keep ordinary work **inline**: one brief, one draft, one short rec, one question. Do not open a side preview for those.
+Split presentation only if the founder is choosing among multiple options and the full writeup would bury the choice. Chat holds the recommendation and a short comparison. One private artifact can hold the detail at `$HERMES_HOME/workspace/editorial-memory/idea-options/YYYY-MM-DD-working-slug.md` (or the agreed non-Hermes workspace), with a side preview if available. Keep it accessible without a retrieval phrase.
 
-Split presentation only when **both** are true:
+Use public, non-sensitive URLs only; private/local sources remain source IDs and descriptions. Remove credentials, signed query parameters, customer identifiers, and unnecessary raw excerpts. Keep the artifact under the same private retention policy as the related idea; not in a public preview or the distribution.
 
-1. the founder must choose among multiple options; and
-2. the full writeup would be long enough to bury the choice.
+Do not use this split for a single draft, single brief, or short recommendation, and avoid repeating the full writeup in both surfaces.
 
-Then:
+## Deferred work
 
-- **Chat** holds the decision: the recommendation, one line per option, Not now if needed, and the choice control.
-- **One private artifact** holds the full cards under `$HERMES_HOME/workspace/editorial-memory/idea-options/YYYY-MM-DD-working-slug.md`. Open it in a side preview when that surface exists. If it does not, keep the artifact available without making the founder hunt for a retrieval phrase.
-- Store only the decision material needed for the choice. Include public, non-sensitive URLs only. Private or local sources stay as source IDs and descriptions; remove credentials, signed query parameters, customer identifiers, and unnecessary raw excerpts.
-- Retain or delete the artifact under the same private Editorial Memory policy as the related idea decision; do not copy it into the distribution or a public preview.
-
-Do not use this split for a single draft, a single brief, or a short recommendation. Do not dump the full cards into chat *and* the preview.
-
-## Background-work gate
-
-If background work is justified:
-
-1. explain why it cannot or should not be completed inline;
-2. name the exact running gate and expected completion condition;
-3. keep the launch checklist visible and update its status;
-4. advance safe independent work in parallel;
-5. return results automatically to the active conversation or a designated thread;
-6. cancel, replace, or avoid duplicate and obsolete future schedules;
-7. never require the founder to remember a retrieval phrase.
-
-Automatic delivery alone is not continuity. A returned result must reopen the checklist and advance the journey.
-
-## Required delivery envelope
-
-Every substantive returned deliverable includes:
-
-1. **Completed:** what was produced or decided.
-2. **Caveats:** evidence gaps, placeholders, permissions, or fit concerns.
-3. **Updated launch path:** compact checklist state.
-4. **Review:** the current review gate and decision: ready for founder review, needs revision, blocked, or approved for use in beehiiv.
-5. **Next:** the smallest next action recommended to the founder.
-6. **After your answer:** what happens after the answer and what the agent will do next.
-7. **Remaining:** the meaningful launch work still open, including promotion and founder-completed sending inside beehiiv.
-
-Do not bury the artifact beneath process commentary. Show the work, then the continuation envelope.
+If later delivery is justified, explain the reason, completion condition, and where results will arrive. Return them to the agreed conversation without making the founder retrieve them. Avoid duplicate or obsolete schedules, and continue safe independent work. Report the actual result and any failure, not an invented completion.
 
 ## Repeated messages
 
-A verbatim or near-verbatim repeat of a message the founder already sent is a delivery artifact — a resend, a stuck client, or an impatient nudge — until proven otherwise. On a repeat:
+For a verbatim or near-verbatim repeat, do not take a new or different action or infer extra meaning. Never edit a saved artifact, flip approval, or record a new decision because of repetition. Briefly acknowledge what was delivered and confirm what the founder wants next. If the original request was not fulfilled, address that actual gap rather than reinterpret the same words.
 
-1. do not take a new or different action from the one the original message produced;
-2. do not extract new meaning the original reading did not carry — the same words mean the same thing the second time;
-3. Never edit a saved artifact, flip an approval or checklist state, or record a decision because of a repeat;
-4. briefly acknowledge the work already delivered for that message and confirm what the founder wants next ("I received this twice — did you want me to change something, or continue?").
+## Moving into beehiiv
 
-If the repetition itself suggests the founder believes the request was not fulfilled, restate where the deliverable is instead of redoing or reinterpreting it.
-
-## User-action boundary
-
-When a next step requires beehiiv permission, confirmation, preview, testing, scheduling, or sending, label it as a founder action. Scheduling and sending always remain founder actions inside beehiiv. The agent may prepare and, where the live tool surface and `references/beehiiv-handoff.md` action state machine allow it, execute an explicitly approved draft mutation — but it must never imply it completed an action it could not verify by reading back the target.
+Name remaining setup, preview/testing, and founder actions when they matter. Content approval is distinct from an approved external draft mutation. Follow `references/beehiiv-handoff.md` for supported operations, exact-target approval, one attempt, and readback. Scheduling, publishing, and sending belong to the founder inside beehiiv; local copy is not proof those actions occurred.

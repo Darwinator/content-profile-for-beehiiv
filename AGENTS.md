@@ -1,78 +1,43 @@
-# Content Profile Working Protocol
+# Working on Content Profile
 
-This repository is the clean, publisher-owned source for Content Profile, a private editorial partner for founders publishing useful newsletters on beehiiv. It is a Hermes profile distribution, not a customer workspace. This file is the contract for any agent (or human) reading, reviewing, or contributing to this checkout.
+This is the public source for a newsletter editor built for beehiiv and Hermes. It is a source-available product distribution, not a customer workspace or a general agent framework.
 
-## Product contract
+## Product
 
-The agent follows this loop:
+Help founders, small-business owners and newsletter side-hustlers make useful issues. The reader should benefit even if they never buy anything. A publication can use the founder's name, cover an adjacent industry or be a business itself.
 
-> Orient → understand founder and business → make reversible choices → show one launch path → do useful work now → return the artifact as the next gate → learn only with approval.
+Understand enough to help, do the editorial work, and remember what matters for next time. Keep the typed-answer popup for meaningful kickoff gaps; resolve five areas of context rather than requiring five replies. The first issue is the goal when material supports it. Otherwise develop a concrete direction and identify the essential missing evidence, permission or decision.
 
-The initial customer is a solo founder or small-business owner building a useful newsletter on beehiiv. The newsletter must still reward the reader if the reader never buys the founder's product.
+The experience should feel like a knowledgeable, opinionated editor, not a project tracker. Return the work rather than a mandatory status report. Keep private records proportionate and linked, with launch planning only when relevant. Voice, evidence and willingness to reject weak material matter more than filling templates.
 
-The agent is a longitudinal editorial partner. It is not a generic AI writer, content calendar, creator clone, autonomous publisher, or beehiiv support replacement. It must be willing to say that material is not worth publishing yet.
+This is independent of beehiiv. Do not imply endorsement, privileged access or employer-confidential knowledge.
 
-Public positioning is beehiiv-only and independent. Do not imply beehiiv endorsement, official status, privileged access, or employer-confidential knowledge.
+## Ownership and learning
 
-## Ownership boundary
+`distribution.yaml` owns the manifest, root `LICENSE`, `SOUL.md`, starter `config.yaml` and `skills/content-profile/`. Updates replace shared material; Hermes preserves the user's existing config. The skill folder carries an identical license for standalone reuse.
 
-Publisher-owned and replaceable on profile update:
+User memories, sessions, editorial workspace, drafts, credentials, OAuth data, `.env`, `auth.json`, local overrides and business context stay out of this repository and its fixtures. An installed profile is a separate Hermes home. Don't point `HERMES_HOME` at this checkout.
 
-- `distribution.yaml`
-- `SOUL.md`
-- `config.yaml`
-- `skills/content-profile/**`
+Use current user direction, then approved private context, then shared guidance, then generic model knowledge. Inferred lasting changes require an inspectable proposal and approval. One-off edits stay with the issue. Shared updates don't authorize changing private decisions.
 
-User-owned and never allowed in this repository:
+## Beehiiv
 
-- memories and sessions;
-- `workspace/editorial-memory/**` and issue/draft history;
-- credentials, OAuth data, `.env`, and `auth.json`;
-- business context, private sources, conversations, and local configuration.
+Use https://www.beehiiv.com/features/mcp/getting-started and the live tools at https://mcp.beehiiv.com/mcp. The starter connector is disabled, untrusted and has no allowed tools. Review authentication and tool selection before enabling it in the intended profile.
 
-A source checkout and an installed profile must stay separate. The installed profile belongs under `$HERMES_HOME/profiles/<name>`. Never point `HERMES_HOME` at this repository.
+For an external mutation, show the exact target and change, obtain explicit approval, execute once and read back the result. Content approval is separate from action approval. Preserve the local editable draft when a connection or action is unavailable. Sending, scheduling and publishing remain human actions in beehiiv.
 
-## Memory and recommendation precedence
+## Development
 
-1. Current explicit user instruction.
-2. Confirmed private Editorial Memory and boundaries.
-3. Current shared product intelligence from this distribution.
-4. Generic model knowledge.
+- Read Git status first. Use separate branches/worktrees for concurrent writers; one owner per file.
+- Write failing tests before changing scripts or behavior. Prefer Python's standard library.
+- Preserve existing private bytes on initialization. Legacy cleanup should deactivate recognized old content without destroying it; preserve uncertain or customized content.
+- Keep one small orchestration skill, job-specific references and optional templates. No user facts in shared instructions or public examples.
+- Treat source pushes, installed-profile updates and announcements as separate authorized actions.
 
-When shared guidance conflicts with a confirmed private decision, explain the conflict and propose reassessment. Do not silently overwrite the decision.
-
-Durable learning uses: propose → show the change → confirm → apply. Keep it inspectable and reversible.
-
-## Beehiiv boundary
-
-Version `0.1.0` does not encode a beehiiv capability snapshot. The authoritative setup guide is https://www.beehiiv.com/features/mcp/getting-started and the canonical OAuth endpoint is https://mcp.beehiiv.com/mcp. The distributed connector stays disabled, untrusted, and empty until the user authenticates and reviews the live tool surface. At the point of use, inspect the live tools and current first-party documentation; use only supported operations. Mutations require an exact target, explicit approval, one execution attempt, and read back verification. Never publish, schedule, or send. Preserve the local Markdown fallback when MCP or a requested action is unavailable.
-
-## Development rules
-
-- Use tests first for scripts and behavioral changes.
-- Use Python's standard library unless a dependency is demonstrably required.
-- Initialize private workspace files with create-if-missing semantics. Repeated initialization must preserve every existing user byte.
-- Keep one lean orchestration skill; place branch-specific knowledge in `references/` and reusable private-file starters in `templates/`.
-- Never write user-specific facts into `SOUL.md`, the skill, references, templates, evaluations, fixtures, or Git history.
-- Do not add competing newsletter-platform guidance or marketing.
-- Treat repository publishing, profile updates, and connector authentication as explicit side-effect boundaries: they happen only on the maintainer's explicit direction, never as a side effect of routine work.
-
-## Review workflow for agents
-
-An agent reviewing or contributing to this checkout should:
-
-1. read this file first;
-2. inspect current Git status before editing;
-3. work only in the source checkout, never in an installed profile;
-4. never copy private user artifacts into fixtures, examples, or documentation;
-5. run the validator before proposing a commit;
-6. use branches or Git worktrees for concurrent writes, and never let two agents edit the risky shared files (`SOUL.md`, `SKILL.md`, `config.yaml`, `distribution.yaml`) simultaneously.
-
-## Verification commands
+Run the [validator and tests](docs/development.md) before committing:
 
 ```bash
-python3 -m unittest discover -s tests -v
-python3 scripts/validate_distribution.py
+python3 scripts/validate_distribution.py --hermes-bin /path/to/hermes
 ```
 
-A release is not safe until a real local install/update test proves that shared files change while private memory, workspace, sessions, credentials, config overrides, and unrelated user skills remain byte-identical.
+Real disposable install/update tests should prove private-state preservation. Text checks verify instructions exist, not that a model follows them. Check a few clean conversations when changing the experience; don't build a second product to evaluate the first.

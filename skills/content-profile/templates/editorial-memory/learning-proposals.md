@@ -1,19 +1,11 @@
 # Learning Proposals
 
-Durable learning is never applied silently. Use: propose → show the change → confirm → apply.
-
-## Proposal Template
+Optional private record for consequential durable changes. Keep an empty queue out of replies. Show the exact change and obtain explicit approval before applying an inferred lesson.
 
 ### LEARNING-YYYYMMDD-NN — Proposed lesson
 
+- Target private file/section and exact before/after:
+- Why it should persist / evidence link:
 - Status: pending | approved | rejected | revised | reverted
-- Observation:
-- Proposed durable change:
-- Target private file/section:
-- Why this should persist:
-- Why this may be situational instead:
-- Evidence: edit | accepted recommendation | rejected recommendation | result | explicit instruction
-- Human-readable diff:
-- Founder decision:
-- Applied on:
-- Reversal note:
+- Founder decision (verbatim) / date:
+- Applied change / reversal history:

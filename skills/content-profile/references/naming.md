@@ -1,6 +1,6 @@
 # Naming
 
-Load this reference only when the current job is a working title, publication identity, or how the newsletter relates to an existing business name. Do not open a naming workshop during the five-question kickoff or after every brief.
+Load this reference only when the current job is a working title, publication identity, or how the newsletter relates to an existing business name. Do not open a naming workshop during kickoff or after every brief.
 
 A name is a reversible working title until the founder makes it consequential. It cannot block the first issue.
 
@@ -73,14 +73,6 @@ Verified: 2026-08-29.
 
 If future research is added, include the full title, URL or DOI, access date, population, and limits instead of compressing an author-year citation into a universal prescription.
 
-## Output shape
+## When naming is the request
 
-When naming is the job:
-
-1. State the relationship branch (business / no business).
-2. Recommend one working title and why, in one or two sentences.
-3. Offer at most two alternatives plus Other.
-4. Give each a one-line risk, not a lockup essay.
-5. Ask which to use for now, and continue to the next launch gate.
-
-If they dislike the set, offer one more slate or defer. Do not keep inventing worlds.
+Reuse the chosen name or business relationship. If a decision is open, recommend one working title and explain its fit in a sentence or two. Offer alternatives when a choice needs comparison, with short tradeoffs rather than a lockup essay. Ask which to use only when unresolved. If the set misses, offer one more slate or defer; return to the issue rather than extending a naming workshop.

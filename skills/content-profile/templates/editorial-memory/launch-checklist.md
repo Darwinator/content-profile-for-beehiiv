@@ -1,6 +1,6 @@
 # Newsletter Launch Checklist
 
-> Keep this current throughout onboarding, editorial work, beehiiv readiness, and the first publication. Do not treat it as founder-confirmed durable strategy until the founder approves the relevant decisions.
+> Optional private launch starter. Update material launch changes; open for requested readiness, a current launch action, or a consequential blocker, not ordinary weekly editing. Record only actual approvals and link their owning records. Existing user files need no template migration.
 
 | Launch gate | Priority | Progress | Current decision / evidence | Next action | Updated |
 |---|---|---|---|---|---|

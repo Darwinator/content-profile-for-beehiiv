@@ -21,7 +21,7 @@ Two facts still matter:
 - **Paid, and weekly or more:** one welcome. Stop there unless a separate follow-up has an identified reader job and existing material.
 - **Paid, and not sending regularly yet:** still start with one welcome. A short automation of complete useful units is optional only when the material already exists and the benefit is explicit. Irregular cadence by itself does not justify more infrastructure.
 
-If they want something else, take the direction. Offer two alternatives plus Other only when the choice is still open.
+Reuse their direction. Offer alternatives when a choice needs comparison, not to reopen a settled choice.
 
 If a Signed Up automation is on, turn the preset welcome email **off**. Both at once sends two welcomes.
 
@@ -45,7 +45,7 @@ Later emails in an approved short sequence are complete useful units from materi
 
 Bring it up when first-issue work starts:
 
-> New subscribers will not get this issue automatically. We should decide the welcome now — it might be the only thing they receive until you send.
+> New subscribers will not get this issue automatically. A short welcome can give them something useful while they wait for the next send; we can write that after this draft.
 
 Then give the lean recommendation for their plan and actual material, and continue. Draft the welcome in chat when they want it. Loading it into beehiiv waits on their account.
 

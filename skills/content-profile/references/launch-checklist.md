@@ -1,6 +1,6 @@
 # Launch Checklist
 
-Use one persistent checklist from first orientation through the founder's first publication. It is the workflow contract, not a decorative recap.
+Keep one private launch checklist. Open it when the founder asks about launch readiness, a launch action is current, or a consequential blocker needs explaining. Ordinary weekly writing and revisions use issue context, not first-launch scaffolding.
 
 ## State model
 
@@ -22,29 +22,13 @@ Only one gate should normally be `current`. A gate can be both `recommended` and
 7. **Cadence and initial format** — recommend weekly and reduce production cost first, while preserving the founder's right to choose biweekly, monthly, or another cadence. When this gate is current, follow `references/issue-format.md`.
 8. **Research and draft** — select founder-relevant material, produce the issue inline, and preserve strong sources and honest caveats.
 9. **Founder review** — resolve blocking issues and record the current review decision.
-10. **Promotion** — keep this visible even without dedicated integrations. When this gate is current, follow `references/promotion.md`: a founder-fit first-25-readers plan (one primary channel plus one supporting motion), not a generic channel list or growth machinery.
+10. **Promotion** — keep a plan available even without dedicated integrations. When this gate is current, follow `references/promotion.md`: a founder-fit first-25-readers plan (one primary channel plus one supporting motion), not a generic channel list or growth machinery.
 11. **Preview and test** — guide links, assets, formatting, disclosures, test email, and preview checks; user access may be required.
 12. **Approval** — founder approves the content for use in beehiiv. This gate flips to `complete` only on an explicit founder approval statement about the issue content, recorded verbatim; asking for the welcome, signup copy, or runway does not approve the issue, and a repeated message approves nothing. Approval is not authorization for the agent to send.
 13. **Founder-completed send inside beehiiv** — the founder schedules or sends inside beehiiv. The agent never describes this as “approve and send.”
 
-## Update rules
+## Updating and using the checklist
 
-Update the checklist at material transitions, not after every answer. The usual points are: after the five kickoff questions, after the publication brief, when research starts, when a draft returns, and when a launch item is blocked or deferred. Show the compact current view rather than repeating all detail every turn:
+Update only material transitions in launch work, with concise evidence or links to the owning record. A useful display when requested is complete, current, remaining, and blocked/deferred with reasons; it is not a required reply format.
 
-```text
-Launch path
-✓ Complete — …
-→ Current — …
-• Remaining — …
-! Blocked — …
-↷ Deferred — …
-```
-
-Always keep promotion and the founder-completed beehiiv send visible until complete or explicitly deferred. Never hide a launch gate merely because the agent lacks a dedicated integration.
-
-## Momentum rules
-
-- Continue safe independent work when another gate is blocked.
-- Branding, mission, vision, naming, and positioning matter, but uncertainty uses a provisional direction instead of stopping the journey.
-- When account access is missing, continue editorial strategy and drafting while marking user-only beehiiv actions accurately.
-- Every deliverable must update this checklist and make the next gate explicit.
+Keep promotion and human sending in the private record even without integrations. When launch is the job, disclose every relevant remaining action accurately. Continue editorial work when account access or naming is missing, and use reversible working choices for nonessential details. A draft or prepared signup copy is not proof that configuration, preview/testing, or sending happened.

@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CURRENT_VERSION = next(line.split(": ", 1)[1] for line in (ROOT / "distribution.yaml").read_text().splitlines() if line.startswith("version: "))
 HERMES = Path(os.environ.get("HERMES_BIN") or shutil.which("hermes") or "hermes")
 PROFILE_NAME = "content-profile-update-test"
 BASE_RELEASE_SHA = "5aa34cc274322170d6075120d8ddafcc769644a0"
@@ -56,7 +57,7 @@ def export_git_revision(revision: str, destination: Path) -> None:
 
 
 class DistributionUpdateTests(unittest.TestCase):
-    def test_actual_0_1_1_to_0_1_3_update_preserves_workspace_and_adds_reconciliation(self) -> None:
+    def test_historical_update_archives_legacy_and_preserves_workspace(self) -> None:
         if not HERMES.is_file():
             self.fail("Set HERMES_BIN to the Hermes executable before running this test")
         with tempfile.TemporaryDirectory() as tmp:
@@ -93,6 +94,12 @@ class DistributionUpdateTests(unittest.TestCase):
             )
             self.assertEqual(init.returncode, 0, init.stderr or init.stdout)
 
+            legacy_root = installed / "skills/content-agent"
+            (legacy_root / "user-note.bin").write_bytes(b"\x00\xffCustomized legacy fixture\r\n")
+            legacy_before = {
+                str(path.relative_to(legacy_root)): sha256(path)
+                for path in legacy_root.rglob("*") if path.is_file()
+            }
             private_root = installed / "workspace" / "editorial-memory"
             publication_brief = private_root / "publication-brief.md"
             publication_brief.write_bytes(
@@ -127,7 +134,7 @@ class DistributionUpdateTests(unittest.TestCase):
             }
             self.assertEqual(after, before)
             self.assertIn(
-                "Version: 0.1.0",
+                f"Version: {CURRENT_VERSION}",
                 (
                     installed
                     / "skills/content-profile/references/release-marker.md"
@@ -136,12 +143,14 @@ class DistributionUpdateTests(unittest.TestCase):
             installed_skill = (
                 installed / "skills/content-profile/SKILL.md"
             ).read_text(encoding="utf-8")
-            self.assertIn("approval-based reconciliation", installed_skill)
-            self.assertIn("never rewrite existing private files automatically", installed_skill)
+            self.assertIn("Preserve existing file paths and user-authored values", installed_skill)
+            self.assertIn("additive diff and approval", installed_skill)
+            for license_path in ("LICENSE", "skills/content-profile/LICENSE"):
+                self.assertEqual((installed / license_path).read_bytes(), (ROOT / "LICENSE").read_bytes())
             # The rename must not leave a stale duplicate skill behind. The
             # update itself preserves paths the new manifest no longer owns,
-            # so the shipped startup initializer performs the provenance-checked
-            # cleanup on the profile's next run — simulate that next run here.
+            # so the startup initializer recognizes the legacy identity and
+            # archives all its bytes outside skills on the next run.
             post_update_init = subprocess.run(
                 [
                     sys.executable,
@@ -160,11 +169,21 @@ class DistributionUpdateTests(unittest.TestCase):
                 post_update_init.stderr or post_update_init.stdout,
             )
             report = json.loads(post_update_init.stdout)
-            self.assertEqual(report["removed_stale"], ["skills/content-agent/"])
+            self.assertEqual(report["archived_legacy"], ["local/legacy-skills/content-agent/"])
             self.assertFalse(
                 (installed / "skills" / "content-agent").exists(),
                 "stale skills/content-agent/ left behind after rename update",
             )
+            archive = installed / "local/legacy-skills/content-agent"
+            self.assertEqual({
+                str(path.relative_to(archive)): sha256(path)
+                for path in archive.rglob("*") if path.is_file()
+            }, legacy_before)
+            final_workspace = {
+                str(path.relative_to(private_root)): sha256(path)
+                for path in private_root.rglob("*") if path.is_file()
+            }
+            self.assertEqual(final_workspace, before)
 
     def test_real_profile_update_replaces_shared_intelligence_and_preserves_user_state(self) -> None:
         if not HERMES.is_file():
@@ -198,7 +217,7 @@ class DistributionUpdateTests(unittest.TestCase):
                 / "references"
                 / "release-marker.md"
             )
-            self.assertIn("0.1.0", shared_marker.read_text(encoding="utf-8"))
+            self.assertIn(CURRENT_VERSION, shared_marker.read_text(encoding="utf-8"))
 
             sentinels = {
                 "memory": installed / "memories" / "MEMORY.md",
@@ -240,9 +259,9 @@ class DistributionUpdateTests(unittest.TestCase):
             )
             manifest = source / "distribution.yaml"
             manifest_text = manifest.read_text(encoding="utf-8")
-            self.assertIn("version: 0.1.0", manifest_text)
+            self.assertIn(f"version: {CURRENT_VERSION}", manifest_text)
             manifest.write_text(
-                manifest_text.replace("version: 0.1.0", "version: 0.1.7", 1),
+                manifest_text.replace(f"version: {CURRENT_VERSION}", "version: 0.1.7", 1),
                 encoding="utf-8",
             )
 

@@ -2,23 +2,9 @@
 
 Develop the selected opportunity until the founder can approve the editorial direction before prose hides unresolved thinking.
 
-## Issue Brief contract
+## Develop only what the issue needs
 
-Create a private Issue Brief from `templates/issue-brief.md` containing:
-
-- reader and immediate situation;
-- useful payoff;
-- central editorial claim;
-- why the founder is close enough to make it;
-- source IDs and claim map;
-- what is missing or uncertain;
-- argument, story, demonstration, or example sequence;
-- expected reader objections or misunderstandings;
-- relationship to previous issues;
-- transparent business connection;
-- appropriate reader action;
-- working title/subject directions;
-- explicit founder approval state.
+Use `templates/issue-brief.md` as an optional working note, not a form. Link publication context rather than recopying it. Capture the reader/payoff, central claim, evidence and permissions, and argument shape in the evolving issue record. Add objections, overlap, commercial relationship, and reader action where consequential.
 
 ## Development conversation
 
@@ -58,8 +44,8 @@ For each material claim, attach:
 
 If the central claim lacks support, return to evidence gathering or narrow the claim. Do not draft around the gap.
 
-## Approval boundary
+## Direction and approval
 
-Show the brief in a compact form and ask for content-direction approval. Approval means the founder agrees with the reader, payoff, claim, evidence boundaries, structure, and commercial relationship. It does not waive final draft approval.
+When the founder has already authorized a specific direction and drafting scope, proceed within it; a second brief approval adds nothing. Otherwise show the compact direction and ask about the consequential choice. Preserve the actual request or approval verbatim in the issue record. Direction approval does not waive final draft approval, authorize durable memory, or permit an external mutation.
 
-Mark the brief `approved for drafting`, `needs revision`, or `parked`. Preserve the reason.
+If the central claim lacks support, research or narrow the claim before drafting. A noncentral gap can remain clearly marked in a reviewable draft; use `references/editorial-review.md` before calling it publish-ready.

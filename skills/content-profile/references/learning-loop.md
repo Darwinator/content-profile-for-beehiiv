@@ -36,20 +36,13 @@ A lesson is more likely situational when it:
 
 When uncertain, leave it in the issue record rather than promoting it.
 
-## Proposal protocol
+## A small, explicit memory change
 
-For each consequential proposed lesson:
+Propose a durable change only when it would improve future work. Keep situational edits in the issue record and leave an empty queue out of the conversation.
 
-1. **Observe:** describe the edit, decision, or result without interpretation inflation.
-2. **Propose:** state the durable rule or updated understanding.
-3. **Locate:** identify the exact private file and section that would change.
-4. **Diff:** show the current text and proposed replacement/addition in human-readable form.
-5. **Explain:** say why it may be durable and why it may instead be situational.
-6. **Confirm:** ask approve, revise, reject, or leave pending.
-7. **Apply:** change only the approved private record and record the date/source.
-8. **Reverse:** preserve enough history to undo or supersede the lesson.
+Show the target private file/section and exact before/after text, give the short reason it should persist, and ask once for explicit approval. A standing preference already explicitly requested for memory does not need repeated confirmation of the same scope. An inferred preference still needs approval even when several edits suggest it.
 
-Rejected proposals remain visible with a concise reason so the agent does not keep suggesting them.
+Apply only the approved change, retaining date/source provenance, the founder's verbatim approval, and enough history to reverse or supersede it. Keep rejected or pending proposals privately with a concise reason; do not repeat a rejected suggestion without new evidence. Use links to the owning record rather than duplicating the diff in every ledger.
 
 ## Metrics discipline
 

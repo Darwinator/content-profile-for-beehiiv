@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import shutil
 from pathlib import Path
 
 
@@ -52,7 +51,7 @@ def initialize_workspace(hermes_home: Path) -> dict[str, list[str]]:
             "Missing bundled Editorial Memory templates: " + ", ".join(missing_templates)
         )
 
-    removed_stale = migrate_renamed_skill(hermes_home)
+    archived_legacy = migrate_renamed_skill(hermes_home)
 
     target_dir = hermes_home / "workspace" / "editorial-memory"
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -92,34 +91,57 @@ def initialize_workspace(hermes_home: Path) -> dict[str, list[str]]:
         "preserved_files": preserved_files,
         "created_directories": created_directories,
         "preserved_directories": preserved_directories,
-        "removed_stale": removed_stale,
+        "archived_legacy": archived_legacy,
     }
 
 
+def has_skill_identity(path: Path, name: str, *, require_body: bool = False) -> bool:
+    """Recognize the shipped plain name field, not arbitrary YAML or body text."""
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except (OSError, UnicodeDecodeError):
+        return False
+    if not lines or lines[0] != "---" or "---" not in lines[1:]:
+        return False
+    end = lines.index("---", 1)
+    names = [line for line in lines[1:end] if line.startswith("name:")]
+    return names == [f"name: {name}"] and (
+        not require_body or any(line.strip() for line in lines[end + 1:])
+    )
+
+
 def migrate_renamed_skill(hermes_home: Path) -> list[str]:
-    """Remove the pre-0.1.0 distribution-owned skill left behind by the rename.
+    """Preserve a recognized legacy skill outside the active skills directory.
 
     Hermes profile updates replace paths the new manifest owns but preserve
-    paths it no longer names, so the 0.1.x `skills/content-agent/` directory
-    survives an update to 0.1.0 as a stale duplicate. Delete it only when
-    provenance proves it is the old shipped skill and the renamed skill is
-    already installed; anything else is preserved untouched.
+    paths it no longer names. Historical releases used `skills/content-agent/`.
+    Name recognition is not proof of publisher provenance or unmodified bytes:
+    move the entire tree, including customizations, rather than deleting it.
     """
     old_dir = hermes_home / "skills" / "content-agent"
+    old_skill = old_dir / "SKILL.md"
     new_skill = hermes_home / "skills" / "content-profile" / "SKILL.md"
+    archive = hermes_home / "local" / "legacy-skills" / "content-agent"
+    # The caller resolves the profile home; do not follow descendant links.
+    # This is a local path guard, not a concurrent hostile-filesystem guarantee.
+    if any(path.is_symlink() for path in (
+        old_dir.parent, old_dir, old_skill, new_skill.parent, new_skill,
+        archive.parent.parent, archive.parent, archive,
+    )):
+        return []
     if not old_dir.is_dir() or not new_skill.is_file():
         return []
-    old_skill = old_dir / "SKILL.md"
     if not old_skill.is_file():
         return []
-    try:
-        frontmatter = old_skill.read_text(encoding="utf-8")
-    except UnicodeDecodeError:
+    if not has_skill_identity(old_skill, "content-agent"):
         return []
-    if "name: content-agent" not in frontmatter:
+    if not has_skill_identity(new_skill, "content-profile", require_body=True):
         return []
-    shutil.rmtree(old_dir)
-    return ["skills/content-agent/"]
+    if archive.exists():
+        return []
+    archive.parent.mkdir(parents=True, exist_ok=True)
+    old_dir.rename(archive)
+    return ["local/legacy-skills/content-agent/"]
 
 
 def main() -> int:

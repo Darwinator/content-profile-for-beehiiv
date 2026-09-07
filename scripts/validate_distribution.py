@@ -15,6 +15,8 @@ from pathlib import Path
 
 REQUIRED_FILES = {
     "AGENTS.md",
+    "LICENSE",
+    "skills/content-profile/LICENSE",
     "README.md",
     "SOUL.md",
     "config.yaml",
@@ -51,6 +53,7 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 HOST_PATH_PATTERNS = (
+    re.compile(re.escape("/Us" + "ers/") + r"[A-Za-z0-9._-]+/"),
     re.compile(re.escape("/opt" + "/data/")),
     re.compile(re.escape("/ho" + "me/") + r"[A-Za-z0-9._-]+/"),
     re.compile(r"[A-Za-z]:\\Users\\[^\\]+\\", re.IGNORECASE),
@@ -76,6 +79,7 @@ CREDENTIAL_PATTERNS = (
 )
 EXPECTED_OWNED = {
     "distribution.yaml",
+    "LICENSE",
     "SOUL.md",
     "config.yaml",
     "skills/content-profile/",

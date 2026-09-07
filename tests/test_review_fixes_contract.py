@@ -1,8 +1,6 @@
-"""Contract tests for the 0.1.0 fixes driven by the independent review of the
-2026-08-30 four-instance coverage run (REVIEW.md).
+"""Source contracts for approval/evidence regressions and lighter editorial work.
 
-Each test names the review finding it closes. These are text contracts on the
-shared intelligence, in the same style as test_distribution_contract.py.
+These inspect authored policy; controlled conversations must verify model behavior.
 """
 
 from __future__ import annotations
@@ -19,6 +17,14 @@ def authored_text(relative: str) -> str:
 
 
 class ReviewFixesContractTests(unittest.TestCase):
+    def test_durable_learning_needs_exact_diff_and_approval_without_ceremony(self) -> None:
+        learning = authored_text("skills/content-profile/references/learning-loop.md")
+        for required in ("exact before/after", "explicit approval", "only the approved change", "provenance",
+                         "reverse", "issue record", "empty queue", "ask once"):
+            self.assertIn(required, learning)
+        self.assertNotIn("**Observe:**", learning)
+        self.assertNotIn("Rejected proposals remain visible", learning)
+
     # Review §4 #1 / blocker 2: the adjacent sitting recorded
     # "Issue 1 approved … Confirmed by: founder" when the founder never
     # approved anything. Approval states may only flip on an explicit
@@ -67,18 +73,18 @@ class ReviewFixesContractTests(unittest.TestCase):
     # Review §4 #4: cards fired invisibly/unnamed for the undecided-founder
     # track (Rina) — the exact persona the product is wedged on. Card
     # provenance must land in the saved artifacts, not only in reasoning.
-    def test_card_provenance_is_named_in_saved_artifacts(self) -> None:
+    def test_card_provenance_is_private_and_explanations_are_useful(self) -> None:
         skill = authored_text("skills/content-profile/SKILL.md")
-        self.assertIn("name the card ID", skill)
-        self.assertIn("in the saved options and brief artifacts", skill)
         cards = authored_text("skills/content-profile/references/decision-cards.md")
-        self.assertIn("card ID must appear in the saved artifact", cards)
-        self.assertIn("An undecided founder is not an exception", cards)
-        issue_brief = authored_text("skills/content-profile/templates/issue-brief.md")
-        self.assertIn("Decision card applied (ID and rule, or 'no card fits'):", issue_brief)
+        for text in (skill, cards):
+            self.assertIn("card IDs stay private", text)
+            self.assertIn("plain language", text)
+        self.assertIn("on request", cards)
+        self.assertIn("issue record", cards)
+        self.assertNotIn("more* visible card provenance", cards)
+        brief = authored_text("skills/content-profile/templates/issue-brief.md")
+        self.assertNotIn("Decision card applied", brief)
 
-    # Review §5 product issues: welcome copy promised weekly while the runway
-    # said weekly supply was unproven. The promise must match the runway.
     def test_cadence_promises_match_runway_supply_honesty(self) -> None:
         welcome = authored_text("skills/content-profile/references/welcome.md")
         for required in (
@@ -107,17 +113,18 @@ class ReviewFixesContractTests(unittest.TestCase):
 
     # Review §6 fast-follow: career welcome shipped with a literal
     # "[Your name]". A bracketed placeholder blocks "ready for founder review".
-    def test_unresolved_placeholders_block_ready_for_founder_review(self) -> None:
+    def test_reviewable_draft_is_distinct_from_publish_ready(self) -> None:
         review = authored_text("skills/content-profile/references/editorial-review.md")
-        for required in (
-            "placeholder scan",
-            "[Your name]",
-            "cannot be called ready for founder review",
-        ):
+        for required in ("placeholder scan", "[Your name]", "reviewable draft", "publish-ready",
+                         "noncentral", "exact marker", "central claim", "permission", "remove"):
             self.assertIn(required, review)
+        self.assertNotIn("cannot be called ready for founder review", review)
+        self.assertNotIn("Workflow continuation", review)
+        development = authored_text("skills/content-profile/references/issue-development.md")
+        self.assertIn("already authorized", development)
+        self.assertIn("narrow the claim", development)
+        self.assertIn("final draft approval", development)
 
-    # Update awareness (0.1.0): the agent surfaces new releases itself, with
-    # strict quiet-by-default guardrails and no telemetry.
     def test_update_awareness_is_consensual_quiet_and_telemetry_free(self) -> None:
         skill = authored_text("skills/content-profile/SKILL.md")
         for required in (
@@ -135,19 +142,6 @@ class ReviewFixesContractTests(unittest.TestCase):
             "Update nagging",
         ):
             self.assertIn(required, skill)
-
-
-class ReleaseMarker016Tests(unittest.TestCase):
-    def test_release_markers_are_0_1_6(self) -> None:
-        for relative in (
-            "distribution.yaml",
-            "skills/content-profile/SKILL.md",
-            "skills/content-profile/references/release-marker.md",
-            "README.md",
-            "AGENTS.md",
-        ):
-            self.assertIn("0.1.0", authored_text(relative), relative)
-            self.assertNotIn("0.1.5", authored_text(relative), relative)
 
 
 if __name__ == "__main__":

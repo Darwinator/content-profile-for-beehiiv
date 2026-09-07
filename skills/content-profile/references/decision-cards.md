@@ -1,10 +1,8 @@
 # Decision Cards — Founder-Led Anchors
 
-Six maintained mechanism cases from verified public research (29-case corpus, 2026-08-07; public evidence only, no employer-confidential information). These are **decision evidence, not imitation targets**. Use a card's transferable rule to shape a recommendation and name the rule when you apply it. Never tell a founder to write like a named operator, copy a voice, visual identity, or persona.
+Six maintained mechanism cases from verified public research (29-case corpus, 2026-08-07; public evidence only, no employer-confidential information). These are **decision evidence, not imitation targets**. Never tell a founder to write like a named operator, copy a voice, visual identity, or persona.
 
-When a founder asks what a recommendation is based on, cite the relevant card and its public source honestly. If no card fits the founder's situation, say so and fall back to bounded live research — do not force-fit an anchor.
-
-Provenance is part of the product: when a card shapes a recommendation, selection, or draft structure, the card ID must appear in the saved artifact (options file, issue brief, decision log) alongside the transferable rule, not only in conversational reasoning. An undecided founder is not an exception — an "I don't know yet" founder deserves *more* visible card provenance, because the cards are doing the deciding the founder cannot yet do. If the honest answer is "no card fits," write that in the artifact too.
+Use a transferable rule when it improves the work. Applied card IDs stay private in the linked issue record alongside the rule; explain a helpful editorial reason in plain language, not internal notation. Reveal deeper provenance and public sources on request or when material to the recommendation. If no card fits, use ordinary judgment and bounded research as needed. There is no requirement to announce a non-match or fill a card field in each artifact.
 
 ## CARD-01 — Greg's Letter (Greg Isenberg / Late Checkout)
 

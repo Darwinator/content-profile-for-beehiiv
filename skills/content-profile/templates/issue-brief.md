@@ -1,86 +1,21 @@
 # Issue Brief — Working Title
 
-- Brief ID:
-- Related idea ID:
-- Status: developing | needs-evidence | approved-for-drafting | parked
-- Decision card applied (ID and rule, or 'no card fits'):
-- Created:
-- Last updated:
+Optional working note in the private issue history; expand only where useful. Link the draft as it develops rather than maintaining duplicate records.
 
-## Reader and Situation
+- Related idea / Publication context link:
+- Reader situation and payoff:
+- Central claim or question:
+- Contribution and issue-specific fit or overlap:
+- Argument / example sequence:
 
--
-
-## Useful Payoff
-
--
-
-## Central Editorial Claim
-
--
-
-## Founder Proximity
-
--
-
-## Founder and Business Relevance
-
-- Current or intended business:
-- Newsletter objective:
-- Business and industry interests:
-- Why this belongs in this newsletter, from this founder, for this reader and promise:
-- Private personalization context used and publication permission:
-
-## Crowding against the landscape
-
-- Field label: crowded / distinctive / thin / unknown
-- What already covers this take:
-- Why this version is still worth doing, or why it is Not now:
-
-## Claim and Source Map
+## Material claims and permissions
 
 | Claim | Source ID | Strength/qualification | Missing evidence or permission |
 |---|---|---|---|
 | | | | |
 
-## Structure
-
-1.
-2.
-3.
-
-## Expected Objections or Misunderstandings
-
--
-
-## What Transfers / What Does Not
-
-- Transfers:
-- Does not:
-
-## Prior-Issue Overlap
-
--
-
-## Business Relationship and Reader Action
-
-- Commercial connection:
-- Appropriate disclosure:
-- Reader action:
-
-## Title / Subject Directions
-
-1.
-2.
-3.
-
-## Open Questions
-
--
-
-## Founder Decision
-
-- Decision: approve direction | revise | park
-- Reason:
-- Confirmed by:
-- Confirmed on:
+- Material objections, commercial disclosures, or reader action:
+- Exact essential gap, if drafting is not supported:
+- Draft / source / private provenance links:
+- Direction approval (actual founder words and date):
+- Final content approval: pending until explicitly given

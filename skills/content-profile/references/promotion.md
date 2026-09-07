@@ -22,7 +22,7 @@ The V1 promotion job is small and honest: help a founder get their first 25 real
 
 ## What to record
 
-In the launch checklist and decision log: the chosen primary channel and why it fits, the supporting motion, and the review point (after ~3 issues: any replies? any forwards? is the channel producing readers who match the definition?). If the channel produces nothing after a fair test, change the channel, not the publication.
+Keep the chosen primary channel, why it fits, supporting motion, and review point in the private launch record; link rather than recopy them into the decision log. Review after a few issues: any replies or forwards, and are new readers a fit? If the channel produces nothing after a fair test, change the channel, not the publication.
 
 ## What comes later (not V1 defaults)
 

@@ -40,6 +40,26 @@ class DistributionValidatorTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertIn("static distribution checks passed", result.stdout)
 
+    def test_each_distributed_surface_requires_its_license(self) -> None:
+        for relative in ("LICENSE", "skills/content-profile/LICENSE"):
+            with self.subTest(surface=relative), tempfile.TemporaryDirectory() as tmp:
+                copied = Path(tmp) / "distribution"
+                self.copy_source(copied)
+                license_path = copied / relative
+                if license_path.exists():
+                    license_path.unlink()
+                result = run_validator(copied)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn(f"missing required file: {relative}", result.stderr)
+
+    def test_license_payload_is_explicit_and_consistent(self) -> None:
+        manifest = (ROOT / "distribution.yaml").read_text(encoding="utf-8")
+        self.assertIn("  - LICENSE\n", manifest)
+        self.assertEqual(
+            (ROOT / "LICENSE").read_bytes(),
+            (ROOT / "skills/content-profile/LICENSE").read_bytes(),
+        )
+
     def test_private_runtime_file_fails_validation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             copied = Path(tmp) / "distribution"
@@ -50,6 +70,19 @@ class DistributionValidatorTests(unittest.TestCase):
 
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("auth.json", result.stdout + result.stderr)
+
+    def test_macos_private_path_fails_validation(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            copied = Path(tmp) / "distribution"
+            self.copy_source(copied)
+            private_prefix = "/Us" + "ers/"
+            (copied / "private-path.md").write_text(
+                f"Private path: {private_prefix}example-person/private-folder/\n",
+                encoding="utf-8",
+            )
+            result = run_validator(copied)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("host-specific path", result.stderr)
 
     def test_host_specific_path_fails_validation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

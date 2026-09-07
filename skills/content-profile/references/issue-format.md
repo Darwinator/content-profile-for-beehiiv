@@ -4,7 +4,7 @@ Load this reference when the current job is the recurring issue shape — not du
 
 A format is a **working format**. Say that. Do not say “provisional.” It can change after the first real issues.
 
-Recommend **one** shape. Offer two alternatives plus Other. Do not default every publication to the same shell.
+Recommend **one** shape when undecided; reuse an explicit format. Offer alternatives when a choice needs comparison. Do not default every publication to the same shell.
 
 ## Choose from these four
 
@@ -40,7 +40,6 @@ If the default shorts favor two territories, the others must still be allowed as
 ## How to talk about it
 
 - Recommend one working shape and say why in a few sentences.
-- Offer two alternatives plus Other.
-- Ask whether to use it for now, then test it against real first-issue candidates.
+- Compare alternatives only if the choice remains open, then test the chosen shape against real material.
 - Stay in chat if no publication account exists yet. Format work does not require beehiiv.
 - Never say “write like” a named newsletter.

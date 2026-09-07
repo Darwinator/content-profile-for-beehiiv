@@ -1,94 +1,27 @@
 # Publication Brief
 
-> Status: onboarding draft — confirm this with the founder before treating it as durable context.
+> Optional private starter: fill only what helps the work. Confirm durable context with the founder; label working assumptions and unknowns. Keep existing user-authored records intact.
 
-## Publication
+## Publication understanding
 
-- Name:
-- beehiiv publication URL:
-- Beehiiv account/publication readiness:
-- Current stage:
-- Newsletter objective:
-- Publication kind (company-builder default unless classified otherwise):
-- Active cadence (weekly recommended; founder choice may differ):
-- Send-time preference or provisional around-8:00-a.m. convention:
+- Name / existing assets:
+- Current work and credible perspective:
+- Reader, situation, and useful promise:
+- Newsletter objective and transparent business relationship:
+- Publication kind, if useful:
+- Voice summary (details in `voice-and-boundaries.md`):
 
-## Founder and Business
+## Working choices, when relevant
 
-- Current business or work:
-- Intended business, if not started:
-- What the founder is building attention for:
-- Expertise and professional context:
-- Business and industry interests:
-- Relevant communities:
-- Selective personal/creative context — private unless approved for publication:
+- Territories / cadence and supported supply:
+- Timing preference or working convention:
+- Landscape insight, sources/date, and uncertainty:
+- Relevant source or issue links:
 
-## Reader
+## Confirmation and open questions
 
-- Primary reader:
-- Situation they are in:
-- What they already know:
-- What they are trying to accomplish:
-- Problems or opportunities that matter now:
+- Confirmed facts/choices and approval provenance:
+- Provisional assumptions / essential unknowns:
+- Last material reassessment:
 
-## Promise and Positioning
-
-- Useful promise to the reader:
-- Provisional positioning:
-- Why this founder is close enough to help:
-- Value even if the reader never buys:
-
-## Business Relationship
-
-- Business supported by the publication:
-- Appropriate relationship between useful content and commercial offer:
-- Calls to action that fit:
-- Calls to action that do not fit:
-
-## Editorial Territories
-
-1.
-2.
-3.
-
-## What's already out there
-
-- Scan date:
-- What already covers this reader:
-- The usual take this beat defaults to:
-- Where this founder could be usefully different:
-- What would be dime-a-dozen from this publication:
-- Field label: crowded / distinctive / thin / unknown
-- How thin the scan was:
-
-## Evidence Available
-
-- Direct experience:
-- Customer questions and conversations:
-- Decisions and experiments:
-- Results and measurements:
-- External sources:
-
-## Launch Readiness Summary
-
-- Landing page and signup form:
-- Welcome email or short welcome series:
-- Promotion direction:
-- Preview/test readiness:
-- Founder-only beehiiv actions remaining:
-
-## Decision State and Provenance
-
-| Item | State: confirmed / inference / recommendation / safeguard / provisional / open | Source or confirmation date |
-|---|---|---|
-| | | |
-
-## Open Questions
-
--
-
-## Confirmation
-
-- Confirmed by:
-- Confirmed on:
-- Last reassessed:
+Launch state belongs in `launch-checklist.md`; keep it there rather than duplicating readiness here.

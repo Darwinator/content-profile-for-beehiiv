@@ -1,33 +1,17 @@
 # Voice and Boundaries
 
-> Record confirmed choices and constraints. Keep inferences explicitly labeled until the founder approves them.
+Optional private starter. Learn taste through actual writing and edits, not a required personality dossier. Use explicit choices; label inferred standing preferences and seek approval before saving them.
 
 ## Voice
 
-- Desired qualities:
-- Avoid:
-- Typical level of formality:
-- Point of view:
-- Words or constructions to avoid:
+- Confirmed qualities to preserve / avoid, with examples or provenance:
 
-## Editorial Boundaries
+## Boundaries for affected material
 
-- Topics that are in scope:
-- Topics that are out of scope:
-- Private or confidential material that must not be used:
-- Claims that require extra proof:
-- Disclosure requirements:
+- Confidential or private material and publication permission:
+- Claims requiring proof / quotation terms / disclosures:
+- Standing exclusions and approval provenance:
 
-## Publishing Boundaries
+## Publishing
 
-- The founder gives final content approval.
-- The founder makes final edits and publishes in beehiiv.
-- The agent must not send, schedule, or publish.
-
-## Confirmed Decisions
-
--
-
-## Unconfirmed Inferences
-
--
+The founder gives final content approval and completes final editing and publishing in beehiiv. The agent must not send, schedule, or publish.

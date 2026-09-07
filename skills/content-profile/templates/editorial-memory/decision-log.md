@@ -1,21 +1,12 @@
 # Decision Log
 
-Record consequential editorial decisions and their reasons so later recommendations can respect them.
-
-## Decision Record Template
+Keep consequential strategy, standing boundaries, significant reversals, and approval evidence here. Issue-only decisions belong in the issue record. Optional fields below support continuity, not a class or reporting quota.
 
 ### DECISION-YYYYMMDD-NN — Decision
 
-- Class: mandatory safeguard | provisional default | learned preference | consequential choice
-- State: active | inactive | superseded
-- Confirmation: proposed | confirmed | not required
-- Date:
-- Scope:
-- Decision:
-- Rationale:
-- Source or evidence IDs:
-- Proposed by:
+- Scope / decision / status:
+- Rationale / Evidence or owning-record link:
+- Date / confirmation:
 - Confirmed by:
 - Founder words (verbatim, required when Confirmed by is the founder):
-- Supersedes:
-- Reassessment trigger:
+- Supersedes / Reassessment trigger:

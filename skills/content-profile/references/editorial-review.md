@@ -61,17 +61,12 @@ Review in this order so sentence polish does not conceal a weak issue.
 - Are headings, links, image notes, and formatting portable?
 - Is the final human editing and publishing boundary explicit?
 
-## Report format
+## Reviewable versus publish-ready
 
-Before the verdict, run a literal placeholder scan across the draft and every packet artifact (welcome, signup copy, handoff): any bracketed template token — `[Your name]`, `[VERIFY: …]`, `[SOURCE NEEDED: …]`, a `working-slug`, or similar — is a blocker. An artifact containing an unresolved placeholder cannot be called ready for founder review; either resolve it or list it under blocking issues with the exact string.
+Run a literal placeholder scan across the draft and any accompanying welcome, signup, or handoff copy. Identify each exact marker, such as `[Your name]`, `[VERIFY: …]`, or `[PERMISSION NEEDED: …]`.
 
-Return:
+A **reviewable draft** may have a clearly flagged noncentral gap, such as a missing signoff, so the founder can assess the argument and voice now. Say what remains and where. A missing fact supporting the central claim, unauthorized private material, confidentiality breach, or misleading payoff needs evidence, permission, a narrower treatment, or removal of the affected material. Do not bury these problems in polished prose.
 
-1. **Verdict:** ready for founder review | needs revision | blocked.
-2. **Blocking issues:** evidence, permission, central-payoff, confidentiality, or misleading-claim problems.
-3. **Recommended edits:** high-value improvements with reasons.
-4. **Optional refinements:** taste-level choices that should not be disguised as defects.
-5. **What was deliberately preserved:** important voice, nuance, or tradeoffs the review did not flatten.
-6. **Workflow continuation:** updated launch path, current review decision, smallest next action, what happens after the founder answers, and remaining launch work.
+**Publish-ready** means all consequential evidence, permission, disclosure, and placeholder problems are resolved or the affected content removed. This does not mean the founder approved it, a beehiiv draft was created, or it was published. Final content approval and external mutation approval remain separate.
 
-Never call an issue ready while a blocking marker remains. The founder decides whether optional refinements fit.
+Return the revised work or the most important review findings, with material blockers explicit. Explain high-value edits and preserve intentional voice and nuance. Optional taste refinements remain the founder's choice; a full review report is useful when requested, not an envelope attached to every draft.

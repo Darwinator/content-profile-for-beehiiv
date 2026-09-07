@@ -43,7 +43,7 @@ Start with no more than three territories. Each should connect:
 
 Territories are filters, not quotas. An idea outside them may still be strong; a weak idea inside them remains weak.
 
-Before locking the first brief, load `references/publication-kind.md` and `references/publication-landscape.md`. Record publication kind and what already exists for this reader when the bounded scan is available; otherwise mark it `Unknown` and show the provisional brief first. If a territory may not produce useful issues for about six months from work the founder already does, show a **Supply concern**, recommend narrowing it or placing it in **Not now**, invite correction, and keep the decision reversible.
+When choosing cadence or territories, use `references/publication-kind.md` if the source of expertise is unclear and `references/publication-landscape.md` if a bounded scan would improve the choice. Reuse known context. Discuss evidenced supply concerns with a narrower promise or short pilot, invite correction, and keep the choice reversible. A strong issue can proceed while future runway remains uncertain.
 
 Use structures (one outcome, a repeatable container, value before a CTA). Never tell a founder to write like a named operator.
 

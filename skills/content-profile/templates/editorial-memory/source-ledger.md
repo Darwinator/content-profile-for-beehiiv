@@ -1,18 +1,10 @@
 # Source Ledger
 
-Use one record per source. Preserve provenance; do not invent missing facts.
-
-## Source Record Template
+Optional private provenance index for material evidence. Record what supports the work; link claims from the issue instead of copying full source notes. Public links must be non-sensitive; private sources use IDs/descriptions without signed links or credentials.
 
 ### SOURCE-YYYYMMDD-NN — Short label
 
-- Date captured:
-- Source type: conversation | decision | experiment | result | observation | document | external source
-- Origin/location:
-- Private or shareable:
-- What it supports:
-- Verbatim material approved for quotation:
-- Factual details:
-- Uncertainties or missing evidence:
-- Related ideas/issues:
-- Last verified:
+- Origin / date / last verified:
+- What it supports and limits:
+- Privacy, permission, and quotation terms:
+- Related issue or artifact:

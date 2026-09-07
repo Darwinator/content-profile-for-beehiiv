@@ -1,6 +1,6 @@
 # Publication Kind
 
-Load this after the five-question kickoff, once current work and newsletter objective are known, and **before** prescribing format, territories, or a founder operating-week workflow.
+Load this when known work and newsletter objective leave the source of editorial expertise unclear, especially before choosing format or territories. Reuse supplied answers.
 
 This is a classification, not five products. Do not open a track workshop. Do not build creator, company, or newsroom modes in V1.
 
